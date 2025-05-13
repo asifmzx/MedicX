@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "@/Components/Shared/Header";
+import Sidebar from "@/Components/Shared/Sidebar";
 import { Container } from "@/Components/UI/Container";
 
 export const metadata = {
@@ -13,7 +14,15 @@ export default function RootLayout({ children }) {
       <body>
         <Container>
           <Header />
-          {children}
+          <div className="grid grid-cols-4 min-h-screen">
+            
+            <div className="col-span-1">
+              <Sidebar />
+            </div>
+
+           
+            <div className="col-span-3 p-4">{children}</div>
+          </div>
         </Container>
       </body>
     </html>
