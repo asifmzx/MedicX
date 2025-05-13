@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { GoSun } from "react-icons/go";
 import { BsFillMoonStarsFill } from "react-icons/bs";
@@ -8,8 +8,8 @@ import { assets } from "@/assets";
 import Sidebar from "./Sidebar";
 
 const Header = () => {
-    const [isDark, setIsDark] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <nav className="bg-[#096B68] text-white fixed w-full z-100">
@@ -79,4 +79,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;
