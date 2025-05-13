@@ -1,5 +1,6 @@
-import Header from "@/Components/Shared/Header";
 import "./globals.css";
+import Header from "@/Components/Shared/Header";
+import { Container } from "@/Components/UI/Container";
 
 export const metadata = {
   title: "MedicX",
@@ -10,8 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <Container>
+          <Header />
+          {children}
+        </Container>
       </body>
     </html>
   );
