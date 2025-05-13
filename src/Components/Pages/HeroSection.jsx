@@ -19,6 +19,9 @@ const HeroSection = () => {
       <div className="ps-10 py-2">
         <StatusButton variant="default" text="default" />
       </div>
+      <div className="ps-10 py-2">
+        <StatusButton variant="progress" text="progress" />
+      </div>
     </div>
   );
 };
