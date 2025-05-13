@@ -5,14 +5,14 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 const ParentLayout = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    return (
-        <>
-            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-            <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        </>
-    );
+  return (
+    <>
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+    </>
+  );
 };
 
 export default ParentLayout;

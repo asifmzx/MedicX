@@ -6,13 +6,15 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <aside
       className={`
-        bg-[#096B68] w-64 p-4 h-[calc(100vh-64px)] mt-17
-        fixed md:relative top-0 left-0 z-40
+        fixed md:static top-0 left-0 z-40
+        h-screen w-64 bg-[#096B68] p-4
         transform transition-transform duration-300 ease-in-out
-        ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} 
-        md:translate-x-0 md:flex md:flex-col md:space-y-4
+        ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} 
+        md:translate-x-0
+        flex flex-col space-y-4
       `}
     >
+      {/* Navigation Links */}
       <Link
         href="/Dashboard/AdminDashboard"
         className="text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
