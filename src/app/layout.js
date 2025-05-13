@@ -15,12 +15,10 @@ export default function RootLayout({ children }) {
         <Container>
           <Header />
           <div className="grid grid-cols-4 min-h-screen">
-            
             <div className="col-span-1">
               <Sidebar />
             </div>
 
-           
             <div className="col-span-3 p-4">{children}</div>
           </div>
         </Container>

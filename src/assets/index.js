@@ -1,3 +1,3 @@
 export const assets = {
-  logo: "./logo.png",
+  logo: "/logo.png",
 };
