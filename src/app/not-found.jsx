@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/Components/UI/Button";
+import Button from "@/Components/UI/Button/Button";
 import Link from "next/link";
 import { IoHomeOutline } from "react-icons/io5";
 
