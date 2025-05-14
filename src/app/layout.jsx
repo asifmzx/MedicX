@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/Components/Shared/Header";
 import Sidebar from "@/Components/Shared/Sidebar";
+import { SidebarProvider } from "@/Components/Shared/SidebarContext";
 import { Container } from "@/Components/UI/Container";
 
 export const metadata = {
@@ -12,16 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Container>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 min-h-screen">
-            <div className="col-span-1 ">
-              <Header />
-            </div>
-
-            <div className="md:col-span-2">{children}</div>
-          </div>
-        </Container>
+        <main >{children}</main>
       </body>
     </html>
   );

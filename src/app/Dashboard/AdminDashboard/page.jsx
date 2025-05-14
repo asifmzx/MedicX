@@ -1,8 +1,11 @@
+import React from 'react'
+
 const Page = () => {
   return (
     <div>
-      <p>
-        Wellcome to the Admin Dashboard
+      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
+        Wellcome to
+        <span className="text-red-500 ps-2">AdminDashboard</span>
       </p>
     </div>
   );
