@@ -1,11 +1,11 @@
-import React from "react";
-
-const PatientDashboard = () => {
+const Page = () => {
   return (
     <div>
-      <p>patientDashboard</p>
+      <p className="flex items-center justify-center h-screen font-bold border ">
+        Wellcome to the Patient Dashboard
+      </p>
     </div>
   );
 };
 
-export default PatientDashboard;
+export default Page;

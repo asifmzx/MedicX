@@ -6,8 +6,8 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <aside
       className={`
-        fixed md:static top-0 left-0 z-40
-        h-screen w-64 bg-[#096B68] p-4
+        fixed md:static top-0 z-40
+        h-screen w-64 bg-[#096B68] p-4 mt-1
         transform transition-transform duration-300 ease-in-out
         ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} 
         md:translate-x-0
@@ -23,7 +23,7 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
         Admin Dashboard
       </Link>
       <Link
-        href="/DoctorDashboard"
+        href="/Dashboard/DoctorDashboard"
         className="text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
         onClick={() => setIsMenuOpen(false)}
       >

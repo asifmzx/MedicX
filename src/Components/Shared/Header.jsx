@@ -6,10 +6,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { assets } from "@/assets";
 import Sidebar from "./Sidebar";
+import Link from "next/link";
 
 const Header = () => {
-  const [isDark, setIsDark] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDark, setIsDark] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <nav className="bg-[#096B68] text-white fixed w-full z-100">
@@ -27,12 +28,15 @@ const Header = () => {
                             </svg>
                         </button>
                         <div>
-                            <Image
-                                src={assets.logo}
-                                alt="Logo"
-                                width={150}
-                                height={50}
-                            />
+                            <Link href="/" >
+
+                                <Image
+                                    src={assets.logo}
+                                    alt="Logo"
+                                    width={150}
+                                    height={50}
+                                />
+                            </Link>
                         </div>
                     </div>
 
@@ -65,13 +69,13 @@ const Header = () => {
             {/* Mobile Sidebar */}
             <div className={`md:hidden fixed inset-0 z-40 ${isMenuOpen ? 'block' : 'hidden'}`}>
                 <div className="absolute inset-0 bg-black/50" onClick={() => setIsMenuOpen(false)} />
-                <div className={`absolute left-0 top-16 w-64 bg-[#096B68] h-[calc(100vh-4rem)] p-4 transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <div className={`absolute left-0 top-16 bg-[#096B68] h-[calc(100vh-4rem)] p-4 transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
                 </div>
             </div>
 
             {/* Desktop Sidebar */}
-            <div className="hidden md:block fixed left-0 top-16 w-64">
+            <div className="hidden md:block fixed top-16 w-64">
                 <Sidebar isMenuOpen={true} setIsMenuOpen={() => { }} />
             </div>
         </nav>
