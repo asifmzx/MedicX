@@ -1,5 +1,5 @@
 "use client";
-import { BarChart, Bar, XAxis, Legend } from "recharts";
+import { BarChart, Bar, XAxis, Legend, ResponsiveContainer } from "recharts";
 
 const data = [
   {
@@ -78,23 +78,24 @@ const data = [
 
 const AdminOverviewBarChart = () => {
   return (
-    <BarChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <XAxis dataKey="name" />
-
-      <Legend />
-      <Bar dataKey="total" fill="#2563EB" />
-      <Bar dataKey="patient" fill="#16A34A" />
-    </BarChart>
+    <div style={{ width: "100%", height: "300px" }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <XAxis dataKey="name" />
+          <Legend />
+          <Bar dataKey="total" fill="#2563EB" />
+          <Bar dataKey="patient" fill="#16A34A" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
