@@ -39,19 +39,25 @@ const RevenueSourcesBarChart = () => {
   return (
     <ComposedChart
       layout="vertical"
-      width={300}
-      height={300}
+      width={220}
+      height={250}
       data={data}
       margin={{
-        top: 20,
+        top: 30,
         right: 20,
         bottom: 20,
-        left: 20,
+        left: 0,
       }}
     >
       <CartesianGrid stroke="#f5f5f5" />
       <XAxis type="number" interval={1} />
-      <YAxis dataKey="name" interval={1} type="category" scale="band" />
+      <YAxis
+        dataKey="name"
+        interval={1}
+        type="category"
+        scale="band"
+        className="text-xs"
+      />
       <Tooltip formatter={(value, name) => [`$${value}`, name]} />
 
       <Bar dataKey="revenue" barSize={30} fill="#10B981" />
