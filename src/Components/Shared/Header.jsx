@@ -21,7 +21,7 @@ const Header = () => {
                     <div className="flex items-center w-full">
                         {/* Sidebar Toggle - hidden on md and up */}
                         <button
-                            className="p-2 mr-3 hover:bg-white/10 rounded-md md:hidden"
+                            className="p-2 hover:bg-white/10 rounded-md md:hidden"
                             onClick={toggleSidebar}
                             aria-label="Toggle Sidebar"
                         >
@@ -30,11 +30,11 @@ const Header = () => {
                             </svg>
                         </button>
 
-                        <div>
-                            <Link href="/Dashboard">
-                                <Image src={assets.logo} alt="Logo" width={150} height={50} />
-                            </Link>
-                        </div>
+                        <Link href="/">
+                            {/* <img src={assets.logo} alt="/Logo" width={150} height={16} /> */}
+                            <Image src={assets.logo} alt="Logo" width={125} height={16} />
+                        </Link>
+
                     </div>
 
                     {/* Right */}
@@ -46,12 +46,12 @@ const Header = () => {
                         >
                             {isDark ? <GoSun className="text-xl" /> : <BsFillMoonStarsFill className="text-xl" />}
                         </button>
-                        <Link href="/Dashboard" className="pr-2 hover:bg-white/10 rounded-md">
+                        <Link href="/" className="pr-2 hover:bg-white/10 rounded-md">
                             <IoMdNotificationsOutline className="text-xl" />
                         </Link>
-                        <div className="p-2 bg-white/20 hover:bg-white/10 rounded-full text-xl font-normal">
-                            AM
-                        </div>
+                        <Link href="/" className=" bg-white/20 hover:bg-white/10 rounded-full text-xl font-normal size-10 flex items-center justify-center">
+                            US
+                        </Link>
                     </div>
                 </div>
             </div>
