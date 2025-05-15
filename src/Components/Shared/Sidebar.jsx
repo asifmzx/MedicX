@@ -19,7 +19,6 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
-
 const SidebarLink = ({ href, label, onClick, icon: Icon }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -27,8 +26,9 @@ const SidebarLink = ({ href, label, onClick, icon: Icon }) => {
   return (
     <Link
       href={href}
-      className={`flex items-center text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isActive ? "bg-white/10 text-white" : ""
-        }`}
+      className={`flex items-center text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
+        isActive ? "bg-white/10 text-white" : ""
+      }`}
       onClick={onClick}
     >
       {Icon && (
@@ -54,8 +54,9 @@ const SidebarGroup = ({ label, items, onClick, icon: Icon }) => {
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className={`w-full flex items-center justify-between text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isGroupActive ? "bg-white/10 text-white" : ""
-          }`}
+        className={`w-full flex items-center justify-between text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
+          isGroupActive ? "bg-white/10 text-white" : ""
+        }`}
       >
         <div className="flex items-center">
           {Icon && (
@@ -64,8 +65,16 @@ const SidebarGroup = ({ label, items, onClick, icon: Icon }) => {
             </IconContext.Provider>
           )}
           {label}
-        </div >
-        {open ? <span ><SlArrowUp /></span> : <span className="transition duration-300"><SlArrowDown /></span>}
+        </div>
+        {open ? (
+          <span>
+            <SlArrowUp />
+          </span>
+        ) : (
+          <span className="transition duration-300">
+            <SlArrowDown />
+          </span>
+        )}
       </button>
       {open && (
         <div className="pl-6 mt-1 space-y-1">
@@ -114,7 +123,10 @@ const menuItems = [
     type: "group",
     label: "Appointments",
     items: [
-      { label: "All Appointments", href: "/home/appointments/all_appointments" },
+      {
+        label: "All Appointments",
+        href: "/home/appointments/all_appointments",
+      },
       { label: "Add Appointment", href: "/home/appointments/add_appointment" },
       { label: "Calender View", href: "/home/appointments/calender_view" },
       { label: "Appointment Requests", href: "/home/appointment_requests" },
@@ -126,9 +138,18 @@ const menuItems = [
     label: "Prescriptions",
     icon: FaAmbulance,
     items: [
-      { label: "All Prescriptions", href: "/home/prescriptions/all_prescriptions" },
-      { label: "Create Prescriptions", href: "/home/prescriptions/create_prescription" },
-      { label: "Medicine Templates", href: "/home/prescriptions/medicine_templates" },
+      {
+        label: "All Prescriptions",
+        href: "/home/prescriptions/all_prescriptions",
+      },
+      {
+        label: "Create Prescriptions",
+        href: "/home/prescriptions/create_prescription",
+      },
+      {
+        label: "Medicine Templates",
+        href: "/home/prescriptions/medicine_templates",
+      },
     ],
   },
 
@@ -137,7 +158,10 @@ const menuItems = [
     label: "Ambulance",
     icon: FaAmbulance,
     items: [
-      { label: "Ambulance Call List", href: "/home/ambulance/ambulance_call_list" },
+      {
+        label: "Ambulance Call List",
+        href: "/home/ambulance/ambulance_call_list",
+      },
       { label: "Ambulance List", href: "/home/ambulance/ambulance_list" },
       { label: "Ambulance Details", href: "/home/ambulance/ambulance_details" },
     ],
@@ -200,7 +224,10 @@ const menuItems = [
     items: [
       { label: "All Staff", href: "/home/staff/all_staff" },
       { label: "Add Staff", href: "/home/staff/add_staff" },
-      { label: "Roles & Permissions", href: "/home/staff/roles_and_permission" },
+      {
+        label: "Roles & Permissions",
+        href: "/home/staff/roles_and_permission",
+      },
       { label: "Attendance", href: "/home/staff/attendance" },
     ],
   },
@@ -222,7 +249,10 @@ const menuItems = [
     items: [
       { label: "Allotted Rooms", href: "/home/room_allotment/allotted_rooms" },
       { label: "New Allotment", href: "/home/room_allotment/new_allotment" },
-      { label: "Room by Department", href: "/home/room_allotment/room_by_department" },
+      {
+        label: "Room by Department",
+        href: "/home/room_allotment/room_by_department",
+      },
       { label: "Add New Room", href: "/home/room_allotment/add_new_room" },
     ],
   },
@@ -235,10 +265,16 @@ const menuItems = [
     icon: FaChartBar,
     items: [
       { label: "Overview", href: "/home/reports/overview" },
-      { label: "Appointment Reports", href: "/home/reports/appointment_reports" },
+      {
+        label: "Appointment Reports",
+        href: "/home/reports/appointment_reports",
+      },
       { label: "Financial Reports", href: "/home/reports/financial_reports" },
       { label: "Inventory Reports", href: "/home/reports/inventory_reports" },
-      { label: "Patient Visit Reports", href: "/home/reports/patient_visit_reports" },
+      {
+        label: "Patient Visit Reports",
+        href: "/home/reports/patient_visit_reports",
+      },
     ],
   },
 
@@ -261,8 +297,14 @@ const menuItems = [
     items: [
       { label: "Login", href: "/home/authentication/login" },
       { label: "Register", href: "/home/authentication/register" },
-      { label: "Forgot Password", href: "/home/authentication/forgot_password" },
-      { label: "Profile Settings", href: "/home/authentication/profile_settings" },
+      {
+        label: "Forgot Password",
+        href: "/home/authentication/forgot_password",
+      },
+      {
+        label: "Profile Settings",
+        href: "/home/authentication/profile_settings",
+      },
     ],
   },
 
@@ -279,8 +321,6 @@ const menuItems = [
   // { type: "link", label: "User", href: "/profile" },
   // { type: "link", label: "Administrator", href: "/admin" },
 ];
-
-
 
 const SidebarContent = ({ onLinkClick }) => (
   <div className="flex flex-col space-y-2 pb-4">
@@ -312,7 +352,11 @@ const Sidebar = () => {
   return (
     <>
       {/* Mobile Sidebar */}
-      <div className={`md:hidden fixed top-15 inset-0 z-40 ${isSidebarOpen ? "block" : "hidden"}`}>
+      <div
+        className={`md:hidden fixed top-15 inset-0 z-40 ${
+          isSidebarOpen ? "block" : "hidden"
+        }`}
+      >
         <div className="absolute inset-0 bg-black/50" onClick={closeSidebar} />
         <aside
           className={`
