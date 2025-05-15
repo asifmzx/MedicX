@@ -50,11 +50,11 @@ const data = [
 
 const PatientDemographicsBarChart = () => {
   return (
-    <div style={{ width: "100%", height: "300px" }}>
+    <div style={{ width: "100%", height: "250px" }}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
-          margin={{ top: 20, right: 0, left: 0, bottom: 5 }} 
+          margin={{ top: 30, right: 20, left: 0, bottom: 10 }} 
           layout="horizontal"
         >
           <CartesianGrid strokeDasharray="3 3" />

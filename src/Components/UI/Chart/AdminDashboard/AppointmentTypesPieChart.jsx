@@ -49,8 +49,8 @@ export default function AppointmentTypesPieChart() {
             dataKey="value"
             nameKey="name"
             cx="50%"
-            cy="50%"
-            outerRadius={100}
+            cy="30%"
+            outerRadius={70}
             label={renderCustomizedLabel}
           >
             {data.map((entry, index) => (

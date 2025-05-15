@@ -3,43 +3,43 @@ import PatientDemographicsBarChart from "@/Components/UI/Chart/AdminDashboard/Pa
 import RevenueSourcesBarChart from "@/Components/UI/Chart/AdminDashboard/RevenueSourcesBarChart";
 
 const AnalyticsCard = () => {
-  const chartConfigs = [
+  const chartDetails = [
     {
       title: "Patient Demographics",
-      description: "Age and gender distribution",
+      description: "Age and gender distribution of patients",
       Component: PatientDemographicsBarChart,
-      className: "h-64 md:h-72 lg:h-80",
     },
     {
       title: "Appointment Types",
       description: "Distribution by service category",
       Component: AppointmentTypesPieChart,
-      className: "h-64 md:h-72 lg:h-80",
     },
     {
       title: "Revenue Sources",
       description: "Breakdown by department",
       Component: RevenueSourcesBarChart,
-      className: "h-64 md:h-72 lg:h-80",
     },
   ];
 
   return (
-    <div className="w-full">
-      <div className="flex flex-col gap-5 md:flex-row md:gap-x-5">
-        {chartConfigs.map(
-          ({ title, description, Component, className }, index) => (
-            <div key={index} className="mb-6 w-full md:w-1/3">
-              <h1 className="text-xl font-bold text-gray-800 md:text-2xl">
+    <div className="w-full space-y-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {chartDetails.map(({ title, description, Component }, index) => (
+          <div
+            key={index}
+            className="flex flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm h-[350px]"
+          >
+            <div className="mb-3">
+              <h2 className="text-lg font-semibold text-gray-800 md:text-xl">
                 {title}
-              </h1>
-              <p className="text-gray-600">{description}</p>
-              <div className={className}>
-                <Component />
-              </div>
+              </h2>
+              <p className="text-sm text-gray-500">{description}</p>
             </div>
-          )
-        )}
+            <div className="flex-1 h-[100%]">
+              <Component />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
