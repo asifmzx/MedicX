@@ -1,4 +1,5 @@
 "use client";
+
 import { BarChart, Bar, XAxis, Legend, ResponsiveContainer } from "recharts";
 
 const data = [

@@ -1,7 +1,7 @@
-
 import React from "react";
 import AnalyticsCard from "./Card/AnalyticsCard";
 
+import AnalyticsProgress from "./AnalyticsProgress/AnalyticsProgress";
 
 const Analytics = () => {
   return (
@@ -13,6 +13,9 @@ const Analytics = () => {
         </p>
       </div>
       <AnalyticsCard />
+      <div className="py-4">
+        <AnalyticsProgress />
+      </div>
     </div>
   );
 };
