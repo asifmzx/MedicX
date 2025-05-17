@@ -8,7 +8,7 @@ import RecentReportActivity from "./RecentReportActivity/RecentReportActivity";
 const Report = () => {
   return (
     <div className="rounded-lg">
-      {/* Header Section */}
+     
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">
