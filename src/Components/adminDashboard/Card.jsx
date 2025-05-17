@@ -44,10 +44,7 @@ const Card = () => {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
         {data.map(({ id, icon, title, text, number, color }) => (
-          <div
-            key={id}
-            className="bg-white rounded-lg p-4 flex flex-col gap-2"
-          >
+          <div key={id} className="bg-white rounded-lg p-4 flex flex-col gap-2">
             <div className={` ${color}`}>{icon}</div>
             <h2 className="text-lg md:text-2xl font-semibold">{title}</h2>
             <p className="text-sm text-gray-500">

@@ -63,7 +63,10 @@ const RecentAppointment = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <StatusButton variant={appointment.status} />
+              <StatusButton
+                variant={appointment.status}
+                text={appointment.status}
+              />
               <button
                 className="text-gray-400 hover:text-gray-600 transition-colors"
                 aria-label="More options"
