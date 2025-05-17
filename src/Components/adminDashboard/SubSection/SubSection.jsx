@@ -5,7 +5,7 @@ import Button from "@/Components/UI/Button/Button";
 import Overview from "./Overview/Overview";
 import Analytics from "./Analytics/Analytics";
 import Notifications from "./Notifications/Notifications";
-import Reports from "./Reports/Reports";
+import Report from "./Report/Report";
 
 const SubSection = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -22,7 +22,7 @@ const SubSection = () => {
       case "analytics":
         return <Analytics />;
       case "reports":
-        return <Reports />;
+        return <Report />;
       case "notifications":
         return <Notifications />;
       default:
@@ -33,9 +33,9 @@ const SubSection = () => {
   return (
     <div>
       <div className="flex space-x-2">
-        {tabs.map((tab) => (
+        {tabs.map((tab, index) => (
           <Button
-            key={tab.key}
+            key={index} 
             variant="primary"
             text={tab.label}
             onClick={() => setActiveTab(tab.key)}
@@ -48,7 +48,7 @@ const SubSection = () => {
         ))}
       </div>
 
-      <div className="pt-6">{Content()}</div>
+      <div className="pt-4">{Content()}</div>
     </div>
   );
 };

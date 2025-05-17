@@ -5,7 +5,7 @@ import StaffPerformance from "./StaffPerformance/StaffPerformance";
 
 const Analytics = () => {
   return (
-    <div className="py-6 rounded-lg">
+    <div className=" rounded-lg">
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Detailed Analytics</h1>

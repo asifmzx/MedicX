@@ -1,3 +1,4 @@
+'use client'
 import Card from "@/Components/adminDashboard/Card";
 import SubSection from "@/Components/adminDashboard/SubSection/SubSection";
 import Button from "@/Components/UI/Button/Button";
