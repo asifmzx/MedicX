@@ -10,6 +10,13 @@ import Reports from "./Reports/Reports";
 const SubSection = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
+  const tabs = [
+    { key: "overview", label: "Overview" },
+    { key: "analytics", label: "Analytics" },
+    { key: "reports", label: "Reports" },
+    { key: "notifications", label: "Notifications" },
+  ];
+
   const Content = () => {
     switch (activeTab) {
       case "analytics":
@@ -24,31 +31,24 @@ const SubSection = () => {
   };
 
   return (
-    <div className="space-x-2">
-      <Button
-        variant="primary"
-        text="Overview "
-        onClick={() => setActiveTab("overview")}
-      />
-      <Button
-        variant="primary"
-        text="Analytics"
-        onClick={() => setActiveTab("analytics")}
-      />
+    <div>
+      <div className="flex space-x-2">
+        {tabs.map((tab) => (
+          <Button
+            key={tab.key}
+            variant="primary"
+            text={tab.label}
+            onClick={() => setActiveTab(tab.key)}
+            className={`${
+              activeTab === tab.key
+                ? "bg-gray-100 text-black "
+                : "bg-[#FFFFFF] hover:bg-[#F5F5F5] text-black"
+            }`}
+          />
+        ))}
+      </div>
 
-      <Button
-        variant="primary"
-        text="Reports "
-        onClick={() => setActiveTab("reports")}
-      />
-
-      <Button
-        variant="primary"
-        text="Notifications "
-        onClick={() => setActiveTab("notifications")}
-      />
-
-      <div className="pt-6 ">{Content()}</div>
+      <div className="pt-6">{Content()}</div>
     </div>
   );
 };
