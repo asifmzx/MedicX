@@ -1,21 +1,20 @@
 import React from "react";
+import TodaysPatients from "./TodaysPatients/TodaysPatients";
+import RecentPatientNotes from "./RecentPatientNotes/RecentPatientNotes";
 
-
-const Schedule = () => {
-    return (
-        <div className="p-6 bg-white rounded-lg shadow-md">
-            <div className="mb-6">
-                <h1 className="text-2xl font-bold text-gray-800">Detailed Analytics</h1>
-                <p className="text-gray-600">
-                    Insights and trends from your clinic data
-                </p>
-            </div>
-            {/* <AnalyticsCard /> */}
-            <div className="py-4">
-                {/* <AnalyticsProgress /> */}
-            </div>
+const Patients = () => {
+  return (
+    <>
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 ">
+        <div className="p-4 bg-white rounded-lg shadow-md">
+          <TodaysPatients />
         </div>
-    );
+        <div className="p-4 bg-white rounded-lg shadow-md">
+          <RecentPatientNotes />
+        </div>
+      </div>
+    </>
+  );
 };
 
-export default Schedule;
+export default Patients;
