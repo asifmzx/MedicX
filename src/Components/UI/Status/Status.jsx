@@ -1,6 +1,6 @@
 const Status = ({ variant = "default", text = "", className = "" }) => {
   const baseStyles =
-    "inline-flex items-center justify-center p-1 rounded-full text-xs font-bold tracking-wide text-center border border-gray-300";
+    "inline-flex items-center justify-center p-1 rounded-full text-xs font-semibold tracking-wide text-center border border-gray-300";
 
   const variants = {
     follow_up: "bg-black text-white w-[90px]",

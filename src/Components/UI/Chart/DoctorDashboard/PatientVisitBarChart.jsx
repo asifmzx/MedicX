@@ -1,87 +1,41 @@
 "use client";
-import { BarChart, Bar, XAxis, Legend, YAxis } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend } from "recharts";
 
 const data = [
-  {
-    name: "jan",
-    patient: 40,
-    amt: 10,
-  },
-  {
-    name: "fev",
-    patient: 50,
-    amt: 20,
-  },
-  {
-    name: "mar",
-    patient: 45,
-    amt: 30,
-  },
-  {
-    name: "apr",
-    patient: 60,
-    amt: 40,
-  },
-  {
-    name: "may",
-    patient: 55,
-    amt: 50,
-  },
-  {
-    name: "jun",
-    patient: 70,
-    amt: 60,
-  },
-  {
-    name: "jul",
-    patient: 65,
-    amt: 70,
-  },
-  {
-    name: "aug",
-    patient: 55,
-    amt: 80,
-  },
-  {
-    name: "sep",
-    patient: 80,
-    amt: 90,
-  },
-  {
-    name: "oct",
-    patient: 75,
-    amt: 100,
-  },
-  {
-    name: "nov",
-    patient: 90,
-    amt: 10,
-  },
-  {
-    name: "dec",
-    patient: 85,
-    amt: 10,
-  },
+  { name: "Jan", patient: 40 },
+  { name: "Feb", patient: 50 },
+  { name: "Mar", patient: 45 },
+  { name: "Apr", patient: 60 },
+  { name: "May", patient: 55 },
+  { name: "Jun", patient: 70 },
+  { name: "Jul", patient: 65 },
+  { name: "Aug", patient: 55 },
+  { name: "Sep", patient: 80 },
+  { name: "Oct", patient: 75 },
+  { name: "Nov", patient: 90 },
+  { name: "Dec", patient: 85 },
 ];
 
 const PatientVisitBarChart = () => {
   return (
-    <BarChart
-      width={800}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <XAxis dataKey="name" />
-      <YAxis dataKey="amt" />
-
-      <Bar dataKey="patient" fill="#6366F1" barSize={50} interval={1} />
-    </BarChart>
+    <div style={{ width: "100%", height: 300 }}>
+      <ResponsiveContainer>
+        <BarChart
+          data={data}
+          margin={{
+            top: 0,
+            right: 20,
+            left: -30,
+            bottom: 5,
+          }}
+        >
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Legend />
+          <Bar dataKey="patient" fill="#6366F1" shape="rounded-md" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
