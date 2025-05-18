@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactInfoForm = () => {
   return (
-    <div >
+    <div>
       <div className="py-4">
         <h1 className="text-xl md:text-2xl font-semibold tracking-tight mb-1">
           Contact Information
