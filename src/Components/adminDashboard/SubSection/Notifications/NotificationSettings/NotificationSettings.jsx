@@ -40,7 +40,7 @@ const NotificationSettings = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md max-w-6xl ">
+    <div className="bg-white p-6 rounded-lg shadow-md max-w-8xl ">
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-xl font-bold text-gray-800">
