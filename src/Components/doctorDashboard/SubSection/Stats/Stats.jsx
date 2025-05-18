@@ -1,21 +1,19 @@
 import React from "react";
+import StatSection from "./StatsSection"
 
+const Stats = () => {
 
-const Schedule = () => {
     return (
-        <div className="p-6 bg-white rounded-lg shadow-md">
+        <div className="w-full sm:px-4 lg:px-8 bg-white px-4 py-4 rounded-md">
             <div className="mb-6">
-                <h1 className="text-2xl font-bold text-gray-800">Detailed Analytics</h1>
-                <p className="text-gray-600">
-                    Insights and trends from your clinic data
-                </p>
+                <h1 className="text-2xl font-semibold text-gray-800">
+                    Performance Metrics
+                </h1>
+                <p className="text-gray-600 mt-4">Your clinical performance and patient outcomes</p>
             </div>
-            {/* <AnalyticsCard /> */}
-            <div className="py-4">
-                {/* <AnalyticsProgress /> */}
-            </div>
+            <StatSection />
         </div>
     );
 };
 
-export default Schedule;
+export default Stats;

@@ -54,10 +54,10 @@ const PendingTasks = () => {
   ];
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-2">
       <div className="mb-6">
-        <h1 className="text-xl font-semibold text-gray-800">Pending Tasks</h1>
-        <p className="text-gray-600 mt-1">Tasks requiring your attention</p>
+        <h1 className="text-2xl font-semibold text-gray-800">Pending Tasks</h1>
+        <p className="text-gray-600 mt-4">Tasks requiring your attention</p>
       </div>
 
       <div className="space-y-3">
@@ -66,9 +66,8 @@ const PendingTasks = () => {
           return (
             <div
               key={index}
-              className={`flex justify-between items-center p-4 border rounded-md ${
-                isCompleted ? "bg-gray-50" : "hover:bg-gray-100"
-              }`}
+              className={`flex justify-between items-center px-4 py-6 border border-gray-200 rounded-md ${isCompleted ? "bg-gray-50" : "hover:bg-gray-100"
+                }`}
             >
               <div className="flex items-start gap-3">
                 <input
@@ -79,19 +78,16 @@ const PendingTasks = () => {
                 />
                 <div>
                   <h3
-                    className={`font-medium text-sm ${
-                      isCompleted
-                        ? "line-through text-gray-400"
-                        : "text-gray-800"
-                    }`}
+                    className={`font-medium text-sm ${isCompleted
+                      ? "line-through text-gray-400"
+                      : "text-gray-800"
+                      }`}
                   >
                     {task.name}
                   </h3>
-                  <div className="flex items-center gap-2 mt-1 text-[13px] font-medium text-gray-600">
-                    <span className="flex flex-row justify-center items-center gap-1">
-                      <CiClock2 />
-                      {task.day}, {task.time}
-                    </span>
+                  <div className="flex justify-start items-center gap-2 text-[14px] font-medium text-gray-600 mt-1">
+                    <CiClock2 />
+                    {task.day}, {task.time}
                     <Status variant={task.variant} text={task.type} />
                   </div>
                 </div>

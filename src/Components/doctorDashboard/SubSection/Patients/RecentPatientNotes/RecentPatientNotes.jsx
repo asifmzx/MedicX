@@ -49,7 +49,7 @@ const RecentPatientNotes = () => {
   return (
     <div className="w-full sm:px-2 mt-2 lg:px-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-gray-800">
+        <h1 className="text-2xl font-medium text-gray-800">
           Recent Patient Notes
         </h1>
         <p className="text-gray-600 mt-4">Your latest clinical notes</p>
@@ -60,11 +60,11 @@ const RecentPatientNotes = () => {
         />
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 h-[120vw] md:h-[31vw] overflow-y-auto">
         {patients.map((patient, index) => (
           <div
             key={index}
-            className="border border-gray-200 pb-4 rounded-md p-2"
+            className="border border-gray-200 pb-4 rounded-md p-2 "
           >
             <div className="flex flex-col">
               <div className="flex flex-row justify-between items-center gap-2">
@@ -82,7 +82,7 @@ const RecentPatientNotes = () => {
                 </div>
                 <div>
                   <div className="flex items-center gap-1">
-                    <span className="text-gray-600 text-[14px] flex flex-wrap justify-center items-center gap-1">
+                    <span className="text-gray-600 text-sm flex flex-wrap justify-center items-center gap-1">
                       <MdOutlineDateRange />
                       {patient.day}, {patient.time}
                     </span>
@@ -90,7 +90,7 @@ const RecentPatientNotes = () => {
                 </div>
               </div>
               <div className="p-1">{patient.note}</div>
-              <div className="mt-2 flex flex-col sm:flex-row items-center justify-end gap-2">
+              <div className="mt-2 flex flex-col-2 items-center justify-center md:justify-end gap-2">
                 <Buttonv2
                   variant="editnote"
                   Icon={FaEdit}

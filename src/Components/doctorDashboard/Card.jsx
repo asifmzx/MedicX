@@ -69,7 +69,7 @@ const Card = () => {
           className={`bg-white rounded-lg p-5 shadow-sm border ${item.brColor} hover:shadow-md transition duration-300 ease-in-out`}
         >
           {/* Header */}
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-center">
             <div className="flex items-center gap-2 text-gray-600 font-semibold">
               <div
                 className={`p-2 rounded-md ${item.bgColor} ${item.iconColor}`}
