@@ -1,12 +1,27 @@
 import React from "react";
+import Button from "@/Components/UI/Button/Button";
+import Card from "@/Components/patientDashboard/Card";
+// import SubSection from "@/Components/patientDashboard/SubSection";
 
 const Page = () => {
   return (
-    <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Patient Dashboard</span>
-      </p>
+    <div className="p-4 bg-[#E7F2E4]">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">
+            Welcome back, Dr. Sarah
+          </h1>
+          <p className="text-gray-700">
+            Here's what's happening with your patients today.
+          </p>
+        </div>
+      </div>
+      <div className="py-6">
+        <Card />
+      </div>
+      {/* <div>
+        <SubSection />
+      </div> */}
     </div>
   );
 };
