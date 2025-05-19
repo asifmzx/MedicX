@@ -12,10 +12,10 @@ const addPatient = () => {
         </div>
         <div>
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1">
-            Patients
+            Add Patients
           </h1>
           <p className="text-gray-600">
-            Manage your patients and their medical records.
+            Register a new patient in your clinic.
           </p>
         </div>
       </div>

@@ -16,6 +16,7 @@ const Status = ({ variant = "default", text = "", className = "" }) => {
     low: "bg-[#dbebff] text-[#6241b0] w-[75px]",
     active: "bg-[#22C55E] text-[#0A0A0A] w-[75px]",
     inactive: "bg-[#EAB308] text-[#0A0A0A] w-[75px]",
+    onLeave: "bg-[#EF4444] text-[#ffe3e3] w-[75px]",
   };
 
   return (
