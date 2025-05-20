@@ -13,6 +13,8 @@ const Buttonv2 = ({
       "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA] text-xs font-semibold",
     deletenote: "hover:bg-red-500/20 text-red-500 w-[135px] font-medium",
     editnote: "hover:bg-gray-500/5 w-[120px] font-medium",
+    primary_main: "bg-[#FFFFFF] hover:bg-[#F5F5F5] text-black",
+    secondary_main: "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA]",
   };
 
   const activeStyle = isActive ? "bg-white" : "";

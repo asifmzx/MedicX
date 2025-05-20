@@ -13,7 +13,7 @@ const RecentPatientNotes = () => {
       name: "Emma Thompson",
       time: "09:00 AM",
       day: "Today",
-      note: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, repellat,consectetur adipisicing elit. Alias, repellat.",
+      note: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, repellat, consectetur adipisicing elit. Alias, repellat.",
       img: assets.prof,
     },
     {
@@ -89,7 +89,7 @@ const RecentPatientNotes = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-1">{patient.note}</div>
+              <div className="line-clamp-2 md:line-clamp-2 p-2">{patient.note}</div>
               <div className="mt-2 flex flex-col-2 items-center justify-center md:justify-end gap-2">
                 <Buttonv2
                   variant="editnote"

@@ -1,8 +1,6 @@
 "use client";
 import { FaRegFileLines } from "react-icons/fa6";
 import { CiCalendar } from "react-icons/ci";
-import { GoPeople } from "react-icons/go";
-import { BiTask } from "react-icons/bi";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { GiMedicines, GiTakeMyMoney } from "react-icons/gi";
 
