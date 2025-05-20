@@ -19,7 +19,7 @@ const MedicalInfoForm = () => {
             </label>
             <select
               id="gender"
-              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
             >
               <option value="" disabled selected>
                 Select Blood Type
@@ -44,7 +44,7 @@ const MedicalInfoForm = () => {
             <input
               type="number"
               placeholder="Enter height"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             />
           </div>
         </div>
@@ -56,7 +56,7 @@ const MedicalInfoForm = () => {
             <input
               type="number"
               placeholder="Enter weight"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ const MedicalInfoForm = () => {
           <textarea
             rows={3}
             placeholder="list any Allergies(medicine,food,etc)"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
         <div className="col-span-1 md:col-span-2 lg:col-span-3">
@@ -77,7 +77,7 @@ const MedicalInfoForm = () => {
           <textarea
             rows={3}
             placeholder="list any current medicine"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
         <div className="col-span-1 md:col-span-2 lg:col-span-3">
@@ -87,7 +87,7 @@ const MedicalInfoForm = () => {
           <textarea
             rows={3}
             placeholder="list any Chronic Conditions"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
       </div>

@@ -16,7 +16,7 @@ const LifeStyleInfoForm = () => {
             </label>
             <select
               id=""
-              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
             >
               <option value="" disabled selected>
                 Select Status
@@ -34,7 +34,7 @@ const LifeStyleInfoForm = () => {
             </label>
             <select
               id=""
-              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
             >
               <option value="" disabled selected>
                 Select Consumption
@@ -52,7 +52,7 @@ const LifeStyleInfoForm = () => {
             </label>
             <select
               id=""
-              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
             >
               <option value="" disabled selected>
                 Select Frequency
@@ -70,7 +70,7 @@ const LifeStyleInfoForm = () => {
           <textarea
             rows={3}
             placeholder="Describe dietary habits"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
       </div>

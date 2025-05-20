@@ -23,7 +23,7 @@ const SecondaryInsurance = () => {
             id=""
             type="text"
             placeholder="Enter Insurance Provider"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
         <div className="col-span-1">
@@ -34,7 +34,7 @@ const SecondaryInsurance = () => {
             id=""
             type="number"
             placeholder="Enter Policy Number"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
       </div>

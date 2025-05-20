@@ -16,7 +16,7 @@ const AdditionalDocuments = () => {
             </label>
             <select
               id=""
-              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
             >
               <option value="" disabled selected>
                 Select Document Type
@@ -48,7 +48,7 @@ const AdditionalDocuments = () => {
               </div>
 
               <div>
-                <p className="text-xs text-gray-600 max-w-[200px] md:max-w-full">
+                <p className="text-xs text-gray-600 max-w-[150px] md:max-w-full">
                   Upload additional patient documents. PDF, JPG, or PNG. Max
                   10MB.
                 </p>

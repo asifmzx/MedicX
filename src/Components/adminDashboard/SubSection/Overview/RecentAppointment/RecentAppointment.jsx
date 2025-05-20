@@ -41,7 +41,7 @@ const RecentAppointment = () => {
         </p>
       </div>
 
-      <div className="flex-1 space-y-3 overflow-y-auto pr-2">
+      <div className="flex-1 space-y-3 overflow-y-auto ">
         {appointments.map((appointment) => (
           <div
             key={appointment.id}

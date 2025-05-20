@@ -12,7 +12,7 @@ const RequiredConsentForms = () => {
         <div className="col-span-1 md:col-span-2 flex justify-between items-center border border-gray-200 p-4 rounded">
           <div>
             <p className="text-sm font-semibold">HIPAA Consent Form</p>
-            <p className="text-xs text-gray-500 max-w-[200px] md:max-w-full">
+            <p className="text-xs text-gray-500 max-w-[150px] md:max-w-full">
               Patient consent for use and disclosure of health information
             </p>
           </div>
@@ -37,7 +37,7 @@ const RequiredConsentForms = () => {
         <div className="col-span-1 md:col-span-2 flex justify-between items-center border border-gray-200 p-4 rounded">
           <div>
             <p className="text-sm font-semibold">Treatment Consent</p>
-            <p className="text-xs text-gray-500 max-w-[200px] md:max-w-full">
+            <p className="text-xs text-gray-500 max-w-[150px] md:max-w-full">
               Consent to receive medical treatment
             </p>
           </div>

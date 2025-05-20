@@ -2,7 +2,7 @@ import React from "react";
 
 const BillingPreferences = () => {
   return (
-    <div >
+    <div>
       <div className="pb-4">
         <h1 className="text-xl md:text-xl font-semibold tracking-tight mb-1">
           Billing Preferences
@@ -15,7 +15,7 @@ const BillingPreferences = () => {
           </label>
           <select
             id=""
-            className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
           >
             <option value="" disabled selected>
               Preferred Billing Method

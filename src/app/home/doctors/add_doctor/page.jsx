@@ -1,5 +1,4 @@
-
-import SubSection from "@/Components/Doctors/subSection/subSection";
+import AddDoctorSection from "@/Components/Doctors/AddDoctorSection/AddDoctorSection";
 import BackButton from "@/Components/UI/Button/BackButton";
 
 const addDoctor = () => {
@@ -17,7 +16,7 @@ const addDoctor = () => {
         </div>
       </div>
       <div className="py-4">
-        <SubSection />
+        <AddDoctorSection />
       </div>
     </div>
   );
