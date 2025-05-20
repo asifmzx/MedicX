@@ -24,7 +24,7 @@ const Page = () => {
         </div>
 
         <div className="flex flex-row  sm:items-center gap-2 sm:gap-3">
-          <div>
+          <div className="w-full sm:w-auto">
             <RangePicker
               format={dateFormat}
               defaultValue={[

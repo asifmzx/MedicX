@@ -1,6 +1,6 @@
 const StatusButton = ({ variant = "default", text = "button" }) => {
   const baseStyles =
-    "w-[100px] p-1 rounded-full text-xs font-medium tracking-wide text-center";
+    "w-[70px] p-1 rounded-full text-xs font-medium tracking-wide text-center";
 
   const variants = {
     confirm:

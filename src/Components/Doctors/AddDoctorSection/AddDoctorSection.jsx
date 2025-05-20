@@ -6,7 +6,7 @@ import PersonalInfo from "./PersonalInfo/PersonalInfo";
 import ProfessionalInfo from "./ProfessionalInfo/ProfessionalInfo";
 import AccountSettings from "./AccountSettings/AccountSettings";
 
-const SubSection = () => {
+const AddDoctorSection = () => {
   const [activeTab, setActiveTab] = useState("PersonalInfo");
 
   const tabs = [
@@ -49,4 +49,4 @@ const SubSection = () => {
   );
 };
 
-export default SubSection;
+export default AddDoctorSection;

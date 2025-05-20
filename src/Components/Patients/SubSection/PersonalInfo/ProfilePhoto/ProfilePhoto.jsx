@@ -9,12 +9,12 @@ const ProfilePhoto = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-8">
-        <div className="bg-gray-200 p-6 rounded-full inline-block self-center sm:self-auto">
+      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-start gap-y-4 sm:gap-x-8">
+        <div className="bg-gray-200 p-6 rounded-full inline-block">
           <CiExport size={40} className="text-gray-500" />
         </div>
 
-        <div className="space-y-2 w-full sm:w-auto">
+        <div className="space-y-2 w-full sm:w-auto text-center sm:text-left">
           <label
             htmlFor="fileUpload"
             className="inline-block bg-transparent text-black px-4 py-2 border border-gray-300 rounded cursor-pointer hover:bg-gray-300 transition"

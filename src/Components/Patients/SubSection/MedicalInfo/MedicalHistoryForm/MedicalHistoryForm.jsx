@@ -32,27 +32,27 @@ const MedicalHistoryForm = () => {
         <div className="col-span-1 md:col-span-2 lg:col-span-3">
           <p className="py-2 font-semibold">Family Medical History</p>
           <div className="grid grid-cols-2 gap-2">
-            <div className="flex gap-x-1.5">
+            <div className="flex items-center gap-x-1.5">
               <input type="checkbox" name="diabetes" />
               <label>Diabetes</label>
             </div>
-            <div className="flex gap-x-1.5">
+            <div className="flex items-center  gap-x-1.5">
               <input type="checkbox" name="Hypertension" />
               <label>Hypertension</label>
             </div>
-            <div className="flex gap-x-1.5">
+            <div className="flex items-center  gap-x-1.5">
               <input type="checkbox" name="Asthma" />
               <label>Asthma</label>
             </div>
-            <div className="flex gap-x-1.5">
+            <div className="flex items-center  gap-x-1.5">
               <input type="checkbox" name="Heart Disease" />
               <label>Heart Disease</label>
             </div>
-            <div className="flex gap-x-1.5">
+            <div className="flex items-center  gap-x-1.5">
               <input type="checkbox" name="Cancer" />
               <label>Cancer</label>
             </div>
-            <div className="flex gap-x-1.5">
+            <div className="flex items-center  gap-x-1.5">
               <input type="checkbox" name="Mental Health Conditions" />
               <label>Mental Health Conditions</label>
             </div>

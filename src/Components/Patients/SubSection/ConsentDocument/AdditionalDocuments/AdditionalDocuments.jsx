@@ -48,7 +48,7 @@ const AdditionalDocuments = () => {
               </div>
 
               <div>
-                <p className="text-xs text-gray-600 max-w-[200px] md:max-w-full">
+                <p className="text-xs text-gray-600 max-w-[150px] md:max-w-full">
                   Upload additional patient documents. PDF, JPG, or PNG. Max
                   10MB.
                 </p>

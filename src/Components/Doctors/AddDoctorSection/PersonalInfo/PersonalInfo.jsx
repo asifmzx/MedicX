@@ -1,8 +1,9 @@
 import Button from "@/Components/UI/Button/Button";
+import PersonalInfoForm from "./PersonalInfoForm/PersonalInfoForm";
 import ContactInfoForm from "./ContactInfoForm/ContactInfoForm";
 import EmergencyContactForm from "./EmergencyContactForm/EmergencyContactForm";
-import PersonalInfoForm from "./PersonalInfoForm/PersonalInfoForm";
 import ProfilePhoto from "./ProfilePhoto/ProfilePhoto";
+
 
 const PersonalInfo = () => {
   return (
