@@ -17,7 +17,7 @@ const ContactInfoForm = () => {
             <input
               type="text"
               placeholder="Enter email address"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             />
           </div>
         </div>
@@ -30,7 +30,7 @@ const ContactInfoForm = () => {
             <input
               type="number"
               placeholder="Enter Phone Number"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             />
           </div>
         </div>
@@ -42,7 +42,7 @@ const ContactInfoForm = () => {
             <input
               type="email"
               placeholder="Enter alternative phone"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             />
           </div>
         </div>

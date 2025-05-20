@@ -16,7 +16,7 @@ const MedicalHistoryForm = () => {
           <textarea
             rows={3}
             placeholder="list any past surgeries with dates"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
         <div className="col-span-1 md:col-span-2 lg:col-span-3">
@@ -26,7 +26,7 @@ const MedicalHistoryForm = () => {
           <textarea
             rows={3}
             placeholder="list any previous hospitalizations with dates"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
         <div className="col-span-1 md:col-span-2 lg:col-span-3">
@@ -65,7 +65,7 @@ const MedicalHistoryForm = () => {
           <textarea
             rows={3}
             placeholder="list any Additional Family Medical History "
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
       </div>

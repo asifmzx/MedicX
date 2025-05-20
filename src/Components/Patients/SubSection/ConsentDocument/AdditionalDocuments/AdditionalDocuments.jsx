@@ -16,7 +16,7 @@ const AdditionalDocuments = () => {
             </label>
             <select
               id=""
-              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
             >
               <option value="" disabled selected>
                 Select Document Type

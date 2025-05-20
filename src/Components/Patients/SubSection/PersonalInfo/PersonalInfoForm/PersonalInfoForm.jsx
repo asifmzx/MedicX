@@ -20,7 +20,7 @@ const PersonalInfoForm = () => {
             id="firstName"
             type="text"
             placeholder="Enter first name"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -32,7 +32,7 @@ const PersonalInfoForm = () => {
             id="middleName"
             type="text"
             placeholder="Enter middle name"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -44,7 +44,7 @@ const PersonalInfoForm = () => {
             id="lastName"
             type="text"
             placeholder="Enter last name"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -55,7 +55,7 @@ const PersonalInfoForm = () => {
           <input
             id="dob"
             type="date"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -65,7 +65,7 @@ const PersonalInfoForm = () => {
           </label>
           <select
             id="gender"
-            className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
           >
             <option value="" disabled selected>
               Select gender
@@ -83,7 +83,7 @@ const PersonalInfoForm = () => {
           </label>
           <select
             id="maritalStatus"
-            className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
           >
             <option value="" disabled selected>
               Select status
@@ -104,7 +104,7 @@ const PersonalInfoForm = () => {
             id="address"
             rows={3}
             placeholder="Enter address"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
 
@@ -116,7 +116,7 @@ const PersonalInfoForm = () => {
             id="city"
             type="text"
             placeholder="Enter city"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -128,7 +128,7 @@ const PersonalInfoForm = () => {
             id="state"
             type="text"
             placeholder="Enter state"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -140,7 +140,7 @@ const PersonalInfoForm = () => {
             id="zip"
             type="text"
             placeholder="Enter Zip Code"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
       </div>

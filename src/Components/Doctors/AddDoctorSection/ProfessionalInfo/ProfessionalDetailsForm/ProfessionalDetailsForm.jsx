@@ -22,7 +22,7 @@ const ProfessionalDetailsForm = () => {
           </label>
           <select
             id="primarySpecialization"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             defaultValue=""
           >
             <option value="" disabled>
@@ -48,7 +48,7 @@ const ProfessionalDetailsForm = () => {
           </label>
           <select
             id="secondarySpecialization"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             defaultValue=""
           >
             <option value="" disabled>
@@ -73,7 +73,7 @@ const ProfessionalDetailsForm = () => {
             id="licenseNumber"
             type="number"
             placeholder="Enter License Number"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -84,7 +84,7 @@ const ProfessionalDetailsForm = () => {
           <input
             id="expiryDate"
             type="date"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
 
@@ -96,7 +96,7 @@ const ProfessionalDetailsForm = () => {
             id="qualifications"
             rows={3}
             placeholder="Enter qualifications (MD, PhD, etc)"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
         <div className="md:col-span-2">
@@ -107,7 +107,7 @@ const ProfessionalDetailsForm = () => {
             id=""
             type="number"
             placeholder="Enter Years of Experience"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
       </div>

@@ -21,7 +21,7 @@ const AccountSettingsForm = () => {
             id=""
             type="text"
             placeholder="Enter username"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
         <div className="md:col-span-1">
@@ -32,7 +32,7 @@ const AccountSettingsForm = () => {
             id=""
             type="password"
             placeholder="Enter Temporary Password"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
         </div>
         <div className="md:col-span-2">
@@ -43,9 +43,11 @@ const AccountSettingsForm = () => {
             id=""
             type="email"
             placeholder="Enter Email Address"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
           />
-          <p className="text-xs text-gray-500">This will be used for login and notifications.</p>
+          <p className="text-xs text-gray-500">
+            This will be used for login and notifications.
+          </p>
         </div>
       </div>
     </div>

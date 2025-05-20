@@ -19,7 +19,7 @@ const DepartmentAndPositionForm = () => {
           </label>
           <select
             id="primarySpecialization"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             defaultValue=""
           >
             <option value="" disabled>
@@ -44,7 +44,7 @@ const DepartmentAndPositionForm = () => {
           </label>
           <select
             id="primarySpecialization"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             defaultValue=""
           >
             <option value="" disabled>

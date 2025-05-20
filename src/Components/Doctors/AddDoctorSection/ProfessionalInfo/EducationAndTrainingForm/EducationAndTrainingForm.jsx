@@ -10,7 +10,6 @@ const EducationAndTrainingForm = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-     
         <div className="md:col-span-2">
           <label htmlFor="" className="block mb-1 font-medium">
             Education
@@ -19,7 +18,7 @@ const EducationAndTrainingForm = () => {
             id=""
             rows={3}
             placeholder="Enter education details"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
 
@@ -31,7 +30,7 @@ const EducationAndTrainingForm = () => {
             id=""
             rows={3}
             placeholder="Enter Certifications"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black resize-none"
           ></textarea>
         </div>
       </div>

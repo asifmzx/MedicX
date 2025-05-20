@@ -11,6 +11,7 @@ const StatusButton = ({ variant = "default", text = "button" }) => {
       "bg-transparent hover:bg-[#262626] text-[#262626] hover:text-[#FAFAFA] border border-[#262626]",
     progress:
       "bg-[#f59f0a] hover:bg-[#262626] text-[#FAFAFA] hover:text-[#FAFAFA] ",
+  
   };
 
   return (
