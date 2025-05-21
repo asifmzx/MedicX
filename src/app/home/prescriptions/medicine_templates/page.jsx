@@ -26,20 +26,6 @@ const Page = () => {
         <div className="pt-4 flex justify-between items-center flex-wrap gap-4">
           <MedicineTemplates />
 
-          {/* <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full sm:w-auto">
-            <SearchInput
-              placeholder="Search templates..."
-              icon={AiOutlineSearch}
-              inputClassName="text-sm text-gray-700"
-              wrapperClassName="flex-grow sm:flex-grow-0"
-            />
-            <Button
-              variant="secondary"
-              Icon={FiPlus}
-              text="New Template"
-              className="w-[120px] md:w-[180px]"
-            />
-          </div> */}
         </div>
       </div>
     </div>

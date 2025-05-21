@@ -37,12 +37,12 @@ const HypertensionStandard = () => {
             Cardiovascular • Created by Dr. Sarah Johnson
           </p>
         </div>
-        <div className="space-x-4">
+        <div className=" space-x-4 ">
           <Button
             variant="primary"
             text="Edit"
             Icon={FaRegEdit}
-            className="border border-gray-300"
+            className="border border-gray-300 mb-2 md:mb-0"
           />
           <Button
             variant="secondary"

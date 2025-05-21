@@ -28,13 +28,15 @@ const NewMedicineTemplateModal = () => {
         open={open}
         onCancel={() => setOpen(false)}
         footer={null}
-        style={{ top: 20 }}
-        className="w-[70%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] max-w-[600px]"
-        bodyStyle={{
-          maxHeight: "60vh",
-          overflowY: "auto ",
-          paddingRight: "5px",
+        style={{ top: 20, width: "70%" }}
+        styles={{
+          body: {
+            maxHeight: "60vh",
+            overflowY: "auto",
+            paddingRight: "5px",
+          },
         }}
+        className="sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] max-w-[600px]"
       >
         <div className="mb-6">
           <Title level={4}>Add New Specialization</Title>

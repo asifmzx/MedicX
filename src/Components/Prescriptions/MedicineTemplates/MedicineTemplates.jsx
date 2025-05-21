@@ -5,10 +5,9 @@ import Button from "@/Components/UI/Button/Button";
 import AllTemplates from "./AllTemplates/AllTemplates";
 import RecentlyUsed from "./RecentlyUsed/RecentlyUsed";
 import MyTemplates from "./MyTemplates/MyTemplates";
-
 import SearchInput from "@/Components/UI/Inputs/SearchInput";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FiPlus } from "react-icons/fi";
+
 import NewMedicineTemplateModal from "@/Components/UI/Modal/NewMedicineTemplateModal";
 
 const MedicineTemplates = () => {
@@ -24,7 +23,7 @@ const MedicineTemplates = () => {
     switch (activeTab) {
       case "RecentlyUsed":
         return <RecentlyUsed />;
-      case "Insurance":
+      case "MyTemplates":
         return <MyTemplates />;
 
       default:
@@ -35,7 +34,7 @@ const MedicineTemplates = () => {
   return (
     <div className="w-full">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-        {/* Tabs Section */}
+    
         <div className="flex flex-wrap gap-2 w-full sm:flex-1">
           {tabs.map((tab, index) => (
             <Button
@@ -52,7 +51,7 @@ const MedicineTemplates = () => {
           ))}
         </div>
 
-        {/* Search & New Template Button */}
+       
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full sm:w-auto sm:justify-end">
           <SearchInput
             placeholder="Search templates..."
