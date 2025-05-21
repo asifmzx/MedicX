@@ -65,7 +65,11 @@ const PrescriptionHistory = () => {
       </div>
 
       <div className="mt-4">
-        <Button variant="secondary" text="View All Prescription" />
+        <Button
+          variant="secondary"
+          text="View All Prescription"
+          className="w-full"
+        />
       </div>
     </div>
   );
