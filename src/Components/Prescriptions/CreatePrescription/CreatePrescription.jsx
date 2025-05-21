@@ -17,7 +17,7 @@ const CreatePrescription = () => {
             <Medications />
             <AdditionalInformation />
           </div>
-          <div className=" sm:col-span-2 lg:col-span-1">
+          <div className=" sm:col-span-2 lg:col-span-1 space-y-4">
             <PatientInformation />
             <PrescriptionHistory />
             <PrescriptionOptions />
