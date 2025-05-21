@@ -28,26 +28,33 @@ const Past = () => {
             {pastAppointments.map((appt, idx) => (
                 <div key={idx} className="border border-gray-200 rounded-md p-4 mb-4 bg-gray-50">
                     <div className="flex items-start gap-3 mb-3">
-                        <div className="rounded-full p-3 flex items-center justify-center bg-gray-200">
+                        <div className={`rounded-full p-3 items-center justify-center hidden sm:flex`}>
                             <CiCalendar className="text-2xl text-gray-500" />
                         </div>
-                        <div className="flex flex-col">
-                            <h3 className="font-medium text-gray-600 text-base">{appt.type}</h3>
-                            <p className="text-gray-400 text-sm">{appt.date} • {appt.time}</p>
-                            <div className="flex items-center text-sm text-gray-400 mt-1">
-                                <GoPerson className="mr-1" />
-                                <span>{appt.doctor} ({appt.specialty})</span>
+                        <div className="flex flex-wrap justify-between items-center w-full">
+                            <div className="flex flex-col">
+                                <h3 className="font-medium text-gray-600 text-base">{appt.type}</h3>
+                                <p className="text-gray-400 text-sm">{appt.date} • {appt.time}</p>
+                                <div className="flex items-center text-sm text-gray-400 mt-1">
+                                    <GoPerson className="mr-2" />
+                                    <span>{appt.doctor} ({appt.specialty})</span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-2">
+                                <div className="flex justify-center sm:justify-end items-end gap-2 w-full">
+                                    <Buttonv2 text="View Results" className="h-10 text-sm text-gray-600 border border-gray-300" />
+                                    <Buttonv2 text="Notes" className="h-10 text-sm text-gray-600 border border-gray-300" />
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-end gap-2">
-                        <Buttonv2 text="View Results" className="h-10 text-sm w-full sm:w-auto text-gray-600 border-gray-300" />
-                        <Buttonv2 text="Notes" className="h-10 text-sm w-full sm:w-auto text-gray-600 border-gray-300" />
-                    </div>
+
                 </div>
-            ))}
-        </div>
+            ))
+            }
+        </div >
     );
 };
 
