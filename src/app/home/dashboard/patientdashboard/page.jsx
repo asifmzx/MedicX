@@ -19,17 +19,18 @@ const Page = () => {
                 Your health dashboard - manage your care all in one place
               </p>
             </div>
-            <div className="flex md:flex-col lg:flex-row items-start justify-center gap-2">
+            <div className="flex flex-col sm:flex-row items-end justify-end gap-2">
               <Buttonv2
                 variant="primary_main"
                 text="Message Doctor"
                 Icon={FiMessageSquare}
-                className="text-sm"
+                className="text-sm w-[170px] sm:w-[160px]"
               />
               <Buttonv2
                 variant="secondary_main"
                 text="Book Appointment"
                 Icon={CiCalendar}
+                className="text-sm w-auto sm:w-[170px]"
               />
             </div>
           </div>

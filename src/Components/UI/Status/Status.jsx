@@ -16,12 +16,13 @@ const Status = ({ variant = "default", text = "", className = "" }) => {
     high: "bg-[#ffe3e3] text-[#991c61] w-[90px]",
     medium: "bg-[#fef9c3] text-[#944c0d] w-[75px]",
     low: "bg-[#dbebff] text-[#6241b0] w-[75px]",
-    active: "bg-[#22C55E] text-[#0A0A0A] w-[75px]",
+    active: "bg-[#f0fcf4] text-[#14806c] w-[75px]",
     inactive: "bg-[#EAB308] text-[#0A0A0A] w-[75px]",
     onLeave: "bg-[#EF4444] text-[#ffe3e3] w-[75px]",
     tomorrow: "bg-[#dbebff] text-[#145efc] border border-[#145efc] w-[85px]",
     nextweek: "bg-[#faf5ff] text-[#9023cf]  border border-[#9023cf] w-[85px]",
     expired: "bg-[#EF4444] text-[#ffe3e3] w-[75px]",
+
   };
 
   return (
