@@ -18,9 +18,9 @@ const Medications = () => {
         {
             name: "Metformin",
             dosage: "500mg",
-            schedule: "Twice daily",
+            schedule: "Three daily",
             time: "Morning and Evening",
-            prescribedBy: "Dr. Patel",
+            prescribedBy: "Dr. Khal",
             startDate: "February 10, 2023",
             refillsRemaining: 2,
             nextRefillDate: "May 25, 2023",
@@ -35,24 +35,36 @@ const Medications = () => {
             schedule: "Three times daily",
             time: "With meals",
             prescribedBy: "Dr. Martinez",
-            startDate: "December 5, 2022",
-            endDate: "December 15, 2022",
+            startDate: "December 15, 2022",
+            endDate: "December 13, 2022",
         }
     ];
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 bg-white p-4 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Active Medications</h2>
+        <div className="bg-white px-6 py-6 rounded-xl shadow-md border border-gray-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h2 className="text-xl font-semibold text-gray-800 mb-2">Active Medications</h2>
+                    <div className="space-y-4">
+                        {activeMeds.map((med, idx) => (
+                            <div key={`active-${idx}`}>
+                                <ActiveMedications medication={med} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
-            {activeMeds.map((med, idx) => (
-                <ActiveMedications key={`active-${idx}`} medication={med} />
-            ))}
-
-            <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Medication History</h2>
-
-            {historyMeds.map((med, idx) => (
-                <MedicationHistory key={`history-${idx}`} medication={med} />
-            ))}
+                <div>
+                    <h2 className="text-xl font-semibold text-gray-800 mb-4">Medication History</h2>
+                    <div className="space-y-4">
+                        {historyMeds.map((med, idx) => (
+                            <div key={`history-${idx}`} className="border-b pb-4 last:border-b-0">
+                                <MedicationHistory medication={med} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

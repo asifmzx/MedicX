@@ -39,25 +39,32 @@ const Upcoming = () => {
                 const icon = icon_s.find(i => i.specialty === appt.specialty);
 
                 return (
-                    <div key={idx} className="border border-gray-300 rounded-md p-4 mb-4">
-                        <div className="flex items-start gap-3 mb-3">
+                    <div key={idx} className="border border-gray-300 rounded-md px-4 py-2 mb-2">
+                        <div className="flex items-start gap-3">
                             <div className={`rounded-full p-3 flex items-center justify-center ${icon?.iconBgColor} hidden sm:flex`}>
                                 <CiCalendar className={`text-2xl ${icon?.iconColor}`} />
                             </div>
-                            <div className="flex flex-col w-full ">
-                                <div className="flex items-center justify-between">
-                                    <h3 className="font-medium text-gray-800 text-base">{appt.type}</h3>
+                            <div className="flex flex-col w-full">
+                                <div className="flex items-center justify-between mb-1">
+                                    <div>
+                                        <h3 className="font-medium text-gray-800 text-base">{appt.type}</h3>
+                                        <p className="text-gray-500 text-sm sm:">{appt.date} • {appt.time}</p>
+                                    </div>
                                     <Status variant={appt.labeltype} text={appt.label} />
                                 </div>
-                                <p className="text-gray-500 text-sm sm: mt-2 ">{appt.date} • {appt.time}</p>
-                                <div className="flex items-center text-sm text-gray-500 mt-1">
-                                    <GoPerson className="mr-1" />
-                                    <span>{appt.doctor} ({appt.specialty})</span>
-                                </div>
-                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-2">
-                                    <div className="flex justify-center sm:justify-end items-end gap-2 w-full">
-                                        <Buttonv2 variant="primary_main" text="Reschedule" className="h-10 text-sm border border-gray-300" />
-                                        <Buttonv2 variant="secondary_main" text="Details" className="h-10 text-sm" />
+                                <div className="flex flex-col md:flex-row sm:items-center justify-between gap-2">
+                                    <span className="flex flex-col ">
+                                        <div className="flex items-center text-sm text-gray-500 mt-1">
+                                            <GoPerson className="mr-1" />
+                                            <span>{appt.doctor} ({appt.specialty})</span>
+                                        </div>
+                                    </span>
+
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-2">
+                                        <div className="flex justify-center sm:justify-end items-end gap-2 w-full">
+                                            <Buttonv2 variant="primary_main" text="Reschedule" className="text-sm border border-gray-300" />
+                                            <Buttonv2 variant="secondary_main" text="Details" className="text-sm" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

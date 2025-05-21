@@ -1,14 +1,14 @@
 const Buttonv2 = ({
   variant = "primary",
-  text = "button",
+  text,
   Icon,
   onClick,
   className = "",
-  isActive = false, // new prop
+  isActive = false,
 }) => {
   const baseStyles = "px-3 py-2 text-center rounded-md";
   const variants = {
-    primary: " bg-black/1 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
+    primary: "bg-black/1 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
     secondary:
       "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA] text-xs font-semibold",
     deletenote: "hover:bg-red-500/20 text-red-500 w-[135px] font-medium",
@@ -24,9 +24,9 @@ const Buttonv2 = ({
       onClick={onClick}
       className={`${baseStyles} ${variants[variant]} ${activeStyle} ${className}`}
     >
-      <div className="flex items-center justify-between gap-2 space-x-1">
+      <div className="flex items-center justify-center gap-2">
         {Icon && <Icon className="w-4 h-4" />}
-        <span>{text}</span>
+        {text && <span>{text}</span>}
       </div>
     </button>
   );
