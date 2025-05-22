@@ -54,9 +54,9 @@ const Page = () => {
             <div>
               <p className="text-lg font-semibold">{call.title}</p>
             </div>
-            <div className="flex flex-row justify-between items-center h-full gap-4 pt-6">
+            <div className="flex flex-row justify-between items-center h-full gap-4 pt-4">
               <div>
-                <p className="text-lg font-bold text-gray-800">{call.text}</p>
+                <p className="text-4xl font-bold text-gray-800">{call.text}</p>
                 <p className="text-xs text-gray-600 mt-1">{call.description}</p>
               </div>
               <div className="text-2xl text-right">{call.icon}</div>

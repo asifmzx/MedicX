@@ -3,7 +3,7 @@ const PTable = ({ columns, data }) => {
     <div className="w-full overflow-x-auto">
       <table className="min-w-[700px] w-full bg-white border-b border-gray-200 rounded-lg text-sm">
         <thead>
-          <tr className="bg-gray-50 text-left font-semibold text-gray-600">
+          <tr className=" text-left font-semibold text-gray-600">
             {columns.map((col, index) => (
               <th
                 key={index}
