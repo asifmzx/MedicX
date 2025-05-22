@@ -13,7 +13,7 @@ const Header = () => {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <nav className="bg-[#096B68] text-white fixed w-full z-50">
+    <nav className="bg-[#193768] text-white fixed w-full z-50">
       <div className="w-full px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Left */}

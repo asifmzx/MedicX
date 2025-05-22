@@ -7,7 +7,7 @@ import { CiCalendar } from "react-icons/ci";
 
 const Page = () => {
   return (
-    <div className="p-4 bg-[#E7F2E4]">
+    <div className="p-4">
       <div className="flex justify-between items-center">
         <div className="flex w-full flex-col gap-2">
           <div className="flex flex-wrap items-center justify-between">

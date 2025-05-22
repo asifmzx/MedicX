@@ -3,7 +3,7 @@ import SubSection from "@/Components/doctorDashboard/SubSection/SubSection";
 
 const Page = () => {
   return (
-    <div className="p-4 bg-[#E7F2E4]">
+    <div className="p-4">
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">

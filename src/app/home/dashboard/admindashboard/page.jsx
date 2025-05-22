@@ -12,7 +12,7 @@ const Page = () => {
   const dateFormat = "DD/MM/YYYY";
 
   return (
-    <div className="p-4 bg-[#E7F2E4]">
+    <div className="p-4">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1">

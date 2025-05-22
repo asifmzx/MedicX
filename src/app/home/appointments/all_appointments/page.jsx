@@ -1,14 +1,12 @@
 import React from "react";
+import Appointments from "@/Components/Appointments/AllAppointments/Appointments";
 
-const Page = () => {
+const all_appointments = () => {
   return (
     <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">All_Appointments</span>
-      </p>
+      <Appointments />
     </div>
   );
 };
 
-export default Page;
+export default all_appointments;

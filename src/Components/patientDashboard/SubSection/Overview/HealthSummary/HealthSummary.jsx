@@ -12,7 +12,7 @@ const healthMetrics = [
         label: "Blood Pressure",
         value: "118/78 mmHg",
         normalRange: "Normal range: Below 120/80 mmHg",
-        progress: 95, // arbitrary percentage for UI representation
+        progress: 95,
         icon: "📅",
     },
     {
