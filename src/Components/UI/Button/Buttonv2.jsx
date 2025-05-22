@@ -6,27 +6,33 @@ const Buttonv2 = ({
   className = "",
   isActive = false,
 }) => {
-  const baseStyles = "px-3 py-2 text-center rounded-md";
+  // Added min-w-0 to prevent flex overflow issues
+  const baseStyles =
+    "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0";
+
+  // Modified variants to work better with custom widths
   const variants = {
-    primary: "bg-black/1 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
+    primary: "bg-black/10 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
     secondary:
       "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA] text-xs font-semibold",
-    deletenote: "hover:bg-red-500/20 text-red-500 w-[135px] font-medium",
-    editnote: "hover:bg-gray-500/5 w-[120px] font-medium",
     primary_main: "bg-[#FFFFFF] hover:bg-[#F5F5F5] text-black",
     secondary_main: "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA]",
   };
 
-  const activeStyle = isActive ? "bg-white" : "";
-
   return (
     <button
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${activeStyle} ${className}`}
+      className={`
+        ${baseStyles}
+        ${variants[variant]}
+        ${className}
+        ${isActive ? "!bg-white shadow-sm" : ""}
+        transition-colors duration-200
+      `}
     >
-      <div className="flex items-center justify-center gap-2">
-        {Icon && <Icon className="w-4 h-4" />}
-        {text && <span>{text}</span>}
+      <div className="flex items-center gap-1 md:gap-2 w-full justify-center">
+        {Icon && <Icon className="size-4 md:w-4 md:h-4 shrink-0" />}
+        {text && <span className="whitespace-nowrap ">{text}</span>}
       </div>
     </button>
   );
