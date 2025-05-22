@@ -26,9 +26,8 @@ const SidebarLink = ({ href, label, onClick, icon: Icon }) => {
   return (
     <Link
       href={href}
-      className={`flex items-center text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-        isActive ? "bg-white/10 text-white" : ""
-      }`}
+      className={`flex items-center text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isActive ? "bg-white/10 text-white" : ""
+        }`}
       onClick={onClick}
     >
       {Icon && (
@@ -54,9 +53,8 @@ const SidebarGroup = ({ label, items, onClick, icon: Icon }) => {
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className={`w-full flex items-center justify-between text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-          isGroupActive ? "bg-white/10 text-white" : ""
-        }`}
+        className={`w-full flex items-center justify-between text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isGroupActive ? "bg-white/10 text-white" : ""
+          }`}
       >
         <div className="flex items-center">
           {Icon && (
@@ -129,7 +127,7 @@ const menuItems = [
       },
       { label: "Add Appointment", href: "/home/appointments/add_appointment" },
       { label: "Calender View", href: "/home/appointments/calender_view" },
-      { label: "Appointment Requests", href: "/home/appointment_requests" },
+      { label: "Appointment Requests", href: "/home/appointments/appointment_requests" },
     ],
   },
 
@@ -353,14 +351,13 @@ const Sidebar = () => {
     <>
       {/* Mobile Sidebar */}
       <div
-        className={`md:hidden fixed top-15 inset-0 z-40 ${
-          isSidebarOpen ? "block" : "hidden"
-        }`}
+        className={`md:hidden fixed top-15 inset-0 z-40 ${isSidebarOpen ? "block" : "hidden"
+          }`}
       >
         <div className="absolute inset-0 bg-black/50" onClick={closeSidebar} />
         <aside
           className={`
-            absolute top-0 left-0 bg-[#096B68] w-64 h-full
+            absolute top-0 left-0 bg-[#193768] w-64 h-full
             transform transition-transform duration-300 ease-in-out
             ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
           `}
@@ -372,7 +369,7 @@ const Sidebar = () => {
       </div>
 
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex fixed top-15 left-0 z-30  h-[calc(100vh-4rem)] w-64 bg-[#096B69] mt-1">
+      <aside className="hidden md:flex fixed top-15 left-0 z-30  h-[calc(100vh-4rem)] w-64 bg-[#193768] mt-1">
         <div className="h-full overflow-y-auto w-full p-4">
           <SidebarContent />
         </div>

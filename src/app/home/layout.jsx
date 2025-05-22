@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }) {
         <SidebarProvider>
             <Header />
             <Sidebar />
-            <div className="pt-16 md:pl-64 min-h-screen bg-[#E7F2E4]">
+            <div className="pt-16 md:pl-64 min-h-screen bg-gray-200">
                 {children}
             </div>
         </SidebarProvider>

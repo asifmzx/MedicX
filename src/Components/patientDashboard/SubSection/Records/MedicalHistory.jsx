@@ -7,7 +7,6 @@ const MedicalHistory = ({ section = {} }) => {
         items = []
     } = section;
 
-    // Color mapping for specific items in each section
     const itemColors = {
         "allergies": {
             "penicillin": { bg: "bg-[#ffebee]", text: "text-[#c62828]" },
@@ -52,7 +51,6 @@ const MedicalHistory = ({ section = {} }) => {
 
     const bgColor = iconBgColor[title.toLowerCase()] || iconBgColor.default;
 
-    // Get color for item based on section
     const getItemColor = (sectionName, itemName) => {
         const sectionColors = itemColors[sectionName.toLowerCase()] || itemColors.allergies;
         const lowerName = itemName.toLowerCase();

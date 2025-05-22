@@ -23,7 +23,7 @@ const appointments = [
         date: "May 22, 2023",
         time: "2:15 PM",
         label: "Next Week",
-        labeltype: "nextweek",
+        labeltype: "nextWeek",
         img: assets.prof,
     },
 ];
