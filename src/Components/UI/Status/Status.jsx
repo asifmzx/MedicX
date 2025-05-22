@@ -9,7 +9,7 @@ const Status = ({ variant = "default", text = "", className = "" }) => {
     urgent: "bg-[#ffe3e3] text-[#991c61] w-[90px]",
     check_up: "text-gray-800 w-[90px]",
     consultation: "text-gray-800 w-[90px]",
-    default: "bg-white text-gray-800 w-[100px]",
+    default: "bg-white text-gray-800 w-[70px]",
     up_def: "bg-gray-300 text-gray-800 w-[100px]",
     confirmed: "bg-[#dcfce7] text-[#166534] w-[85px]",
     pending: "bg-[#fef9c3] text-[#944c0d] w-[75px]",
@@ -24,6 +24,8 @@ const Status = ({ variant = "default", text = "", className = "" }) => {
     expired: "bg-[#EF4444] text-[#ffe3e3] w-[75px]",
     completed: "bg-[#171717] text-white w-[75px]",
     inProgress: "bg-[#F5F5F5] text-black w-[75px]",
+    Available: "bg-[#171717] text-white w-[75px]",
+    Maintenance: "bg-[#F5F5F5] text-black w-[95px]",
   };
 
   const selectedVariant = variants[variant] || variants.default;
