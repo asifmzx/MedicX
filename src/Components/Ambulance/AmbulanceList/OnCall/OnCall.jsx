@@ -1,23 +1,32 @@
 import Status from "@/Components/UI/Status/Status";
 import PTable from "@/Components/UI/Table/PTable";
-import React from "react";
 import { BsThreeDots } from "react-icons/bs";
 
-const Pending = () => {
+const OnCall = () => {
   const data = [
     {
       callId: "AC002",
-      patient: "John Smith",
-      patientNo: "+1 (555) 987-6543",
-      location: "456 Oak Ave, Springville",
-      reason: "Fractured Leg",
-      status: "pending",
-      ambulanceNo: "AMB-002",
+      registration: "ABC-5678",
+      model: "Ford Transit",
+      year: "2022",
+      type: "Advanced Life Support",
+      location: "Westside Clinic",
+      status: "On Call",
       driver: "Sarah Lee",
-      date: "2023-04-23",
-      time: "11:15 AM",
+    },
+
+    {
+      callId: "AC005",
+      registration: "JKL-7890",
+      model: "Chevrolet Express",
+      year: "2020",
+      type: "Advanced Life Support",
+      location: "North Emergency Base",
+      status: "On Call",
+      driver: "William Anderson",
     },
   ];
+
   const columns = [
     {
       label: "Call Id",
@@ -26,35 +35,27 @@ const Pending = () => {
         <p className="font-medium text-gray-900">{row.callId}</p>
       ),
     },
-
+    { label: "Registration", key: "registration" },
     {
-      label: "Date & Time",
-      key: "date&time",
+      label: "Model",
+      key: "model",
       render: (row) => (
         <div className="text-sm text-gray-700">
-          <p>{row.date}</p>
-          <p>{row.time}</p>
+          <p>{row.model}</p>
+          <p className="text-xs text-gray-500">{row.year}</p>
         </div>
       ),
     },
 
-    { label: "Location", key: "location" },
-    { label: "Reason", key: "reason" },
+    { label: "Type", key: "type" },
+
     {
       label: "Status",
       key: "status",
       render: (row) => <Status variant={row.status} text={row.status} />,
     },
-    {
-      label: "Ambulance",
-      key: "ambulance",
-      render: (row) => (
-        <div className="text-sm text-gray-700">
-          <p className="font-medium text-gray-900">{row.ambulanceNo}</p>
-          <p>{row.driver}</p>
-        </div>
-      ),
-    },
+    { label: "Driver", key: "driver" },
+    { label: "Location", key: "location" },
 
     {
       label: "Actions",
@@ -77,4 +78,4 @@ const Pending = () => {
   );
 };
 
-export default Pending;
+export default OnCall;
