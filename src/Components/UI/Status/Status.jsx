@@ -47,9 +47,17 @@ const Status = ({
     Completed: "bg-[#171717] text-white w-[95px]  border border-[#171717]",
   };
 
+  const appointmentrequestVariants = {
+    default: "bg-white text-gray-800 w-[70px]  border border-gray-300",
+    Normal: "bg-[#3b82f5] text-white w-[70px]",
+    High: "bg-[#f04343] text-white w-[70px]",
+    Low: "bg-white text-[#21c45d] w-[70px] border border-[#21c45d]",
+  };
+
   const variantMaps = {
     appointment: appointmentVariants,
     ambulance: ambulanceVariants,
+    appointmentrequest: appointmentrequestVariants,
   };
 
   const variants = variantMaps[type] || {};
