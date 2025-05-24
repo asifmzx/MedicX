@@ -1,12 +1,20 @@
-import React from "react";
+import Widgets from "@/Components/Widgets/Widgets";
 
 const Page = () => {
   return (
-    <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Widgets</span>
-      </p>
+    <div className="p-6 space-y-8">
+      <div>
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tight mb-1">
+          Widgets
+        </h1>
+        <p className="text-gray-600">
+          A collection of UI components and widgets for building dashboards and
+          interfaces.
+        </p>
+      </div>
+      <div>
+        <Widgets />
+      </div>
     </div>
   );
 };
