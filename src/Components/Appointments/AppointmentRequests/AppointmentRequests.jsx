@@ -1,8 +1,8 @@
 import React from "react";
 import BackButton from "@/Components/UI/Button/BackButton";
-import AppointmentDetails from "./AppointmentDetails";
+import SubSection from "./SubSection";
 
-const AddAppointment = () => {
+const AppointmentRequests = () => {
   return (
     <div className="px-2 py-4">
       <div className="flex justify-between items-center">
@@ -13,22 +13,22 @@ const AddAppointment = () => {
                 <BackButton />
               </div>
               <div className="mt-2">
-                <h1 className="text-2xl md:text-2xl font-bold tracking-tight mb-1">
-                  Add Appointment
+                <h1 className="text-xl md:text-2xl font-bold tracking-tight mb-1">
+                  Appointment Requests
                 </h1>
                 <p className="text-gray-600 mb-2 font-normal">
-                  Schedule a new appointment for a patient.
+                  Manage patient appointment requests.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <AppointmentDetails />
+      <div className="mt-4">
+        <SubSection />
       </div>
     </div>
   );
 };
 
-export default AddAppointment;
+export default AppointmentRequests;

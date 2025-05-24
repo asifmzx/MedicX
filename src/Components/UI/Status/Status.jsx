@@ -4,11 +4,9 @@ const Status = ({
   className = "",
   type = "status",
 }) => {
-  // Base styles that apply to all variants
   const baseStyles =
     "flex items-center justify-center p-1 text-center rounded-full text-xs font-semibold leading-none";
 
-  // Status variants (original)
   const statusVariants = {
     primary: "bg-white text-gray-800 w-[100px] border border-gray-300",
     secondary: "bg-black text-white w-[80px] border border-black",
@@ -35,20 +33,35 @@ const Status = ({
     Maintenance: "bg-[#F5F5F5] text-black w-[95px] border border-[#F5F5F5]",
   };
 
-  // Appointment variants with minimal base styles
   const appointmentVariants = {
     default: "bg-white text-gray-800 w-[90px] border border-gray-300",
-    Completed:
-      "bg-[#dcfce7] text-White w-[90px] border border-[#366634] border-[#366634]",
+    Completed: "bg-[#366634] text-white w-[90px] border border-[#366634]",
     Confirmed: "text-[#145efc] w-[90px] border border-[#3ca1fa] bg-white",
     Cancelled: "text-white bg-red-500 w-[90px] border border-red-700",
     "In Progress": "text-white bg-[#FFA725] w-[90px] border border-gray-200",
   };
 
-  // Select variant map based on type
-  const variantMap =
-    type === "appointment" ? appointmentVariants : statusVariants;
-  const selectedVariant = variantMap[variant] || variantMap.default;
+  const ambulanceVariants = {
+    default: "bg-white text-gray-800 w-[110px]  border border-gray-300",
+    Operational: "bg-[#171717] text-white w-[95px]  border border-[#171717]",
+    Completed: "bg-[#171717] text-white w-[95px]  border border-[#171717]",
+  };
+
+  const appointmentrequestVariants = {
+    default: "bg-white text-gray-800 w-[70px]  border border-gray-300",
+    Normal: "bg-[#3b82f5] text-white w-[70px]",
+    High: "bg-[#f04343] text-white w-[70px]",
+    Low: "bg-white text-[#21c45d] w-[70px] border border-[#21c45d]",
+  };
+
+  const variantMaps = {
+    appointment: appointmentVariants,
+    ambulance: ambulanceVariants,
+    appointmentrequest: appointmentrequestVariants,
+  };
+
+  const variants = variantMaps[type] || {};
+  const selectedVariant = variants[variant] || variants.default;
 
   return (
     <span className={`${baseStyles} ${selectedVariant} ${className}`}>
