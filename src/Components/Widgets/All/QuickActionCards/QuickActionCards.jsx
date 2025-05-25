@@ -66,7 +66,7 @@ const QuickActionCards = () => {
             >
               {card.title}
             </p>
-            <p className="text-lg  mb-6" style={{ color: card.Color }}>
+            <p className="text-lg  mb-" style={{ color: card.Color }}>
               {card.text}
             </p>
             <button
