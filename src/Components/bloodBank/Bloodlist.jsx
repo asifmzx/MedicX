@@ -11,7 +11,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED001",
             name: "Amoxicillin 500mg",
             category: "Antibiotics",
-            stock: "1250 units",
+            stock: "1250",
             expiryDate: "2025-06-15",
             type: "Prescription",
         },
@@ -19,7 +19,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED002",
             name: "Paracetamol 500mg",
             category: "Analgesics",
-            stock: "3500 units",
+            stock: "3500",
             expiryDate: "2025-06-22",
             type: "OTC",
         },
@@ -27,7 +27,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED003",
             name: "Metformin 850mg",
             category: "Antidiabetics",
-            stock: "850 units",
+            stock: "850",
             expiryDate: "2024-12-10",
             type: "Prescription",
         },
@@ -35,7 +35,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED004",
             name: "Lisinopril 10mg",
             category: "Antihypertensives",
-            stock: "120 units",
+            stock: "120",
             expiryDate: "2024-09-30",
             type: "Prescription",
         },
@@ -43,7 +43,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED005",
             name: "Morphine 15mg",
             category: "Analgesics",
-            stock: "75 units",
+            stock: "75",
             expiryDate: "2024-11-05",
             type: "Controlled",
         },
@@ -51,7 +51,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED006",
             name: "Cetirizine 10mg",
             category: "Analgesics",
-            stock: "0 units",
+            stock: "0",
             expiryDate: "2024-11-05",
             type: "OTC",
         },
@@ -59,7 +59,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED007",
             name: "Atorvastatin 20mg",
             category: "Statins",
-            stock: "450 units",
+            stock: "450",
             expiryDate: "2025-01-25",
             type: "Prescription",
         },
@@ -67,7 +67,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED008",
             name: "Diazepam 5mg",
             category: "Anxiolytics",
-            stock: "60 units",
+            stock: "60",
             expiryDate: "2024-10-12",
             type: "Controlled",
         },
@@ -75,7 +75,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED009",
             name: "Ibuprofen 400mg",
             category: "NSAIDs",
-            stock: "2800 units",
+            stock: "2800",
             expiryDate: "2025-05-20",
             type: "OTC",
         },
@@ -83,7 +83,7 @@ const AllMedicine = ({ filter }) => {
             id: "MED010",
             name: "Omeprazole 20mg",
             category: "Proton Pump Inhibitors",
-            stock: "920 units",
+            stock: "920",
             expiryDate: "2025-07-28",
             type: "Prescription",
         },
@@ -97,17 +97,18 @@ const AllMedicine = ({ filter }) => {
             key: "id",
         },
         {
-            label: "Medicine Name",
+            label: "Blood Type",
             key: "name",
             render: (row) => <span className="font-medium">{row.name}</span>,
         },
-        {
-            label: "Category",
-            key: "category",
-        },
+
         {
             label: "Stock",
             key: "stock",
+        },
+        {
+            label: "Collection Date",
+            key: "expiryDate",
         },
         {
             label: "Expiry Date",
@@ -130,6 +131,14 @@ const AllMedicine = ({ filter }) => {
                     text={statusVariant}
                 />;
             },
+        },
+        {
+            label: "Location",
+            key: "stock",
+        },
+        {
+            label: "Donor",
+            key: "stock",
         },
         {
             label: "Actions",
@@ -163,13 +172,18 @@ const AllMedicine = ({ filter }) => {
                                 defaultValue=""
                             >
                                 <option value="" disabled>
-                                    All Categories
+                                    All Types
                                 </option>
-                                <option value="Antibiotics">Antibiotics</option>
-                                <option value="Analgesics">Analgesics</option>
-                                <option value="Antidiabetics">Antidiabetics</option>
-                                <option value="Antihypertensives">Antihypertensives</option>
-                                <option value="Antihistamines">Antihistamines</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O-</option>
+                                <option value="O-">O-</option>
+
+
                             </select>
                         </div>
                         <div>
@@ -181,9 +195,9 @@ const AllMedicine = ({ filter }) => {
                                 <option value="" disabled>
                                     All Status
                                 </option>
-                                <option value="In Stock">In Stock</option>
-                                <option value="Low Stock">Low Stock</option>
-                                <option value="Out of Stock">Out of Stock</option>
+                                <option value="Available">Available</option>
+                                <option value="Reserved">Low Stock</option>
+                                <option value="Expiring Soon">Expiring Soon</option>
                             </select>
                         </div>
 

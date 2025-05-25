@@ -61,12 +61,19 @@ const Status = ({
     "Out of Stock": "bg-[#f04343] text-white w-[90px]",
   };
 
+  const widgetVariants = {
+    default: "bg-white text-gray-800 w-[70px]  border border-gray-300",
+    Confirmed: "bg-[#f0f6ff] text-[#588af5] border border-[#588af5] w-[90px]",
+    Active: "bg-[#dcfce7] text-[#166534] w-[80px] border border-[#dcfce7]"
+  }
+
   const variantMaps = {
     appointment: appointmentVariants,
     ambulance: ambulanceVariants,
     appointmentrequest: appointmentrequestVariants,
     pharmacy: pharmacyVariant,
     status: statusVariants,
+    widget: widgetVariants,
   };
 
   const variants = variantMaps[type] || {};

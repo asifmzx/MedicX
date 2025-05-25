@@ -1,13 +1,11 @@
 import React from "react";
+import BloodBank from "@/Components/bloodBank/bloodBank"
 
 const Page = () => {
   return (
-    <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Blood_Stock</span>
-      </p>
-    </div>
+    <>
+      <BloodBank />
+    </>
   );
 };
 
