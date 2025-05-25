@@ -19,7 +19,7 @@ const Page = () => {
                 Your health dashboard - manage your care all in one place
               </p>
             </div>
-            <div className="flex flex-row items-stretch justify-between sm:justify-end gap-2 w-full">
+            <div className="flex flex-row items-stretch justify-between sm:justify-end gap-2 w-full md:w-auto">
               <Buttonv2
                 variant="primary_main"
                 text="Message Doctor"

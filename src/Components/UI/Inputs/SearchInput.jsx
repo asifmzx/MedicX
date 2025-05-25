@@ -5,8 +5,8 @@ const SearchInput = ({
   wrapperClassName = "",
 }) => {
   return (
-    <div className={`relative w-full max-w-sm ${wrapperClassName}`}>
-      
+    <div className={`relative w-full max-w-sm md:max-w-full ${wrapperClassName}`}>
+
       {Icon && (
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
           <Icon className="w-4 h-4" />
