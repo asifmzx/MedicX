@@ -109,4 +109,4 @@ Pull requests are welcome. If you find a bug or have an idea for improvement, fe
 
 ---
 
-> Crafted with care by [Asif M.](https://github.com/asifmzx) 💙
+> Crafted with care by [Asif Mahmud](https://github.com/asifmzx) 💙 & [MD Rakibul Islam](https://github.com/rakibul12212) 💜

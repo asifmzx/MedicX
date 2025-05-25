@@ -53,7 +53,7 @@ const Calender = () => {
         </select>
       </div>
       <div>
-        <Button variant="secondary" text="Add Appointment" Icon={GoPlus} />
+        <Button variant="secondary" text="Add Appointment" Icon={GoPlus} className="w-full h-10" />
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ const Status = ({
     high: "bg-[#ffe3e3] text-[#991c61] w-[90px] border border-[#ffe3e3]",
     medium: "bg-[#fef9c3] text-[#944c0d] w-[75px] border border-[#fef9c3]",
     low: "bg-[#dbebff] text-[#6241b0] w-[75px] border border-[#dbebff]",
-    active: "bg-[#f0fcf4] text-[#14806c] w-[75px] border border-[#f0fcf4]",
+    active: "bg-[#f0fcf4] text-[#14806c] w-[75px] border border-[#14806c]",
     inactive: "bg-[#EAB308] text-[#0A0A0A] w-[75px] border border-[#EAB308]",
     onLeave: "bg-[#EF4444] text-[#ffe3e3] w-[75px] border border-[#EF4444]",
     tomorrow: "bg-[#dbebff] text-[#145efc] w-[85px] border border-[#145efc]",
@@ -54,10 +54,19 @@ const Status = ({
     Low: "bg-white text-[#21c45d] w-[70px] border border-[#21c45d]",
   };
 
+  const pharmacyVariant = {
+    default: "bg-white text-gray-800 w-[70px]  border border-gray-300",
+    "In Stock": "bg-[#21c45d] text-gray-700 w-[70px]",
+    "Low Stock": "bg-[#f59f0a] text-gray-700 w-[80px]",
+    "Out of Stock": "bg-[#f04343] text-white w-[90px]",
+  };
+
   const variantMaps = {
     appointment: appointmentVariants,
     ambulance: ambulanceVariants,
     appointmentrequest: appointmentrequestVariants,
+    pharmacy: pharmacyVariant,
+    status: statusVariants,
   };
 
   const variants = variantMaps[type] || {};
