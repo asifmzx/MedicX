@@ -1,3 +1,5 @@
+import BloodBank from "@/Components/bloodBank/bloodBank";
+
 const Status = ({
   variant = "default",
   text = "",
@@ -51,7 +53,7 @@ const Status = ({
     default: "bg-white text-gray-800 w-[70px]  border border-gray-300",
     Normal: "bg-[#3b82f5] text-white w-[70px]",
     High: "bg-[#f04343] text-white w-[70px]",
-    Low: "bg-white text-[#21c45d] w-[70px] border border-[#21c45d]",
+    Low: "bg-white text-[#] w-[70px] border border-[#21c45d]",
   };
 
   const pharmacyVariant = {
@@ -64,8 +66,14 @@ const Status = ({
   const widgetVariants = {
     default: "bg-white text-gray-800 w-[70px]  border border-gray-300",
     Confirmed: "bg-[#f0f6ff] text-[#588af5] border border-[#588af5] w-[90px]",
-    Active: "bg-[#dcfce7] text-[#166534] w-[80px] border border-[#dcfce7]"
-  }
+    Active: "bg-[#dcfce7] text-[#166534] w-[80px] border border-[#dcfce7]",
+  };
+
+  const bloodBankVariants = {
+    Available: "bg-[#21c45d] h-6 text-white w-[100px]",
+    "Expiring Soon": "bg-[#f59f0a] h-6 text-black w-[100px]",
+    Reserved: "bg-black/3 h-6 text-gray w-[100px] border border-gray-200",
+  };
 
   const variantMaps = {
     appointment: appointmentVariants,
@@ -74,6 +82,7 @@ const Status = ({
     pharmacy: pharmacyVariant,
     status: statusVariants,
     widget: widgetVariants,
+    bloodBank: bloodBankVariants,
   };
 
   const variants = variantMaps[type] || {};

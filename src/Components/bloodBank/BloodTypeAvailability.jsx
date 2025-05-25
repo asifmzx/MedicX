@@ -22,9 +22,9 @@ const BloodTypeAvailability = () => {
             <div className="space-y-2 mb-4 p-0 gap-2 md:p-4">
                 {ratingBreakdown.map((rating, index) => (
                     <div key={index}>
-                        <div className="flex justify-between items-center text-md font-semibold mb-1">
+                        <div className="flex justify-between items-center text-sm font-semibold mb-1">
                             <span className="w-[40px]">{rating.bloodpack}</span>
-                            <div className="w-[85%] h-4 bg-gray-200 rounded-full">
+                            <div className="w-[85%] h-2 bg-gray-100 rounded-full">
                                 <div
                                     className={`h-full rounded-full ${rating.units >= 5
                                         ? "bg-green-500"
