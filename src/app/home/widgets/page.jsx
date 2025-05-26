@@ -1,4 +1,5 @@
-import Widgets from "@/Components/Widgets/Widgets";
+
+import WidgetPage from "@/Components/Widgets/Widgets";
 
 const Page = () => {
   return (
@@ -13,7 +14,7 @@ const Page = () => {
         </p>
       </div>
       <div>
-        <Widgets />
+        <WidgetPage />
       </div>
     </div>
   );
