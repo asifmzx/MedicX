@@ -1,5 +1,5 @@
 import React from "react";
-import BloodBank from "@/Components/bloodBank/bloodBank"
+import BloodBank from "@/Components/bloodBank/BloodStock/bloodBank"
 
 const Page = () => {
   return (

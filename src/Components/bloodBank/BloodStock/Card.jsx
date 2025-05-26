@@ -1,5 +1,4 @@
 "use client";
-import { GiMedicines } from "react-icons/gi";
 import { CgDanger } from "react-icons/cg";
 import { BsBoxSeamFill } from "react-icons/bs";
 import { MdOutlineBloodtype } from "react-icons/md";
