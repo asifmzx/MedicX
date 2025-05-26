@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import SearchInput from "@/Components/UI/Inputs/SearchInput";
 import Status from "@/Components/UI/Status/Status";
@@ -10,258 +11,384 @@ import { TfiFilter } from "react-icons/tfi";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { LuRefreshCw } from "react-icons/lu";
 
+
 const tabs = [
-  { id: "all", label: "All" },
-  { id: "available", label: "Available" },
-  { id: "reserved", label: "Reserved" },
-  { id: "expiringsoon", label: "Expiring Soon" },
+  { id: "all", label: "All Donors" },
+  { id: "eligible", label: "Eligible" },
+  { id: "ineligible", label: "Ineligible" },
+  { id: "new", label: "New" },
 ];
 
 const bloodTypes = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
-const dummyBlood = [
+const dummyDonors = [
   {
-    id: "BS-001",
-    bloodType: "A+",
-    units: 5,
-    collectionDate: "2024-03-15",
-    expiryDate: "2024-04-10",
-    status: "Available",
-    location: "Main Bank",
-    donor: "John Doe",
-  },
-  {
-    id: "BS-002",
-    bloodType: "O-",
-    units: 5,
-    collectionDate: "2023-04-16",
-    expiryDate: "2023-05-16",
-    status: "Reserved",
-    location: "Refrigerator 2",
-    donor: "Emily Johnson",
-  },
-  {
-    id: "BS-003",
-    bloodType: "B+",
-    units: 8,
-    collectionDate: "2023-04-10",
-    expiryDate: "2023-05-10",
-    status: "Expiring Soon",
-    location: "Refrigerator 1",
-    donor: "Michael Brown",
-  },
-  {
-    id: "BS-004",
-    bloodType: "AB+",
-    units: 3,
-    collectionDate: "2023-04-12",
-    expiryDate: "2023-05-12",
-    status: "Available",
-    location: "Refrigerator 3",
-    donor: "Sarah Davis",
-  },
-  {
-    id: "BS-005",
-    bloodType: "A+",
-    units: 4,
-    collectionDate: "2023-04-14",
-    expiryDate: "2023-05-14",
-    status: "Available",
-    location: "Refrigerator 2",
-    donor: "Robert Wilson",
-  },
-  {
-    id: "BS-006",
+    id: "D-1001",
+    name: "John Smith",
     bloodType: "O+",
-    units: 15,
-    collectionDate: "2023-04-13",
-    expiryDate: "2023-05-13",
-    status: "Available",
-    location: "Refrigerator 1",
-    donor: "Jennifer Taylor",
+    contact: "+1 (555) 123-4567",
+    email: "john.smith@example.com",
+    lastDonation: "3/15/2023",
+    status: "Eligible",
+    totalDonations: 8,
+    nextEligible: "7/15/2023",
+    donorLevel: "Silver Donor",
   },
   {
-    id: "BS-007",
+    id: "D-1002",
+    name: "Sarah Johnson",
+    bloodType: "A-",
+    contact: "+1 (555) 987-6543",
+    email: "sarah.j@example.com",
+    lastDonation: "5/22/2023",
+    status: "Ineligible",
+    totalDonations: 3,
+    nextEligible: "9/22/2023",
+    donorLevel: "",
+  },
+  {
+    id: "D-1003",
+    name: "Michael Chen",
     bloodType: "B+",
-    units: 2,
-    collectionDate: "2023-04-08",
-    expiryDate: "2023-05-08",
-    status: "Expiring Soon",
-    location: "Refrigerator 3",
-    donor: "David Martinez",
+    contact: "+1 (555) 456-7890",
+    email: "mchen@example.com",
+    lastDonation: "1/10/2023",
+    status: "Eligible",
+    totalDonations: 12,
+    nextEligible: "5/10/2023",
+    donorLevel: "Gold Donor",
   },
   {
-    id: "BS-008",
-    bloodType: "AB-",
-    units: 1,
-    collectionDate: "2023-04-11",
-    expiryDate: "2023-05-11",
-    status: "Reserved",
-    location: "Refrigerator 2",
-    donor: "Lisa Anderson",
+    id: "D-1004",
+    name: "Emily Rodriguez",
+    bloodType: "AB+",
+    contact: "+1 (555) 234-5678",
+    email: "emily.r@example.com",
+    lastDonation: "Never donated",
+    status: "New Donor",
+    totalDonations: 0,
+    nextEligible: "N/A",
+    donorLevel: "",
   },
   {
-    id: "BS-009",
+    id: "D-1005",
+    name: "David Wilson",
     bloodType: "O-",
-    units: 7,
-    collectionDate: "2023-04-17",
-    expiryDate: "2023-05-17",
-    status: "Available",
-    location: "Refrigerator 4",
-    donor: "Test Donor",
+    contact: "+1 (555) 876-5432",
+    email: "dwilson@example.com",
+    lastDonation: "4/5/2023",
+    status: "Eligible",
+    totalDonations: 25,
+    nextEligible: "8/5/2023",
+    donorLevel: "Platinum Donor",
   },
   {
-    id: "BS-010",
-    bloodType: "AB-",
-    units: 2,
-    collectionDate: "2023-04-18",
-    expiryDate: "2023-05-18",
-    status: "Reserved",
-    location: "Refrigerator 3",
-    donor: "Another Donor",
+    id: "D-1006",
+    name: "Lisa Thompson",
+    bloodType: "A+",
+    contact: "+1 (555) 345-6789",
+    email: "lisa.t@example.com",
+    lastDonation: "6/18/2023",
+    status: "Ineligible",
+    totalDonations: 5,
+    nextEligible: "10/18/2023",
+    donorLevel: "Silver Donor",
   },
 ];
+
+const StatusBadge = ({ status }) => {
+  const getStatusStyles = () => {
+    switch (status) {
+      case "Eligible":
+        return "bg-green-100 text-green-800 border-green-200";
+      case "Ineligible":
+        return "bg-red-100 text-red-800 border-red-200";
+      case "New Donor":
+        return "bg-blue-100 text-blue-800 border-blue-200";
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200";
+    }
+  };
+
+  return (
+    <span className={`px-2 py-1 text-xs font-medium rounded-full border ${getStatusStyles()}`}>
+      {status}
+    </span>
+  );
+};
+
+const BloodTypeBadge = ({ bloodType }) => {
+  const getBloodTypeColor = () => {
+    switch (bloodType) {
+      case "O+":
+        return "bg-red-100 text-red-700 border-red-200";
+      case "O-":
+        return "bg-red-100 text-red-700 border-red-200";
+      case "A+":
+        return "bg-blue-100 text-blue-700 border-blue-200";
+      case "A-":
+        return "bg-blue-100 text-blue-700 border-blue-200";
+      case "B+":
+        return "bg-green-100 text-green-700 border-green-200";
+      case "B-":
+        return "bg-green-100 text-green-700 border-green-200";
+      case "AB+":
+        return "bg-purple-100 text-purple-700 border-purple-200";
+      case "AB-":
+        return "bg-purple-100 text-purple-700 border-purple-200";
+      default:
+        return "bg-gray-100 text-gray-700 border-gray-200";
+    }
+  };
+
+  return (
+    <span className={`px-2 py-1 text-xs font-semibold rounded-full border ${getBloodTypeColor()}`}>
+      {bloodType}
+    </span>
+  );
+};
+
+const DonorLevelBadge = ({ level }) => {
+  if (!level) return null;
+
+  const getLevelColor = () => {
+    switch (level) {
+      case "Silver Donor":
+        return "bg-gray-100 text-gray-600";
+      case "Gold Donor":
+        return "bg-yellow-100 text-yellow-700";
+      case "Platinum Donor":
+        return "bg-purple-100 text-purple-700";
+      default:
+        return "bg-gray-100 text-gray-600";
+    }
+  };
+
+  return (
+    <span className={`px-2 py-1 text-xs font-medium rounded ${getLevelColor()}`}>
+      {level}
+    </span>
+  );
+};
 
 const BloodDonorManagement = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [selectedBloodType, setSelectedBloodType] = useState("");
+  const [selectedStatus, setSelectedStatus] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filters = {
     all: () => true,
-    available: (item) => item.status === "Available",
-    reserved: (item) =>
-      item.status === "Reserved" || ["O-", "AB-"].includes(item.bloodType),
-    expiringsoon: (item) => {
-      const today = new Date();
-      const expiryDate = new Date(item.expiryDate);
-      const diffDays = Math.ceil((expiryDate - today) / (1000 * 60 * 60 * 24));
-      return diffDays <= 7;
-    },
+    eligible: (item) => item.status === "Eligible",
+    ineligible: (item) => item.status === "Ineligible",
+    new: (item) => item.status === "New Donor",
   };
 
-  const filteredData = dummyBlood.filter((item) => {
+  const filteredData = dummyDonors.filter((item) => {
     const matchesTab = filters[activeTab](item);
     const matchesBloodType = selectedBloodType
       ? item.bloodType === selectedBloodType
       : true;
+    const matchesStatus = selectedStatus
+      ? item.status === selectedStatus
+      : true;
     const matchesSearch =
       searchQuery === "" ||
-      [item.id, item.bloodType, item.donor].some((field) =>
+      [item.id, item.name, item.email].some((field) =>
         field.toLowerCase().includes(searchQuery.toLowerCase())
       );
-    return matchesTab && matchesBloodType && matchesSearch;
+    return matchesTab && matchesBloodType && matchesStatus && matchesSearch;
   });
 
-  const columns = [
-    { label: "ID", key: "id" },
-    {
-      label: "Blood Type",
-      key: "bloodType",
-      render: (row) => (
-        <span className="font-semibold flex items-center justify-center w-14 border border-gray-200 rounded-2xl bg-black/4">
-          {row.bloodType}
-        </span>
-      ),
-    },
-    { label: "Units", key: "units" },
-    { label: "Collection Date", key: "collectionDate" },
-    { label: "Expiry Date", key: "expiryDate" },
-    {
-      label: "Status",
-      key: "status",
-      render: (row) => (
-        <Status type="bloodBank" variant={row.status} text={row.status} />
-      ),
-    },
-    { label: "Location", key: "location" },
-    { label: "Donor", key: "donor" },
-    {
-      label: "Actions",
-      key: "action",
-      render: () => (
-        <button className="text-xl text-gray-500 hover:text-gray-700 transition-colors">
-          <BsThreeDots />
-        </button>
-      ),
-    },
-  ];
-
   return (
-    <div className="p-2 md:p-6 bg-white rounded-xl shadow max-w-full mt-6">
-      <div className="flex flex-col md:flex-row justify-between items-center w-full gap-2">
-        <div className="flex flex-col md:flex-row w-full gap-2">
-          <div className="w-full flex gap-2">
-            <SearchInput
-              placeholder="Search blood..."
-              icon={AiOutlineSearch}
-              inputClassName="text-sm text-gray-700"
-              wrapperClassName="flex w-full h-10"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+    <div className="p-6 bg-white rounded-xl shadow-sm max-w-full mt-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4 border-red-500">
+        {/* Left Side: Search and Filters */}
+        <div className="flex flex-row w-full border md:w-2/3">
+          <div className="w-full">
+            <div className="flex items-center gap-2">
+              <SearchInput
+                type="text"
+                placeholder="Search blood..."
+                icon={AiOutlineSearch}
+                inputClassName="text-sm text-gray-700"
+                wrapperClassName="flex h-10"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Buttonv2 Icon={LuRefreshCw} className="h-10 w-10" />
+            </div>
 
-          </div>
-          <div className="flex flex-row gap-2 w-full md:w-auto">
-            <select
-              className="w-full md:w-auto h-10 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring focus:ring-black"
-              value={selectedBloodType}
-              onChange={(e) => setSelectedBloodType(e.target.value)}
-            >
-              <option value="">All Types</option>
-              {bloodTypes.map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
-              ))}
-            </select>
-            <select
-              className="w-full md:w-auto h-10 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring focus:ring-black"
-              defaultValue=""
-            >
-              <option value="">All Status</option>
-              <option value="Available">Available</option>
-              <option value="Reserved">Reserved</option>
-              <option value="Expiring Soon">Expiring Soon</option>
-            </select>
-            <Buttonv2
-              variant="primary_main"
-              Icon={LuRefreshCw}
-              className="border border-black/4 h-10"
-            />
+            <div className="flex items-center justify-between gap-2 mt-4">
+              <select
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm"
+                value={selectedBloodType}
+                onChange={(e) => setSelectedBloodType(e.target.value)}
+              >
+                <option value="">All Blood Types</option>
+                {bloodTypes.map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full"
+                value={selectedStatus}
+                onChange={(e) => setSelectedStatus(e.target.value)}
+              >
+                <option value="">All Status</option>
+                <option value="Eligible">Eligible</option>
+                <option value="Ineligible">Ineligible</option>
+                <option value="New Donor">New Donor</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div className="flex flex-row justify-between md:justify-end gap-2 md:gap-4 items-center w-full text-md font-semibold">
+
+        {/* Right Side: Buttons */}
+        <div className="flex w-full md:w-fit gap-2">
           <Buttonv2
-            variant="primary_main"
             Icon={LuRefreshCw}
+            variant="primary_main"
             text="Refresh"
-            className="border border-black/20 h-10 w-full md:w-[90px]"
+            className="flex border border-black/20 w-full text-md h-10"
           />
           <Buttonv2
-            variant="secondary_main"
             Icon={MdOutlineFileDownload}
+            variant="secondary_main"
             text="Export"
-            className="border border-black/4 h-10 w-full md:w-[90px]"
+            className="flex border border-black/20 w-full h-10"
           />
         </div>
       </div>
 
-      <div className="sm:w-[290px] mt-4 mb-2">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:flex sm:flex-row sm:items-center sm:justify-startrounded-mdsm:h-10 sm:gap-2">
-          {tabs.map(({ id, label }) => (
+
+      <div className="w-full">
+        <div className="sm:w-[510px]">
+          <div className="grid grid-cols-2 grid-rows-2 gap-2 sm:flex sm:flex-row sm:items-center sm:justify-start rounded-md sm:h-10 sm:gap-2 mb-2">
             <Buttonv2
-              key={id}
               variant="primary"
-              text={label}
-              onClick={() => setActiveTab(id)}
-              isActive={activeTab === id}
+              text="All Donors"
+              onClick={() => setActiveTab("all")}
+              className="flex items-center justify-center sm:w-[100px]"
+              isActive={activeTab === "all"}
             />
-          ))}
+            <Buttonv2
+              variant="primary"
+              text="Eligible"
+              onClick={() => setActiveTab("eligible")}
+              className="flex items-center justify-center sm:w-[120px]"
+              isActive={activeTab === "eligible"}
+            />
+            <Buttonv2
+              variant="primary"
+              text="Ineligible"
+              onClick={() => setActiveTab("ineligible")}
+              className="flex items-center justify-center sm:w-[120px]"
+              isActive={activeTab === "ineligible"}
+            />
+
+            <Buttonv2
+              variant="primary"
+              text="New"
+              onClick={() => setActiveTab("new")}
+              className="flex items-center justify-center sm:w-[100px]"
+              isActive={activeTab === "new"}
+            />
+          </div>
         </div>
       </div>
-      <div className="overflow-x-auto border border-gray-300 rounded-md">
-        <PTable columns={columns} data={filteredData} />
+
+      <div className="overflow-x-auto border border-gray-200 rounded-lg">
+        <table className="w-full">
+          <thead className="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Donor
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Blood Type
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Contact
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Last Donation
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Status
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Total Donations
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Next Eligible
+              </th>
+              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {filteredData.map((donor) => (
+              <tr key={donor.id} className="hover:bg-gray-50">
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center mr-3">
+                      <div className="w-4 h-4 text-gray-600">👤</div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-gray-900">{donor.name}</div>
+                      <div className="text-sm text-gray-500">{donor.id}</div>
+                    </div>
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <BloodTypeBadge bloodType={donor.bloodType} />
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">{donor.contact}</div>
+                  <div className="text-sm text-gray-500">{donor.email}</div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {donor.lastDonation}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <StatusBadge status={donor.status} />
+                </td>
+                <td className="px-6 py-4 flex flex-col md:flex-row gap-2 items-center whitespace-nowrap">
+                  <div className="text-sm font-medium text-gray-900">{donor.totalDonations}</div>
+                  <DonorLevelBadge level={donor.donorLevel} />
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {donor.nextEligible}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-right">
+                  <button className="text-gray-400 hover:text-gray-600 transition-colors">
+                    <div className="w-4 h-4">⋯</div>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Footer */}
+      <div className="flex items-center justify-between mt-4 text-sm text-gray-500">
+        <div>
+          Showing 1 to {filteredData.length} of {dummyDonors.length} donors
+        </div>
+        <div className="flex gap-2">
+          <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 transition-colors">
+            Previous
+          </button>
+          <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 transition-colors">
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
