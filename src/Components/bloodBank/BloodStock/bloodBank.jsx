@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import SubSection from "./SubSection";
 import BloodTypeAvailability from "./BloodTypeAvailability";
 import BloodManagement from "./BloodManagement";
 

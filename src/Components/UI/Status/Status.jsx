@@ -1,5 +1,3 @@
-import BloodBank from "@/Components/bloodBank/bloodBank";
-
 const Status = ({
   variant = "default",
   text = "",
