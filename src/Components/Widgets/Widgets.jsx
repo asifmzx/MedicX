@@ -8,7 +8,7 @@ import Cards from "./Cards/Cards";
 import Stats from "./Stats/Stats";
 import Misc from "./Misc/Misc";
 
-const Widgets = () => {
+const WidgetPage = () => {
   const [activeTab, setActiveTab] = useState("All");
 
   const tabs = [
@@ -60,4 +60,4 @@ const Widgets = () => {
   );
 };
 
-export default Widgets;
+export default WidgetPage;
