@@ -80,7 +80,7 @@ export const mail = [
     isSent: false,
     isDraft: false,
     isBin: false,
-    isArchive: false,
+    isArchive: true,
     isImportant: false,
   },
 ];

@@ -69,7 +69,7 @@ const Tab = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col h-full bg-[#E1E7EB]">
       {/* Header */}
       <div className="flex justify-between items-center p-4 border-b border-gray-300">
         <p className="text-2xl sm:text-3xl font-semibold">Email</p>
@@ -86,8 +86,8 @@ const Tab = () => {
                 onClick={() => setActiveTab(tab.key)}
                 className={`w-full px-4 py-2 text-left rounded ${
                   activeTab === tab.key
-                    ? "bg-[#F5F5F5] text-black"
-                    : "hover:bg-[#F5F5F5] text-black"
+                    ? "bg-gray-300 text-black"
+                    : "hover:bg-gray-300 text-black"
                 }`}
               >
                 <span className="flex items-center gap-x-2">
@@ -112,9 +112,8 @@ const Tab = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col flex-1 overflow-hidden">
-          {/* Search */}
-          <div className="border-b border-gray-300 p-4">
+        <div className="flex flex-col flex-1 overflow-hidden bg-[#E3E7EB]">
+          <div className="border-b border-gray-300 p-2">
             <SearchInput
               placeholder="Search emails"
               icon={IoSearchOutline}
