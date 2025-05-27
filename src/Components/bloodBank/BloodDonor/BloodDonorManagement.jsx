@@ -3,14 +3,10 @@ import { useState } from "react";
 
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import SearchInput from "@/Components/UI/Inputs/SearchInput";
-import Status from "@/Components/UI/Status/Status";
-import PTable from "@/Components/UI/Table/PTable";
 import { AiOutlineSearch } from "react-icons/ai";
-import { BsThreeDots } from "react-icons/bs";
-import { TfiFilter } from "react-icons/tfi";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { LuRefreshCw } from "react-icons/lu";
-
+import { assets } from "@/assets";
 
 const tabs = [
   { id: "all", label: "All Donors" },
@@ -23,6 +19,7 @@ const bloodTypes = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
 const dummyDonors = [
   {
+    img: "https://randomuser.me/api/portraits/women/1.jpg",
     id: "D-1001",
     name: "John Smith",
     bloodType: "O+",
@@ -35,6 +32,7 @@ const dummyDonors = [
     donorLevel: "Silver Donor",
   },
   {
+    img: "https://randomuser.me/api/portraits/men/2.jpg",
     id: "D-1002",
     name: "Sarah Johnson",
     bloodType: "A-",
@@ -47,6 +45,8 @@ const dummyDonors = [
     donorLevel: "",
   },
   {
+
+    img: "https://randomuser.me/api/portraits/women/4.jpg",
     id: "D-1003",
     name: "Michael Chen",
     bloodType: "B+",
@@ -59,6 +59,7 @@ const dummyDonors = [
     donorLevel: "Gold Donor",
   },
   {
+    img: "https://randomuser.me/api/portraits/men/5.jpg",
     id: "D-1004",
     name: "Emily Rodriguez",
     bloodType: "AB+",
@@ -71,6 +72,7 @@ const dummyDonors = [
     donorLevel: "",
   },
   {
+    img: "https://randomuser.me/api/portraits/women/8.jpg",
     id: "D-1005",
     name: "David Wilson",
     bloodType: "O-",
@@ -83,6 +85,7 @@ const dummyDonors = [
     donorLevel: "Platinum Donor",
   },
   {
+    img: "https://randomuser.me/api/portraits/men/3.jpg",
     id: "D-1006",
     name: "Lisa Thompson",
     bloodType: "A+",
@@ -332,10 +335,12 @@ const BloodDonorManagement = () => {
             {filteredData.map((donor) => (
               <tr key={donor.id} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center mr-3">
-                      <div className="w-4 h-4 text-gray-600">👤</div>
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={donor.img}
+                      alt={donor.name}
+                      className="w-9 h-9 rounded-full object-cover"
+                    />
                     <div>
                       <div className="text-sm font-medium text-gray-900">{donor.name}</div>
                       <div className="text-sm text-gray-500">{donor.id}</div>
