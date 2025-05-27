@@ -30,3 +30,20 @@
     background-position: -200% center;
   }
 }
+
+.ScrollBar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.ScrollBar::-webkit-scrollbar-track {
+  background: #0000;
+}
+
+.ScrollBar::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #5d90e1);
+  border-radius: 6px;
+}
+
+.ScrollBar::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to bottom, #172554);
+}
