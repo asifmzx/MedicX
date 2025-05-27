@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import DonorsbyBloodType from "@/Components/UI/Chart/BloodBank/DonorsbyBloodType";
-import DonorFrequency from "@/Components/UI/Chart/BloodBank/DonorFrequency";
+import IssuesbyBloodType from "@/Components/UI/Chart/BloodBank/BloodIssued/IssuesbyBloodType";
+import IssuesbyDepartment from "@/Components/UI/Chart/BloodBank/BloodIssued/IssuesbyDepartment";
 
 const ItembtypeItembDeptCard = () => {
     return (
@@ -11,7 +11,7 @@ const ItembtypeItembDeptCard = () => {
                     <div className="mb-4">
                         <p className="text-xl font-semibold mb-1">Issues by Blood Type</p>
                     </div>
-                    <DonorsbyBloodType />
+                    <IssuesbyBloodType />
                 </div>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition duration-300 ease-in-out">
@@ -19,7 +19,7 @@ const ItembtypeItembDeptCard = () => {
                     <div className="mb-4">
                         <p className="text-xl font-semibold mb-1">Issues by Department</p>
                     </div>
-                    <DonorFrequency />
+                    <IssuesbyDepartment />
                 </div>
             </div>
         </div>

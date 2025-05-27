@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import DonorsbyBloodType from "@/Components/UI/Chart/BloodBank/DonorsbyBloodType";
-import DonorFrequency from "@/Components/UI/Chart/BloodBank/DonorFrequency";
+import DonorsbyBloodType from "@/Components/UI/Chart/BloodBank/BloodDonor/DonorsbyBloodType";
+import DonorFrequency from "@/Components/UI/Chart/BloodBank/BloodDonor/DonorFrequency";
 
 const Card = () => {
     return (

@@ -3,27 +3,27 @@
 const data = [
     {
         id: 1,
-        title: "Total Donors",
+        title: "Total Units Issued",
         total: "247",
         value: +12,
         subtitle: "from last month",
     },
     {
         id: 2,
-        title: "Donations This Month",
+        title: "Issued This Month",
         total: "38",
         value: +5,
         subtitle: "compared to last month",
     },
     {
         id: 3,
-        title: "Eligible Donors",
+        title: "Emergency Issues",
         total: "183",
         subtitle: "Critical situations handled",
     },
     {
         id: 4,
-        title: "Frequent Donors",
+        title: "Cross-Matched Units",
         total: "42",
         subtitle: "Compatibility verified",
     },
@@ -43,7 +43,7 @@ const Card = () => {
 
                         </div>
 
-                        <div className="mt-3">
+                        <div className="mt-8">
                             <h3 className="text-2xl font-bold">{item.total}</h3>
                             <p className="text-sm mt-1">
                                 {item.value !== undefined && (
