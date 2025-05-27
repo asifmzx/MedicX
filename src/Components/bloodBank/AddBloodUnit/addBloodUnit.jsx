@@ -4,7 +4,6 @@ import BackButton from '@/Components/UI/Button/BackButton';
 import Buttonv2 from '@/Components/UI/Button/Buttonv2';
 import { DatePicker, Space } from "antd";
 import dayjs from "dayjs";
-import { Select } from 'antd';
 
 export default function AddBloodUnitForm() {
     const [isAnonymous, setIsAnonymous] = useState(false);
@@ -41,7 +40,7 @@ export default function AddBloodUnitForm() {
     };
 
     return (
-        <div className="min-h-screen ">
+        <div className="min-h-screen bg-gray-50">
 
             {/* Form */}
             <div className="max-w-6xl mx-auto p-6">
