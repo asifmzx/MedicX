@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "@/Components/patientDashboard/Card";
-import SubSection from "@/Components/patientDashboard/SubSection/SubSection";
+import Card from "@/Components/Pages/patientDashboard/Card";
+import SubSection from "@/Components/Pages/patientDashboard/SubSection/SubSection";
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import { FiMessageSquare } from "react-icons/fi";
 import { CiCalendar } from "react-icons/ci";

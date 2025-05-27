@@ -1,6 +1,6 @@
 "use client";
 
-import AllPrescriptionTable from "@/Components/Prescriptions/AllPrescriptionTable/AllPrescriptionTable";
+import AllPrescriptionTable from "@/Components/Pages/Prescriptions/AllPrescriptionTable/AllPrescriptionTable";
 import Button from "@/Components/UI/Button/Button";
 import { useRouter } from "next/navigation";
 import { GoPlus } from "react-icons/go";

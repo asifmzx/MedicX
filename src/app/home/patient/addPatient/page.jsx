@@ -1,5 +1,5 @@
 
-import SubSection from "@/Components/Patients/SubSection/subSection";
+import SubSection from "@/Components/Pages/Patients/SubSection/subSection";
 import BackButton from "@/Components/UI/Button/BackButton";
 
 

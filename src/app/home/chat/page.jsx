@@ -1,4 +1,4 @@
-import Chat from "@/Components/Chat/Chat";
+import Chat from "@/Components/Pages/Chat/Chat";
 import React from "react";
 
 const Page = () => {

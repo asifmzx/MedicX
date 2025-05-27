@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Modal, Input, Typography, Form, Select } from "antd";
 import Button from "../Button/Button";
 import { GoPlus } from "react-icons/go";
-import FirstMedication from "@/Components/Prescriptions/CreatePrescription/Medications/FirstMedication/FirstMedication";
+import FirstMedication from "@/Components/Pages/Prescriptions/CreatePrescription/Medications/FirstMedication/FirstMedication";
 import { BsEnvelopePlus } from "react-icons/bs";
 
 const { TextArea } = Input;

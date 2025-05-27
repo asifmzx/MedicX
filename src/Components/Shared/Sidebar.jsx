@@ -26,9 +26,8 @@ const SidebarLink = ({ href, label, onClick, icon: Icon }) => {
   return (
     <Link
       href={href}
-      className={`flex items-center text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-        isActive ? "bg-white/10 text-white" : ""
-      }`}
+      className={`flex items-center text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isActive ? "bg-white/10 text-white" : ""
+        }`}
       onClick={onClick}
     >
       {Icon && (
@@ -54,9 +53,8 @@ const SidebarGroup = ({ label, items, onClick, icon: Icon }) => {
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className={`w-full flex items-center justify-between text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
-          isGroupActive ? "bg-white/10 text-white" : ""
-        }`}
+        className={`w-full flex items-center justify-between text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm  ${isGroupActive ? "bg-white/10 text-white" : ""
+          }`}
       >
         <div className="flex items-center">
           {Icon && (
@@ -68,11 +66,11 @@ const SidebarGroup = ({ label, items, onClick, icon: Icon }) => {
         </div>
         {open ? (
           <span>
-            <SlArrowUp />
+            <SlArrowUp size={12}/>
           </span>
         ) : (
           <span className="transition duration-300">
-            <SlArrowDown />
+            <SlArrowDown size={12}/>
           </span>
         )}
       </button>
@@ -356,9 +354,8 @@ const Sidebar = () => {
     <>
       {/* Mobile Sidebar */}
       <div
-        className={`md:hidden fixed top-15 inset-0 z-40 ${
-          isSidebarOpen ? "block" : "hidden"
-        }`}
+        className={`md:hidden fixed top-15 inset-0 z-40 ${isSidebarOpen ? "block" : "hidden"
+          }`}
       >
         <div className="absolute inset-0 bg-black/50" onClick={closeSidebar} />
         <aside

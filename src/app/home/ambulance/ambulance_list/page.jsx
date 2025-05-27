@@ -1,4 +1,4 @@
-import AmbulanceList from "@/Components/Ambulance/AmbulanceList/AmbulanceList";
+import AmbulanceList from "@/Components/Pages/Ambulance/AmbulanceList/AmbulanceList";
 import { LuAmbulance } from "react-icons/lu";
 import { FiPlus } from "react-icons/fi";
 import { LiaCarSideSolid } from "react-icons/lia";

@@ -1,5 +1,5 @@
-import DepartmentCapacity from "../ProgressIndicators/DepartmentCapacity/DepartmentCapacity";
-import TreatmentProgress from "../ProgressIndicators/TreatmentProgress/TreatmentProgress";
+import DepartmentCapacity from "./DepartmentCapacity/DepartmentCapacity";
+import TreatmentProgress from "./TreatmentProgress/TreatmentProgress";
 
 const ProgressIndicators = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "@/Components/Pharmacy/Card";
-import SubSection from "@/Components/Pharmacy/SubSection";
+import Card from "@/Components/Pages/Pharmacy/Card";
+import SubSection from "@/Components/Pages/Pharmacy/SubSection";
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import { FaPlus } from "react-icons/fa6";
 

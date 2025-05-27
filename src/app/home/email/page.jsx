@@ -1,4 +1,4 @@
-import Email from "@/Components/Email/Email";
+import Email from "@/Components/Pages/Email/Email";
 import React from "react";
 
 const Page = () => {

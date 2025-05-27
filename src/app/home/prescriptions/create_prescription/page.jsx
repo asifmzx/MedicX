@@ -1,4 +1,4 @@
-import CreatePrescription from "@/Components/Prescriptions/CreatePrescription/CreatePrescription";
+import CreatePrescription from "@/Components/Pages/Prescriptions/CreatePrescription/CreatePrescription";
 import BackButton from "@/Components/UI/Button/BackButton";
 import Button from "@/Components/UI/Button/Button";
 import React from "react";

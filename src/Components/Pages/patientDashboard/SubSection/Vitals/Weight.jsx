@@ -1,5 +1,5 @@
 import React from 'react'
-import PatientWeightLineChart from '../../../UI/Chart/PatientDashboard/PatientWeightLineChart'
+import PatientWeightLineChart from '../../../../UI/Chart/PatientDashboard/PatientWeightLineChart'
 
 const Weight = () => {
     return (

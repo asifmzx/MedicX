@@ -1,4 +1,4 @@
-import MedicineTemplates from "@/Components/Prescriptions/MedicineTemplates/MedicineTemplates";
+import MedicineTemplates from "@/Components/Pages/Prescriptions/MedicineTemplates/MedicineTemplates";
 import BackButton from "@/Components/UI/Button/BackButton";
 // import Button from "@/Components/UI/Button/Button";
 // import SearchInput from "@/Components/UI/Inputs/SearchInput";

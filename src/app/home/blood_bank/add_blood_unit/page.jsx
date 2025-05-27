@@ -1,5 +1,5 @@
 import React from "react";
-import AddBloodUnit from "@/Components/bloodBank/AddBloodUnit/addBloodUnit";
+import AddBloodUnit from "@/Components/Pages/bloodBank/AddBloodUnit/addBloodUnit";
 
 const Page = () => {
   return (

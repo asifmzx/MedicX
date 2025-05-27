@@ -1,4 +1,4 @@
-import DoctorSpecializations from "@/Components/Doctors/DoctorSpecializations/DoctorSpecializations";
+import DoctorSpecializations from "@/Components/Pages/Doctors/DoctorSpecializations/DoctorSpecializations";
 import BackButton from "@/Components/UI/Button/BackButton";
 import React from "react";
 

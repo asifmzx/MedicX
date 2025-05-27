@@ -1,4 +1,4 @@
-import DoctorSchedule from "@/Components/Doctors/DoctorSchedule/DoctorSchedule";
+import DoctorSchedule from "@/Components/Pages/Doctors/DoctorSchedule/DoctorSchedule";
 import BackButton from "@/Components/UI/Button/BackButton";
 
 const Page = () => {
