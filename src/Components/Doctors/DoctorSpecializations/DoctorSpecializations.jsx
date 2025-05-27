@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/Components/UI/Button/Button";
 import SearchInput from "@/Components/UI/Inputs/SearchInput";
 import DoctorSpecializationsModal from "@/Components/UI/Modal/DoctorSpecializationsModal";

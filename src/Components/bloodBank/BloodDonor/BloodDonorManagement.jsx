@@ -3,14 +3,10 @@ import { useState } from "react";
 
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import SearchInput from "@/Components/UI/Inputs/SearchInput";
-import Status from "@/Components/UI/Status/Status";
-import PTable from "@/Components/UI/Table/PTable";
 import { AiOutlineSearch } from "react-icons/ai";
-import { BsThreeDots } from "react-icons/bs";
-import { TfiFilter } from "react-icons/tfi";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { LuRefreshCw } from "react-icons/lu";
-
+import { assets } from "@/assets";
 
 const tabs = [
   { id: "all", label: "All Donors" },
@@ -23,6 +19,7 @@ const bloodTypes = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
 const dummyDonors = [
   {
+    img: "https://randomuser.me/api/portraits/women/1.jpg",
     id: "D-1001",
     name: "John Smith",
     bloodType: "O+",
@@ -35,6 +32,7 @@ const dummyDonors = [
     donorLevel: "Silver Donor",
   },
   {
+    img: "https://randomuser.me/api/portraits/men/2.jpg",
     id: "D-1002",
     name: "Sarah Johnson",
     bloodType: "A-",
@@ -47,6 +45,8 @@ const dummyDonors = [
     donorLevel: "",
   },
   {
+
+    img: "https://randomuser.me/api/portraits/women/4.jpg",
     id: "D-1003",
     name: "Michael Chen",
     bloodType: "B+",
@@ -59,6 +59,7 @@ const dummyDonors = [
     donorLevel: "Gold Donor",
   },
   {
+    img: "https://randomuser.me/api/portraits/men/5.jpg",
     id: "D-1004",
     name: "Emily Rodriguez",
     bloodType: "AB+",
@@ -71,6 +72,7 @@ const dummyDonors = [
     donorLevel: "",
   },
   {
+    img: "https://randomuser.me/api/portraits/women/8.jpg",
     id: "D-1005",
     name: "David Wilson",
     bloodType: "O-",
@@ -83,6 +85,7 @@ const dummyDonors = [
     donorLevel: "Platinum Donor",
   },
   {
+    img: "https://randomuser.me/api/portraits/men/3.jpg",
     id: "D-1006",
     name: "Lisa Thompson",
     bloodType: "A+",
@@ -202,48 +205,45 @@ const BloodDonorManagement = () => {
 
   return (
     <div className="p-6 bg-white rounded-xl shadow-sm max-w-full mt-4">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4 border-red-500">
-        {/* Left Side: Search and Filters */}
-        <div className="flex flex-row w-full border md:w-2/3">
-          <div className="w-full">
-            <div className="flex items-center gap-2">
-              <SearchInput
-                type="text"
-                placeholder="Search blood..."
-                icon={AiOutlineSearch}
-                inputClassName="text-sm text-gray-700"
-                wrapperClassName="flex h-10"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <Buttonv2 Icon={LuRefreshCw} className="h-10 w-10" />
-            </div>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row w-full items-center justify-between gap-2 md:w-2/3">
+          <div className="flex items-center w-full gap-2 ">
+            <SearchInput
+              type="text"
+              placeholder="Search blood..."
+              icon={AiOutlineSearch}
+              inputClassName="text-sm text-gray-700"
+              wrapperClassName="flex h-10"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <Buttonv2 Icon={LuRefreshCw} className="h-10 w-10" />
+          </div>
 
-            <div className="flex items-center justify-between gap-2 mt-4">
-              <select
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm"
-                value={selectedBloodType}
-                onChange={(e) => setSelectedBloodType(e.target.value)}
-              >
-                <option value="">All Blood Types</option>
-                {bloodTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
+          <div className="flex items-center gap-2 w-full md:w-auto">
+            <select
+              className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full md:w-30"
+              value={selectedBloodType}
+              onChange={(e) => setSelectedBloodType(e.target.value)}
+            >
+              <option value="">Blood Types</option>
+              {bloodTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
 
-              <select
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full"
-                value={selectedStatus}
-                onChange={(e) => setSelectedStatus(e.target.value)}
-              >
-                <option value="">All Status</option>
-                <option value="Eligible">Eligible</option>
-                <option value="Ineligible">Ineligible</option>
-                <option value="New Donor">New Donor</option>
-              </select>
-            </div>
+            <select
+              className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full md:w-30"
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+            >
+              <option value="">All Status</option>
+              <option value="Eligible">Eligible</option>
+              <option value="Ineligible">Ineligible</option>
+              <option value="New Donor">New Donor</option>
+            </select>
           </div>
         </div>
 
@@ -335,10 +335,12 @@ const BloodDonorManagement = () => {
             {filteredData.map((donor) => (
               <tr key={donor.id} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center mr-3">
-                      <div className="w-4 h-4 text-gray-600">👤</div>
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={donor.img}
+                      alt={donor.name}
+                      className="w-9 h-9 rounded-full object-cover"
+                    />
                     <div>
                       <div className="text-sm font-medium text-gray-900">{donor.name}</div>
                       <div className="text-sm text-gray-500">{donor.id}</div>
