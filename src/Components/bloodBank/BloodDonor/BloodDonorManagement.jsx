@@ -202,48 +202,45 @@ const BloodDonorManagement = () => {
 
   return (
     <div className="p-6 bg-white rounded-xl shadow-sm max-w-full mt-4">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4 border-red-500">
-        {/* Left Side: Search and Filters */}
-        <div className="flex flex-row w-full border md:w-2/3">
-          <div className="w-full">
-            <div className="flex items-center gap-2">
-              <SearchInput
-                type="text"
-                placeholder="Search blood..."
-                icon={AiOutlineSearch}
-                inputClassName="text-sm text-gray-700"
-                wrapperClassName="flex h-10"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <Buttonv2 Icon={LuRefreshCw} className="h-10 w-10" />
-            </div>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row w-full items-center justify-between gap-2 md:w-2/3">
+          <div className="flex items-center w-full gap-2 ">
+            <SearchInput
+              type="text"
+              placeholder="Search blood..."
+              icon={AiOutlineSearch}
+              inputClassName="text-sm text-gray-700"
+              wrapperClassName="flex h-10"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <Buttonv2 Icon={LuRefreshCw} className="h-10 w-10" />
+          </div>
 
-            <div className="flex items-center justify-between gap-2 mt-4">
-              <select
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm"
-                value={selectedBloodType}
-                onChange={(e) => setSelectedBloodType(e.target.value)}
-              >
-                <option value="">All Blood Types</option>
-                {bloodTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
+          <div className="flex items-center gap-2 w-full md:w-auto">
+            <select
+              className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full md:w-30"
+              value={selectedBloodType}
+              onChange={(e) => setSelectedBloodType(e.target.value)}
+            >
+              <option value="">Blood Types</option>
+              {bloodTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
 
-              <select
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full"
-                value={selectedStatus}
-                onChange={(e) => setSelectedStatus(e.target.value)}
-              >
-                <option value="">All Status</option>
-                <option value="Eligible">Eligible</option>
-                <option value="Ineligible">Ineligible</option>
-                <option value="New Donor">New Donor</option>
-              </select>
-            </div>
+            <select
+              className="px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full md:w-30"
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+            >
+              <option value="">All Status</option>
+              <option value="Eligible">Eligible</option>
+              <option value="Ineligible">Ineligible</option>
+              <option value="New Donor">New Donor</option>
+            </select>
           </div>
         </div>
 
