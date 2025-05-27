@@ -1,4 +1,4 @@
-import AmbulancesDetails from "@/Components/Ambulance/AmbulancesDetails/AmbulancesDetails";
+import AmbulancesDetails from "@/Components/Pages/Ambulance/AmbulancesDetails/AmbulancesDetails";
 import { LuAmbulance } from "react-icons/lu";
 import { FiPenTool } from "react-icons/fi";
 import Button from "@/Components/UI/Button/Button";

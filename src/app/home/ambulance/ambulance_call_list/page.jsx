@@ -1,4 +1,4 @@
-import AmbulanceCallList from "@/Components/Ambulance/AmbulanceCallList/AmbulanceCallList";
+import AmbulanceCallList from "@/Components/Pages/Ambulance/AmbulanceCallList/AmbulanceCallList";
 import { LuAmbulance } from "react-icons/lu";
 import { FiPhone, FiPlus } from "react-icons/fi";
 import { LuClock4 } from "react-icons/lu";

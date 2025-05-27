@@ -1,5 +1,5 @@
 import React from 'react'
-import BloodGlucoseLineChart from '../../../UI/Chart/PatientDashboard/BloodGlucoseLineChart'
+import BloodGlucoseLineChart from '../../../../UI/Chart/PatientDashboard/BloodGlucoseLineChart'
 
 const BloodGlucose = () => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import BloodPressureLineChart from '../../../UI/Chart/PatientDashboard/BloodPressureLineChart'
+import BloodPressureLineChart from '../../../../UI/Chart/PatientDashboard/BloodPressureLineChart'
 
 const BloodPressure = () => {
     return (

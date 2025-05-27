@@ -1,6 +1,6 @@
 "use client";
-import Card from "@/Components/adminDashboard/Card";
-import SubSection from "@/Components/adminDashboard/SubSection/SubSection";
+import Card from "@/Components/Pages/adminDashboard/Card";
+import SubSection from "@/Components/Pages/adminDashboard/SubSection/SubSection";
 import Button from "@/Components/UI/Button/Button";
 
 import { TfiImport } from "react-icons/tfi";

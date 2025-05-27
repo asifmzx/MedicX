@@ -1,5 +1,5 @@
-import Card from "@/Components/doctorDashboard/Card";
-import SubSection from "@/Components/doctorDashboard/SubSection/SubSection";
+import Card from "@/Components/Pages/doctorDashboard/Card";
+import SubSection from "@/Components/Pages/doctorDashboard/SubSection/SubSection";
 
 const Page = () => {
   return (

@@ -1,5 +1,5 @@
 
-import WidgetPage from "@/Components/Widgets/Widgets";
+import WidgetPage from "@/Components/Pages/Widgets/Widgets";
 
 const Page = () => {
   return (

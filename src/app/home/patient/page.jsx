@@ -1,6 +1,6 @@
 "use client";
 
-import PatientTable from "@/Components/Patients/PatientTable/PatientTable";
+import PatientTable from "@/Components/Pages/Patients/PatientTable/PatientTable";
 import Button from "@/Components/UI/Button/Button";
 import { useRouter } from "next/navigation";
 import { GoPlus } from "react-icons/go";

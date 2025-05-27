@@ -1,4 +1,4 @@
-import AddDoctorSection from "@/Components/Doctors/AddDoctorSection/AddDoctorSection";
+import AddDoctorSection from "@/Components/Pages/Doctors/AddDoctorSection/AddDoctorSection";
 import BackButton from "@/Components/UI/Button/BackButton";
 
 const addDoctor = () => {
