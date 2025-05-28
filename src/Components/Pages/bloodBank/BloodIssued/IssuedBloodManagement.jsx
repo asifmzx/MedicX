@@ -276,7 +276,7 @@ const IssuedBloodManagement = () => {
                     <div className="flex items-center gap-2 w-full md:w-auto">
                         {/* Blood Type Filter */}
                         <select
-                            className="px-3 py-3 border truncate border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full md:w-31"
+                            className="bg-white px-3 py-3 border truncate border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm w-full md:w-31"
                             value={selectedBloodType}
                             onChange={(e) => setSelectedBloodType(e.target.value)}
                         >
@@ -437,8 +437,8 @@ const IssuedBloodManagement = () => {
                                 <td className="px-6 py-4 whitespace-nowrap">
                                     <StatusBadge status={issuance.status} />
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-right">
-                                    <button className="text-gray-400 hover:text-gray-600 transition-colors">
+                                <td className="px-6 py-4 whitespace-nowrap text-center">
+                                    <button className="text-black font-bold hover:text-gray-600 transition-colors">
                                         <div className="w-4 h-4">⋯</div>
                                     </button>
                                 </td>
