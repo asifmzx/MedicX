@@ -8,10 +8,10 @@ const Page = () => {
   return (
     <div className="p-5 space-y-8">
       <div className="flex justify-between items-center">
-        <p className="text-3xl font-semibold">Task</p>
+        <p className="text-3xl font-semibold">Contact</p>
         <Button variant="secondary" text="Add Contact" Icon={FaPlus} />
       </div>
-      <div >
+      <div>
         <Contact />
       </div>
     </div>

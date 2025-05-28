@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { assets } from "@/assets";
 import Link from "next/link";
-import { useSidebar } from "./SidebarContext";
+import { useSidebar } from "../sidebar/SidebarContext";
 
 const Header = () => {
   const [isDark, setIsDark] = useState(false);

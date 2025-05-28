@@ -78,10 +78,18 @@ const Status = ({
     low: "bg-white text-black text-xs w-[70px] border border-gray-300",
   };
   const contactVariants = {
-    client: "bg-[#DBEAFE] text-[#1E5DCB] text-xs w-[70px]", // Light blue
-    partner: "bg-[#FEF3C7] text-[#92400E] text-xs w-[70px]", // Soft yellow
-    supplier: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]", // Light green
-    lead: "bg-[#FCE7F3] text-[#9D174D] text-xs w-[70px]", // Light pink
+    client: "bg-[#DBEAFE] text-[#1E5DCB] text-xs w-[70px]",
+    partner: "bg-[#FEF3C7] text-[#92400E] text-xs w-[70px]",
+    supplier: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]",
+    lead: "bg-[#FCE7F3] text-[#9D174D] text-xs w-[70px]",
+  };
+  const supportVariants = {
+    High: "bg-sky-100 text-[#1A5BCB] text-xs w-[70px]",
+    Medium: "bg-orange-100 text-[#92400E] text-xs w-[70px]",
+    Low: "bg-gray-100 text-black text-xs w-[70px]",
+    Open: "bg-[#DBEAFE] text-[#1E5DCB] text-xs w-[70px]",
+    "In Progress": "bg-[#FEF3C7] text-[#72400E] text-xs w-[90px]",
+    Resolved: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]",
   };
 
   const variantType = {
@@ -94,6 +102,7 @@ const Status = ({
     bloodBank: bloodBankVariants,
     task: taskVariants,
     contact: contactVariants,
+    support: supportVariants,
   };
 
   const variants = variantType[type] || {};

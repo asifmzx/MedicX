@@ -1,112 +1,42 @@
-"use client";
-
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useSidebar } from "./SidebarContext";
-import { usePathname } from "next/navigation";
-import { IconContext } from "react-icons";
-import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import {
-  FaUserShield,
+  FaUserMd,
+  FaUserInjured,
+  FaCalendarCheck,
+  FaClipboardList,
+  FaPrescriptionBottleAlt,
   FaAmbulance,
   FaHospital,
   FaBoxes,
-  FaUserMd,
-  FaFolder,
-  FaComment,
-  FaChartBar,
+  FaFolderOpen,
+  FaBed,
+  FaComments,
+  FaChartLine,
   FaCog,
-  FaShieldAlt,
+  FaLock,
+  FaEnvelope,
+  FaComments as FaChat,
+  FaCalendarAlt as FaCalendar,
+  FaTasks,
+  FaAddressBook,
+  FaGripHorizontal,
 } from "react-icons/fa";
+import { MdOutlineDashboard } from "react-icons/md";
 
-const SidebarLink = ({ href, label, onClick, icon: Icon }) => {
-  const pathname = usePathname();
-  const isActive = pathname === href;
-
-  return (
-    <Link
-      href={href}
-      className={`flex items-center text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isActive ? "bg-white/10 text-white" : ""
-        }`}
-      onClick={onClick}
-    >
-      {Icon && (
-        <IconContext.Provider value={{ className: "w-4 h-4 mr-2" }}>
-          <Icon />
-        </IconContext.Provider>
-      )}
-      {label}
-    </Link>
-  );
-};
-
-const SidebarGroup = ({ label, items, onClick, icon: Icon }) => {
-  const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const isGroupActive = items.some((item) => item.href === pathname);
-
-  useEffect(() => {
-    if (isGroupActive) setOpen(true);
-  }, [isGroupActive]);
-
-  return (
-    <div>
-      <button
-        onClick={() => setOpen(!open)}
-        className={`w-full flex items-center justify-between text-gray-300 hover:bg-white/10 hover:text-white px-3 py-2 rounded-md text-sm  ${isGroupActive ? "bg-white/10 text-white" : ""
-          }`}
-      >
-        <div className="flex items-center">
-          {Icon && (
-            <IconContext.Provider value={{ className: "w-4 h-4 mr-2" }}>
-              <Icon />
-            </IconContext.Provider>
-          )}
-          {label}
-        </div>
-        {open ? (
-          <span>
-            <SlArrowUp size={12}/>
-          </span>
-        ) : (
-          <span className="transition duration-300">
-            <SlArrowDown size={12}/>
-          </span>
-        )}
-      </button>
-      {open && (
-        <div className="pl-6 mt-1 space-y-1">
-          {items.map((item, index) => (
-            <SidebarLink
-              key={index}
-              href={item.href}
-              label={item.label}
-              onClick={onClick}
-              icon={item.icon}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-const menuItems = [
+export const menuItems = [
   {
     type: "group",
     label: "Dashboard",
-    icon: FaUserShield,
+    icon: MdOutlineDashboard,
     items: [
       { label: "Admin Dashboard", href: "/home/dashboard/admindashboard" },
       { label: "Doctor Dashboard", href: "/home/dashboard/doctordashboard" },
       { label: "Patient Dashboard", href: "/home/dashboard/patientdashboard" },
     ],
   },
-
   {
     type: "group",
     label: "Doctors",
-    icon: FaUserShield,
+    icon: FaUserMd,
     items: [
       { label: "Doctor List", href: "/home/doctors/doctors_list" },
       { label: "Add Doctor", href: "/home/doctors/add_doctor" },
@@ -114,30 +44,33 @@ const menuItems = [
       { label: "Specialization", href: "/home/doctors/specializations" },
     ],
   },
-
-  { type: "link", label: "Patient", href: "/home/patient", icon: FaUserShield },
-
+  {
+    type: "link",
+    label: "Patient",
+    href: "/home/patient",
+    icon: FaUserInjured,
+  },
   {
     type: "group",
     label: "Appointments",
+    icon: FaCalendarCheck,
     items: [
       {
         label: "All Appointments",
         href: "/home/appointments/all_appointments",
       },
       { label: "Add Appointment", href: "/home/appointments/add_appointment" },
-      { label: "Calender View", href: "/home/appointments/calender_view" },
+      { label: "Calendar View", href: "/home/appointments/calender_view" },
       {
         label: "Appointment Requests",
         href: "/home/appointments/appointment_requests",
       },
     ],
   },
-
   {
     type: "group",
     label: "Prescriptions",
-    icon: FaAmbulance,
+    icon: FaPrescriptionBottleAlt,
     items: [
       {
         label: "All Prescriptions",
@@ -153,7 +86,6 @@ const menuItems = [
       },
     ],
   },
-
   {
     type: "group",
     label: "Ambulance",
@@ -167,13 +99,11 @@ const menuItems = [
       { label: "Ambulance Details", href: "/home/ambulance/ambulance_details" },
     ],
   },
-
-  { type: "link", label: "Pharmacy", href: "/home/pharmacy" },
-
+  { type: "link", label: "Pharmacy", href: "/home/pharmacy", icon: FaHospital },
   {
     type: "group",
     label: "Blood Bank",
-    icon: FaAmbulance,
+    icon: FaHospital,
     items: [
       { label: "Blood Stock", href: "/home/blood_bank/blood_stock" },
       { label: "Blood Donor", href: "/home/blood_bank/blood_donor" },
@@ -182,11 +112,10 @@ const menuItems = [
       { label: "Issue Blood", href: "/home/blood_bank/issue_blood" },
     ],
   },
-
   {
     type: "group",
     label: "Billing",
-    icon: FaAmbulance,
+    icon: FaClipboardList,
     items: [
       { label: "Invoices List", href: "/home/billing/blood_stock" },
       { label: "Create Invoice", href: "/home/billing/create_invoice" },
@@ -194,7 +123,6 @@ const menuItems = [
       { label: "Insurance Claims", href: "/home/billing/insurance_claims" },
     ],
   },
-
   {
     type: "group",
     label: "Departments",
@@ -205,7 +133,6 @@ const menuItems = [
       { label: "Services Offered", href: "/home/departments/services_offered" },
     ],
   },
-
   {
     type: "group",
     label: "Inventory",
@@ -217,7 +144,6 @@ const menuItems = [
       { label: "Suppliers List", href: "/home/inventory/suppliers_list" },
     ],
   },
-
   {
     type: "group",
     label: "Staff",
@@ -232,21 +158,19 @@ const menuItems = [
       { label: "Attendance", href: "/home/staff/attendance" },
     ],
   },
-
   {
     type: "group",
     label: "Records",
-    icon: FaFolder,
+    icon: FaFolderOpen,
     items: [
       { label: "Birth Records", href: "/home/records/birth_records" },
       { label: "Death Records", href: "/home/records/death_records" },
     ],
   },
-
   {
     type: "group",
     label: "Room Allotment",
-    icon: FaFolder,
+    icon: FaBed,
     items: [
       { label: "Allotted Rooms", href: "/home/room_allotment/allotted_rooms" },
       { label: "New Allotment", href: "/home/room_allotment/new_allotment" },
@@ -257,13 +181,11 @@ const menuItems = [
       { label: "Add New Room", href: "/home/room_allotment/add_new_room" },
     ],
   },
-
-  { type: "link", label: "Feedback", icon: FaComment, href: "/home/feedback" },
-
+  { type: "link", label: "Feedback", icon: FaComments, href: "/home/feedback" },
   {
     type: "group",
     label: "Reports",
-    icon: FaChartBar,
+    icon: FaChartLine,
     items: [
       { label: "Overview", href: "/home/reports/overview" },
       {
@@ -278,7 +200,6 @@ const menuItems = [
       },
     ],
   },
-
   {
     type: "group",
     label: "Settings",
@@ -290,11 +211,10 @@ const menuItems = [
       { label: "Integrations", href: "/home/settings/integrations" },
     ],
   },
-
   {
     type: "group",
     label: "Authentication",
-    icon: FaShieldAlt,
+    icon: FaLock,
     items: [
       { label: "Login", href: "/home/authentication/login" },
       { label: "Register", href: "/home/authentication/register" },
@@ -308,77 +228,21 @@ const menuItems = [
       },
     ],
   },
-
-  { type: "link", label: "Email", href: "/home/email" },
-  { type: "link", label: "Chat", href: "/home/chat" },
-  { type: "link", label: "Support", href: "/home/support" },
-
-  { type: "link", label: "Calendar", href: "/home/calendar" },
-  { type: "link", label: "Tasks", href: "/home/tasks" },
-  { type: "link", label: "Contacts", href: "/home/contacts" },
-  { type: "link", label: "Widgets", href: "/home/widgets" },
-
-  // User Section
-  // { type: "link", label: "User", href: "/profile" },
-  // { type: "link", label: "Administrator", href: "/admin" },
+  { type: "link", label: "Email", href: "/home/email", icon: FaEnvelope },
+  { type: "link", label: "Chat", href: "/home/chat", icon: FaChat },
+  { type: "link", label: "Support", href: "/home/support", icon: FaComments },
+  { type: "link", label: "Calendar", href: "/home/calendar", icon: FaCalendar },
+  { type: "link", label: "Tasks", href: "/home/tasks", icon: FaTasks },
+  {
+    type: "link",
+    label: "Contacts",
+    href: "/home/contacts",
+    icon: FaAddressBook,
+  },
+  {
+    type: "link",
+    label: "Widgets",
+    href: "/home/widgets",
+    icon: FaGripHorizontal,
+  },
 ];
-
-const SidebarContent = ({ onLinkClick }) => (
-  <div className="flex flex-col space-y-2 pb-4">
-    {menuItems.map((item, idx) =>
-      item.type === "link" ? (
-        <SidebarLink
-          key={idx}
-          href={item.href}
-          label={item.label}
-          onClick={onLinkClick}
-          icon={item.icon}
-        />
-      ) : (
-        <SidebarGroup
-          key={idx}
-          label={item.label}
-          items={item.items}
-          onClick={onLinkClick}
-          icon={item.icon}
-        />
-      )
-    )}
-  </div>
-);
-
-const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = useSidebar();
-
-  return (
-    <>
-      {/* Mobile Sidebar */}
-      <div
-        className={`md:hidden fixed top-15 inset-0 z-40 ${isSidebarOpen ? "block" : "hidden"
-          }`}
-      >
-        <div className="absolute inset-0 bg-black/50" onClick={closeSidebar} />
-        <aside
-          className={`
-            absolute top-0 left-0 bg-[#193768] w-64 h-full
-            transform transition-transform duration-300 ease-in-out
-            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-          `}
-        >
-          <div className="h-full overflow-y-auto p-4">
-            <SidebarContent onLinkClick={closeSidebar} />
-          </div>
-        </aside>
-      </div>
-
-      {/* Desktop Sidebar */}
-      <aside className="hidden md:flex fixed top-15 left-0 z-30  h-[calc(100vh-4rem)] w-64 bg-[#193768] mt-1">
-        <div className="h-full overflow-y-auto w-full p-4 ScrollBar">
-          <SidebarContent />
-        </div>
-      </aside>
-    </>
-  );
-};
-
-export default Sidebar;
