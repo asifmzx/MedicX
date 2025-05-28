@@ -72,6 +72,11 @@ const Status = ({
     "Expiring Soon": "bg-[#f59f0a] h-6 text-black w-[100px]",
     Reserved: "bg-black/3 h-6 text-gray w-[100px] border border-gray-200",
   };
+  const taskVariants = {
+    high: "bg-red-500 text-white text-xs w-[70px]",
+    medium: "bg-[#f59f0a] text-white text-xs w-[70px]",
+    low: "bg-white text-black text-xs w-[70px] border border-gray-300",
+  };
 
   const variantMaps = {
     appointment: appointmentVariants,
@@ -81,6 +86,7 @@ const Status = ({
     status: statusVariants,
     widget: widgetVariants,
     bloodBank: bloodBankVariants,
+    task: taskVariants,
   };
 
   const variants = variantMaps[type] || {};
