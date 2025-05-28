@@ -77,8 +77,14 @@ const Status = ({
     medium: "bg-[#f59f0a] text-white text-xs w-[70px]",
     low: "bg-white text-black text-xs w-[70px] border border-gray-300",
   };
+  const contactVariants = {
+    client: "bg-[#DBEAFE] text-[#1E5DCB] text-xs w-[70px]", // Light blue
+    partner: "bg-[#FEF3C7] text-[#92400E] text-xs w-[70px]", // Soft yellow
+    supplier: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]", // Light green
+    lead: "bg-[#FCE7F3] text-[#9D174D] text-xs w-[70px]", // Light pink
+  };
 
-  const variantMaps = {
+  const variantType = {
     appointment: appointmentVariants,
     ambulance: ambulanceVariants,
     appointmentrequest: appointmentrequestVariants,
@@ -87,9 +93,10 @@ const Status = ({
     widget: widgetVariants,
     bloodBank: bloodBankVariants,
     task: taskVariants,
+    contact: contactVariants,
   };
 
-  const variants = variantMaps[type] || {};
+  const variants = variantType[type] || {};
   const selectedVariant = variants[variant] || variants.default;
 
   return (
