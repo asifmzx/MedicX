@@ -66,11 +66,11 @@ const SidebarGroup = ({ label, items, onClick, icon: Icon }) => {
         </div>
         {open ? (
           <span>
-            <SlArrowUp size={12}/>
+            <SlArrowUp size={12} />
           </span>
         ) : (
           <span className="transition duration-300">
-            <SlArrowDown size={12}/>
+            <SlArrowDown size={12} />
           </span>
         )}
       </button>
@@ -188,7 +188,7 @@ const menuItems = [
     label: "Billing",
     icon: FaAmbulance,
     items: [
-      { label: "Invoices List", href: "/home/billing/blood_stock" },
+      { label: "Invoices List", href: "/home/billing/invoices_list" },
       { label: "Create Invoice", href: "/home/billing/create_invoice" },
       { label: "Payment History", href: "/home/billing/payment_history" },
       { label: "Insurance Claims", href: "/home/billing/insurance_claims" },
