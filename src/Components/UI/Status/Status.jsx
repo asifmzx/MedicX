@@ -72,8 +72,27 @@ const Status = ({
     "Expiring Soon": "bg-[#f59f0a] h-6 text-black w-[100px]",
     Reserved: "bg-black/3 h-6 text-gray w-[100px] border border-gray-200",
   };
+  const taskVariants = {
+    high: "bg-red-500 text-white text-xs w-[70px]",
+    medium: "bg-[#f59f0a] text-white text-xs w-[70px]",
+    low: "bg-white text-black text-xs w-[70px] border border-gray-300",
+  };
+  const contactVariants = {
+    client: "bg-[#DBEAFE] text-[#1E5DCB] text-xs w-[70px]",
+    partner: "bg-[#FEF3C7] text-[#92400E] text-xs w-[70px]",
+    supplier: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]",
+    lead: "bg-[#FCE7F3] text-[#9D174D] text-xs w-[70px]",
+  };
+  const supportVariants = {
+    High: "bg-sky-100 text-[#1A5BCB] text-xs w-[70px]",
+    Medium: "bg-orange-100 text-[#92400E] text-xs w-[70px]",
+    Low: "bg-gray-100 text-black text-xs w-[70px]",
+    Open: "bg-[#DBEAFE] text-[#1E5DCB] text-xs w-[70px]",
+    "In Progress": "bg-[#FEF3C7] text-[#72400E] text-xs w-[90px]",
+    Resolved: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]",
+  };
 
-  const variantMaps = {
+  const variantType = {
     appointment: appointmentVariants,
     ambulance: ambulanceVariants,
     appointmentrequest: appointmentrequestVariants,
@@ -81,9 +100,12 @@ const Status = ({
     status: statusVariants,
     widget: widgetVariants,
     bloodBank: bloodBankVariants,
+    task: taskVariants,
+    contact: contactVariants,
+    support: supportVariants,
   };
 
-  const variants = variantMaps[type] || {};
+  const variants = variantType[type] || {};
   const selectedVariant = variants[variant] || variants.default;
 
   return (
