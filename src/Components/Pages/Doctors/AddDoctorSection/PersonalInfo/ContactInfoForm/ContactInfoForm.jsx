@@ -9,17 +9,15 @@ const ContactInfoForm = () => {
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
-        <div>
-          <div className="col-span-1">
-            <label htmlFor="" className="block mb-1 font-medium">
-              Email
-            </label>
-            <input
-              type="text"
-              placeholder="Enter email address"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
-            />
-          </div>
+        <div className="col-span-1">
+          <label htmlFor="" className="block mb-1 font-medium">
+            Email
+          </label>
+          <input
+            type="text"
+            placeholder="Enter email address"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
+          />
         </div>
 
         <div>
