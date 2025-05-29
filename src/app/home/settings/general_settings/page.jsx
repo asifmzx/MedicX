@@ -1,12 +1,18 @@
+import GeneralSettings from "@/Components/Pages/Settings/GeneralSettings/GeneralSettings";
 import React from "react";
 
 const Page = () => {
   return (
-    <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">General_Settings</span>
-      </p>
+    <div className="p-4">
+      <div>
+        <p className="text-3xl font-semibold">General Settings</p>
+        <p className="text-gray-500">
+          Configure your clinic settings and preferences
+        </p>
+      </div>
+      <div className="pt-4">
+        <GeneralSettings />
+      </div>
     </div>
   );
 };
