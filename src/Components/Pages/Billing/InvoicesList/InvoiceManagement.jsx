@@ -7,7 +7,6 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { MdOutlineFilterAlt } from "react-icons/md";
 
-// Import the invoice data from the separate data file
 import { dummyIssuances } from './data/invoiceData';
 
 const StatusBadge = ({ status }) => {

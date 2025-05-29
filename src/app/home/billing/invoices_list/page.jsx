@@ -1,5 +1,5 @@
 import React from "react";
-import Billing from "@/Components/Pages/Billing/billing";
+import Billing from "@/Components/Pages/Billing/InvoicesList/billing";
 
 const Page = () => {
   return (
