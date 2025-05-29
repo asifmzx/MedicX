@@ -40,10 +40,10 @@ export default function AddBloodUnitForm() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen">
 
             {/* Form */}
-            <div className="max-w-6xl mx-auto p-6">
+            <div className="mx-auto p-6">
                 <div className='flex justify-between items-center mb-6'>
                     <div>
                         <h1 className="text-2xl font-bold text-gray-800">Add Blood Unit</h1>
@@ -149,7 +149,6 @@ export default function AddBloodUnitForm() {
 
                             {/* Right Column */}
                             <div className="space-y-6 mt-0 md:mt-11">
-                                {/* Collection Date */}
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
                                         Collection Date
@@ -166,7 +165,6 @@ export default function AddBloodUnitForm() {
                                     </Space>
                                 </div>
 
-                                {/* Expiry Date */}
                                 <div className="space-y-6 mt-0 md:mt-12">
                                     <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
                                         Collection Date
@@ -183,7 +181,6 @@ export default function AddBloodUnitForm() {
                                     </Space>
                                 </div>
 
-                                {/* Source Type */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
                                         Source Type
@@ -201,7 +198,6 @@ export default function AddBloodUnitForm() {
                                     </select>
                                 </div>
 
-                                {/* Collection Location */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
                                         Collection Location
@@ -217,9 +213,7 @@ export default function AddBloodUnitForm() {
                             </div>
                         </div>
 
-                        {/* Checkboxes Row */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                            {/* Screening Complete */}
                             <div className="border border-gray-200 rounded-lg p-4">
                                 <div className="flex items-center">
                                     <input
@@ -236,7 +230,6 @@ export default function AddBloodUnitForm() {
                                 <p className="text-xs text-gray-500 mt-2">Blood has been screened for infectious diseases.</p>
                             </div>
 
-                            {/* Processing Complete */}
                             <div className="border border-gray-200 rounded-lg p-4">
                                 <div className="flex items-center">
                                     <input
@@ -254,7 +247,6 @@ export default function AddBloodUnitForm() {
                             </div>
                         </div>
 
-                        {/* Additional Notes */}
                         <div className="mt-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Additional Notes
@@ -268,9 +260,8 @@ export default function AddBloodUnitForm() {
                             />
                         </div>
 
-                        {/* Submit Button */}
                         <div className="flex justify-end mt-8">
-                            <Buttonv2 variant="secondary_main" text="Add Blood Unit" />
+                            <Buttonv2 variant="secondary_main" text="Add Blood Unit" className='h-16 w-40 font-semibold text-[18px] rounded-xl' />
                         </div>
                     </div>
                 </div>
