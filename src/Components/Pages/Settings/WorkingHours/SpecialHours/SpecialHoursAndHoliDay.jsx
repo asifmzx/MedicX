@@ -5,9 +5,9 @@ const SpecialHoursAndHoliDay = () => {
   return (
     <div className="p-4 bg-white rounded-lg shadow-md max-w-full space-y-4">
       <div>
-        <p className="text-3xl font-semibold">Clinic Hours</p>
+        <p className="text-3xl font-semibold">Special Hours & Holidays</p>
         <p className="text-gray-500 text-sm mt-2">
-          Set your clinic's regular operating hours for each day of the week
+          Set special operating hours or mark holidays
         </p>
       </div>
       <div>

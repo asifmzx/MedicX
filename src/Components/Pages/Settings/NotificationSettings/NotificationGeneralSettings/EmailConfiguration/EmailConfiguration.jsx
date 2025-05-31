@@ -39,7 +39,7 @@ const EmailConfiguration = () => {
           />
         </div>
 
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <label className="block mb-1 text-sm font-semibold">
             Reply-To Email
           </label>
@@ -50,7 +50,7 @@ const EmailConfiguration = () => {
           />
         </div>
 
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <label className="block mb-1 text-sm font-semibold">
             SMTP Provider
           </label>

@@ -38,19 +38,19 @@ const ClinicHours = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-1 mt-4">
+      <div className="flex flex-col gap-1 mt-4 pb-2">
         {daysOfWeek.map((day) => (
           <div
             key={day}
             className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full p-1 rounded-md"
           >
-            {/* Checkbox + Day */}
+          
             <div className="flex items-center gap-2 min-w-[120px]">
               <Checkbox />
               <span className="text-sm font-medium">{day}</span>
             </div>
 
-            {/* Quiet Hours */}
+          
             <div className="flex flex-col sm:flex-row items-center gap-2 flex-1 w-full">
               <select
                 className="w-full sm:w-auto flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
@@ -78,8 +78,8 @@ const ClinicHours = () => {
         ))}
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-10">
-        <div className="flex items-center gap-x-2 pt-6">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12">
+        <div className="flex items-center gap-x-2 ">
           <Switch />
           <p className="font-semibold">Use 24-hour format</p>
         </div>
