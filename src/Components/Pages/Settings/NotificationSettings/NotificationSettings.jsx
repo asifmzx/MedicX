@@ -4,7 +4,7 @@ import NotificationTab from "./NotificationTab/NotificationTab";
 
 const NotificationSettings = () => {
   return (
-    <div>
+    <div className="space-y-4">
       <div>
         <NotificationCard />
       </div>
