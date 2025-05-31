@@ -1,12 +1,16 @@
 import {
+  FaTachometerAlt,
   FaUserMd,
   FaUserInjured,
+  FaUserPlus,
   FaCalendarCheck,
+  FaCalendarAlt,
   FaClipboardList,
   FaPrescriptionBottleAlt,
   FaAmbulance,
   FaHospital,
   FaBoxes,
+  FaUsers,
   FaFolderOpen,
   FaBed,
   FaComments,
@@ -20,13 +24,12 @@ import {
   FaAddressBook,
   FaGripHorizontal,
 } from "react-icons/fa";
-import { MdOutlineDashboard } from "react-icons/md";
 
 export const menuItems = [
   {
     type: "group",
     label: "Dashboard",
-    icon: MdOutlineDashboard,
+    icon: FaTachometerAlt,
     items: [
       { label: "Admin Dashboard", href: "/home/dashboard/admindashboard" },
       { label: "Doctor Dashboard", href: "/home/dashboard/doctordashboard" },
@@ -117,7 +120,7 @@ export const menuItems = [
     label: "Billing",
     icon: FaClipboardList,
     items: [
-      { label: "Invoices List", href: "/home/billing/invoices_list" },
+      { label: "Invoices List", href: "/home/billing/blood_stock" },
       { label: "Create Invoice", href: "/home/billing/create_invoice" },
       { label: "Payment History", href: "/home/billing/payment_history" },
       { label: "Insurance Claims", href: "/home/billing/insurance_claims" },
