@@ -19,7 +19,6 @@ const paymentHistory = () => {
                 <PaymentHistoryMng />
                 <Card />
             </div>
-
         </>
     )
 }

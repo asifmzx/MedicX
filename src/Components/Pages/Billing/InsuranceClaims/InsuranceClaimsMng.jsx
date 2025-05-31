@@ -10,7 +10,8 @@ import { DatePicker } from 'antd';
 import dayjs from 'dayjs';
 
 const { RangePicker } = DatePicker;
-const dateFormat = 'YYYY-MM-DD';
+const dateFormat = 'MMM DD, YYYY';
+
 
 const StatusBadge = ({ status }) => {
     let style = "";
@@ -45,7 +46,7 @@ const StatusBadge = ({ status }) => {
 
 const method = ["Bank Transfer", "Cash", "Check", "Credit Card", "Debit Card", "Insurance"];
 
-const PaymentHistoryMng = () => {
+const InsuranceClaimsMng = () => {
     const [activeTab, setActiveTab] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedMethod, setselectedMethod] = useState("");
@@ -110,9 +111,15 @@ const PaymentHistoryMng = () => {
                     </div>
                     <div className="flex w-full md:w-[25%] items-center">
                         <RangePicker
-                            defaultValue={[dayjs('2025/01/01', dateFormat), dayjs('2025/01/31', dateFormat)]}
+                            defaultValue={[dayjs('2025-03-03'), dayjs('2025-05-31')]}
                             format={dateFormat}
-                            style={{ width: '100%', height: '40px', maxWidth: '600px' }}
+                            style={{ 
+                                width: '100%', 
+                                height: '40px', 
+                                maxWidth: '600px',
+                                borderRadius: '8px',
+                                border: '1px solid #d1d5db'
+                            }}
                         />
                     </div>
                 </div>
@@ -209,4 +216,4 @@ const PaymentHistoryMng = () => {
     );
 };
 
-export default PaymentHistoryMng;
+export default InsuranceClaimsMng;

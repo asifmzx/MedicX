@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
 import BackButton from '@/Components/UI/Button/BackButton'
+import { Link } from 'next/navigation'
 import Buttonv2 from '@/Components/UI/Button/Buttonv2'
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { FaPlus } from "react-icons/fa6";
@@ -16,7 +17,7 @@ const invoicesList = () => {
                     <BackButton className="bg-white border border-gray-300 h-10 w-10 flex items-center justify-center rounded-md" />
                     <div className='flex flex-col w-full'>
                         <h1 className="text-2xl font-bold text-gray-900">Invoices</h1>
-                        <p className="text-sm text-gray-600 mt-1">Manage billing and invoices for your patients.</p>
+                        <p className="text-xm text-gray-600 mt-1">Manage billing and invoices for your patients.</p>
                     </div>
                 </div>
 
@@ -27,14 +28,12 @@ const invoicesList = () => {
                             variant='primary_main'
                             text="Payments"
                             className='border border-gray-300 h-10 w-full md:w-auto'
-                            to="/home/billing/payment_history"
                         />
                         <Buttonv2
                             Icon={LuFileSpreadsheet}
                             variant='primary_main'
                             text="Insurance Claims"
                             className='border border-gray-300 h-10 w-full md:w-auto'
-                            to="/home/billing/insurance_claims"
                         />
                     </div>
                     <Buttonv2
@@ -42,7 +41,6 @@ const invoicesList = () => {
                         variant='secondary_main'
                         text="Create Invoice"
                         className='border border-gray-300 h-10 w-full md:w-auto'
-                        to="/home/billing/create-invoice"
                     />
                 </div>
             </div>

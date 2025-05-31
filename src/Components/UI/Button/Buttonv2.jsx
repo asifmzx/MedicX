@@ -1,22 +1,14 @@
-"use client";
-import { useRouter } from "next/navigation";
-
 const Buttonv2 = ({
   variant = "primary",
   text,
   Icon,
   onClick,
-  to,
   className = "",
   isActive = false,
 }) => {
-  const router = useRouter();
 
-  // Added min-w-0 to prevent flex overflow issues
   const baseStyles =
     "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0";
-
-  // Modified variants to work better with custom widths
   const variants = {
     primary: "bg-black/10 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
     secondary:
@@ -25,18 +17,9 @@ const Buttonv2 = ({
     secondary_main: "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA]",
   };
 
-  const handleClick = () => {
-    if (to) {
-      router.push(to);
-    }
-    if (onClick) {
-      onClick();
-    }
-  };
-
   return (
     <button
-      onClick={handleClick}
+      onClick={onClick}
       className={`
         ${baseStyles}
         ${variants[variant]}
