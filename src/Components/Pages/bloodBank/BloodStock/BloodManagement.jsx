@@ -215,6 +215,7 @@ const BloodManagement = () => {
               className="w-full md:w-auto h-10 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring focus:ring-black"
               value={selectedBloodType}
               onChange={(e) => setSelectedBloodType(e.target.value)}
+              style={{ padding: '0 10px' }}
             >
               <option value="">All Types</option>
               {bloodTypes.map((type) => (
@@ -226,6 +227,7 @@ const BloodManagement = () => {
             <select
               className="w-full md:w-auto h-10 border border-gray-300 text-gray-600 rounded-md focus:outline-none focus:ring focus:ring-black"
               defaultValue=""
+              style={{ padding: '0 10px' }}
             >
               <option value="">All Status</option>
               <option value="Available">Available</option>

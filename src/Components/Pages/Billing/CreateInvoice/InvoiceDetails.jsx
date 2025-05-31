@@ -130,7 +130,7 @@ const InvoiceDetails = () => {
 
     return (
         <>
-            <div className="p-0 md:p-6 bg-white rounded-lg shadow-sm">
+            <div className="p-0 md:p-6 bg-white rounded-lg">
                 <div className="mb-8">
                     <h2 className="text-xl font-semibold text-gray-800">Invoice Details</h2>
                     <p className="text-sm text-gray-600">Enter the details for the new invoice.</p>
@@ -460,7 +460,7 @@ const InvoiceDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-end space-x-4">
+            <div className="flex justify-end space-x-4 mt-4">
                 <Buttonv2 variant="primary_main" text="Save as Draft" className="border border-gray-300 w-40 h-12 rounded-xl bg-white font-semibold text-md" />
                 <Buttonv2 variant="secondary_main" text="Create Invoice" className="border border-gray-300 w-40 h-12 rounded-xl font-semibold text-md" />
             </div>

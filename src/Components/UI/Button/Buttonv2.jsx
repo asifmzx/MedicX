@@ -6,11 +6,9 @@ const Buttonv2 = ({
   className = "",
   isActive = false,
 }) => {
-  // Added min-w-0 to prevent flex overflow issues
+
   const baseStyles =
     "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0";
-
-  // Modified variants to work better with custom widths
   const variants = {
     primary: "bg-black/10 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
     secondary:

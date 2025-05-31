@@ -9,13 +9,11 @@ const PatientInformation = () => {
     const [selectedPatient, setSelectedPatient] = useState(null);
     const searchRef = useRef(null);
 
-    // Filter patients based on search term
     const filteredPatients = patients.filter(patient =>
         patient.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         patient.id.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -56,7 +54,6 @@ const PatientInformation = () => {
                 </div>
             );
         } catch (error) {
-            // Fallback to initials if image fails
             return (
                 <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center flex-shrink-0">
                     {patient.name.split(' ').map(name => name[0]).join('')}
