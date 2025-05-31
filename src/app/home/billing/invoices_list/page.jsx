@@ -1,10 +1,10 @@
 import React from "react";
-import Billing from "@/Components/Pages/Billing/InvoicesList/billing";
+import InvoicesList from "@/Components/Pages/Billing/InvoicesList/invoicesList";
 
 const Page = () => {
   return (
-    <div className="p-4">
-      <Billing />
+    <div>
+      <InvoicesList />
     </div>
   );
 };

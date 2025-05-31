@@ -7,7 +7,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { MdOutlineFilterAlt } from "react-icons/md";
 
-import { dummyIssuances } from './data/invoiceData';
+import { getInvoiceData } from '../data/billingData';
 
 const StatusBadge = ({ status }) => {
     let style = "";
@@ -63,6 +63,8 @@ const InvoiceManagement = () => {
     const [activeTab, setActiveTab] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
 
+    const dummyIssuances = getInvoiceData();
+
     const filters = {
         all: () => true,
         unpaid: (item) => item.status.toLowerCase() === "unpaid",
@@ -74,7 +76,7 @@ const InvoiceManagement = () => {
         const matchesTab = filters[activeTab](item);
         const matchesSearch =
             searchQuery === "" ||
-            [item.invoiceId, item.recipient.name, item.recipient.id, item.date, item.amount, item.balance, item.status, item.insurance]
+            [item.invoiceId, item.recipient.name, item.recipient.id, item.invoiceDate, item.amount, item.balance, item.status, item.insurance]
                 .map((field) => field.toString())
                 .some((field) =>
                     field.toLowerCase().includes(searchQuery.toLowerCase())
@@ -83,54 +85,48 @@ const InvoiceManagement = () => {
     });
 
     return (
-        <div className="max-w-full">
+        <div className="max-w-full mt-6">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                <div className="flex flex-col md:flex-row md:flex-wrap w-full md:w-2/3 items-center justify-between gap-2 ">
-                    <div className="flex items-center gap-2 w-full md:w-auto">
-                        <div className="w-full">
-                            <div className="sm:w-[410px]">
-                                <div className="grid grid-cols-2 grid-rows-2 gap-2 sm:flex sm:flex-row sm:items-center sm:justify-start rounded-md sm:h-10 sm:gap-2 mb-2">
-                                    <Buttonv2
-                                        variant="primary"
-                                        text="All Invoices"
-                                        onClick={() => setActiveTab("all")}
-                                        className="flex items-center justify-center sm:w-[130px]"
-                                        isActive={activeTab === "all"}
-                                    />
-                                    <Buttonv2
-                                        variant="primary"
-                                        text="Unpaid"
-                                        onClick={() => setActiveTab("unpaid")}
-                                        className="flex items-center justify-center sm:w-[120px]"
-                                        isActive={activeTab === "unpaid"}
-                                    />
-                                    <Buttonv2
-                                        variant="primary"
-                                        text="Paid"
-                                        onClick={() => setActiveTab("paid")}
-                                        className="flex items-center justify-center sm:w-[120px]"
-                                        isActive={activeTab === "paid"}
-                                    />
-                                    <Buttonv2
-                                        variant="primary"
-                                        text="Partially Paid"
-                                        onClick={() => setActiveTab("partially_paid")}
-                                        className="flex items-center justify-center sm:w-[150px]"
-                                        isActive={activeTab === "partially_paid"}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {/* Left Side: Filter Buttons */}
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-2 w-full md:w-auto">
+                    <Buttonv2
+                        variant="primary"
+                        text="All Invoices"
+                        onClick={() => setActiveTab("all")}
+                        className="flex items-center justify-center h-10 text-sm"
+                        isActive={activeTab === "all"}
+                    />
+                    <Buttonv2
+                        variant="primary"
+                        text="Unpaid"
+                        onClick={() => setActiveTab("unpaid")}
+                        className="flex items-center justify-center h-10 text-sm"
+                        isActive={activeTab === "unpaid"}
+                    />
+                    <Buttonv2
+                        variant="primary"
+                        text="Paid"
+                        onClick={() => setActiveTab("paid")}
+                        className="flex items-center justify-center h-10 text-sm"
+                        isActive={activeTab === "paid"}
+                    />
+                    <Buttonv2
+                        variant="primary"
+                        text="Partially Paid"
+                        onClick={() => setActiveTab("partially_paid")}
+                        className="flex items-center justify-center h-10 text-sm"
+                        isActive={activeTab === "partially_paid"}
+                    />
                 </div>
-                {/* Right Side: Buttons */}
+
+                {/* Right Side: Search and Action Buttons */}
                 <div className="flex w-full md:w-fit gap-2">
                     <SearchInput
                         type="text"
                         placeholder="Search invoices..."
                         icon={AiOutlineSearch}
                         inputClassName="text-sm text-gray-700"
-                        wrapperClassName="flex h-10 w-full md:w-[60%] bg-white rounded-xl"
+                        wrapperClassName="flex h-10 w-full md:w-[200px] bg-white rounded-xl"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -179,7 +175,7 @@ const InvoiceManagement = () => {
                                     </div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                    {invoice.date}
+                                    {invoice.invoiceDate}
                                     <div className="text-xs text-gray-400">Due: {invoice.dueDate}</div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">

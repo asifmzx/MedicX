@@ -1,13 +1,11 @@
 import React from "react";
+import InsuranceClaims from "@/Components/Pages/Billing/InsuranceClaims/insuranceClaims";
 
 const Page = () => {
   return (
-    <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Insurance_Claims</span>
-      </p>
-    </div>
+    <>
+      <InsuranceClaims />
+    </>
   );
 };
 

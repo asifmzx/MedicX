@@ -1,10 +1,10 @@
 
 "use client";
 
-import { dummyIssuances } from './data/invoiceData';
+import { getInvoiceData } from '../data/billingData';
 
 const Card = () => {
-
+    const dummyIssuances = getInvoiceData();
     const calculateTotalOutstanding = () => {
         const totalBalance = dummyIssuances
             .filter(invoice => invoice.status !== "Paid")
@@ -26,7 +26,7 @@ const Card = () => {
         const paidThisMonth = dummyIssuances
             .filter(invoice => {
                 if (invoice.status !== "Paid") return false;
-                const invoiceDate = new Date(invoice.date);
+                const invoiceDate = new Date(invoice.invoiceDate);
                 return invoiceDate.getMonth() === currentMonth && invoiceDate.getFullYear() === currentYear;
             })
             .reduce((sum, invoice) => sum + invoice.amount, 0);
@@ -35,9 +35,9 @@ const Card = () => {
         const lastMonth = dummyIssuances
             .filter(invoice => {
                 if (invoice.status !== "Paid") return false;
-                const invoiceDate = new Date(invoice.date);
-                return invoiceDate.getMonth() === lastMonthDate.getMonth() && 
-                       invoiceDate.getFullYear() === lastMonthDate.getFullYear();
+                const invoiceDate = new Date(invoice.invoiceDate);
+                return invoiceDate.getMonth() === lastMonthDate.getMonth() &&
+                    invoiceDate.getFullYear() === lastMonthDate.getFullYear();
             })
             .reduce((sum, invoice) => sum + invoice.amount, 0);
 
@@ -52,7 +52,7 @@ const Card = () => {
 
     const calculateOverdueInvoices = () => {
         const today = new Date();
-        today.setHours(0, 0, 0, 0); 
+        today.setHours(0, 0, 0, 0);
 
         const overdueInvoices = dummyIssuances.filter(invoice => {
             if (invoice.status === "Paid") return false;
