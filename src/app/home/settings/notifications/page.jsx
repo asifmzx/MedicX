@@ -4,8 +4,8 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="p-4 ">
-      <div className="flex items-center gap-x-4">
+    <div className="p-4 space-y-4">
+      <div className="flex items-center gap-x-4 ">
         <div>
           <BackButton />
         </div>
@@ -18,7 +18,7 @@ const Page = () => {
           </p>
         </div>
       </div>
-      <div className="p-5">
+      <div>
         <NotificationSettings />
       </div>
     </div>

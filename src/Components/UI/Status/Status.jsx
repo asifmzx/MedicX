@@ -91,6 +91,10 @@ const Status = ({
     "In Progress": "bg-[#FEF3C7] text-[#72400E] text-xs w-[90px]",
     Resolved: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]",
   };
+  const settingsVariants = {
+    Active: "bg-black text-white text-xs w-[70px]",
+    InActive: "bg-gray-300 text-black text-xs w-[70px]",
+  };
 
   const variantType = {
     appointment: appointmentVariants,
@@ -103,6 +107,7 @@ const Status = ({
     task: taskVariants,
     contact: contactVariants,
     support: supportVariants,
+    settings: settingsVariants,
   };
 
   const variants = variantType[type] || {};

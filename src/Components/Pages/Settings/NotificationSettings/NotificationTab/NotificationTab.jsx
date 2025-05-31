@@ -14,16 +14,16 @@ const NotificationTab = () => {
     { key: "GeneralSettings", label: "General Settings" },
     { key: "EmailTemplates", label: "Email Templates" },
     { key: "SmsTemplates", label: "Sms Templates" },
-    { key: "ScheduledNotifications", label: "Schedule dNotifications" },
+    { key: "ScheduleNotifications", label: "Schedule Notifications" },
   ];
 
   const Content = () => {
     switch (activeTab) {
-      case "EmailTamplates":
+      case "EmailTemplates":
         return <EmailTemplates />;
       case "SmsTemplates":
         return <SmsTemplates />;
-      case "ScheduledNotifications":
+      case "ScheduleNotifications":
         return <ScheduledNotifications />;
       default:
         return <NotificationGeneralSettings />;
