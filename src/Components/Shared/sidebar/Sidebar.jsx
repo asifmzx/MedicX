@@ -1,11 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { menuItems } from "./SidebarMenuItems";
+import { FaAngleDown, FaAnglesRight, FaAnglesLeft } from "react-icons/fa6";
 
 export default function Sidebar({ onMenuItemClick }) {
   const [openGroups, setOpenGroups] = useState({});
+  const [isExpanded, setIsExpanded] = useState(true);
+  const [isMdUp, setIsMdUp] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMdUp(window.innerWidth >= 768);
+    };
+
+    handleResize(); // initial
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleGroup = (label) => {
     setOpenGroups((prev) => ({
@@ -15,14 +30,35 @@ export default function Sidebar({ onMenuItemClick }) {
   };
 
   const handleLinkClick = () => {
-    // Optional: only auto-close on mobile
     if (typeof window !== "undefined" && window.innerWidth < 768) {
       if (onMenuItemClick) onMenuItemClick();
     }
   };
 
   return (
-    <aside className="bg-[#193768] text-white min-h-screen p-4 overflow-auto">
+    <aside
+      className={`bg-[#193768] text-white min-h-screen px-4 transition-all duration-300 
+        ${isMdUp ? (isExpanded ? "w-64" : "w-16") : "w-64"}`}
+    >
+      {/* Toggle button: only visible on md and up */}
+      {isMdUp && (
+        <div className="flex justify-end ">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-white p-2 rounded hover:bg-gray-700 transition-colors"
+          >
+            <span
+              className={`inline-block transition-transform duration-300 ease-in-out ${
+                isExpanded ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              <FaAnglesRight />
+            </span>
+          </button>
+        </div>
+      )}
+
+      {/* Menu items */}
       <nav>
         {menuItems.map((item, index) => {
           if (item.type === "group") {
@@ -34,25 +70,42 @@ export default function Sidebar({ onMenuItemClick }) {
                 >
                   <div className="flex items-center gap-2">
                     {item.icon && <item.icon />}
-                    <span>{item.label}</span>
+                    <span
+                      className={`${
+                        isMdUp && !isExpanded ? "hidden" : "inline"
+                      } transition-opacity duration-300`}
+                    >
+                      {item.label}
+                    </span>
                   </div>
-                  <span>{openGroups[item.label] ? "−" : "+"}</span>
+                  {((isMdUp && isExpanded) || !isMdUp) && (
+                    <span
+                      className={`transition-transform duration-300 ease-in-out ${
+                        openGroups[item.label] ? "rotate-180" : "rotate-0"
+                      }`}
+                    >
+                      <FaAngleDown />
+                    </span>
+                  )}
                 </button>
-                {openGroups[item.label] && (
-                  <ul className="mt-2 ml-6 space-y-1">
-                    {item.items.map((subItem, subIndex) => (
-                      <li key={subIndex}>
-                        <Link
-                          href={subItem.href}
-                          onClick={handleLinkClick}
-                          className="block px-2 py-1 rounded hover:bg-gray-700"
-                        >
-                          {subItem.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+
+                {/* Sub-menu: show when expanded or always on mobile */}
+                {((isMdUp && isExpanded) || !isMdUp) &&
+                  openGroups[item.label] && (
+                    <ul className="mt-2 ml-6 space-y-1">
+                      {item.items.map((subItem, subIndex) => (
+                        <li key={subIndex}>
+                          <Link
+                            href={subItem.href}
+                            onClick={handleLinkClick}
+                            className="block px-2 py-1 rounded hover:bg-gray-700"
+                          >
+                            {subItem.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
               </div>
             );
           } else if (item.type === "link") {
@@ -64,7 +117,13 @@ export default function Sidebar({ onMenuItemClick }) {
                   className="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-700"
                 >
                   {item.icon && <item.icon />}
-                  <span>{item.label}</span>
+                  <span
+                    className={`${
+                      isMdUp && !isExpanded ? "hidden" : "inline"
+                    } transition-opacity duration-300`}
+                  >
+                    {item.label}
+                  </span>
                 </Link>
               </div>
             );
