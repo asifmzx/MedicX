@@ -1,19 +1,11 @@
 import {
-  FaTachometerAlt,
   FaUserMd,
   FaUserInjured,
-  FaUserPlus,
-  FaCalendarCheck,
-  FaCalendarAlt,
   FaClipboardList,
-  FaPrescriptionBottleAlt,
   FaAmbulance,
-  FaHospital,
   FaBoxes,
-  FaUsers,
   FaFolderOpen,
   FaBed,
-  FaComments,
   FaChartLine,
   FaCog,
   FaLock,
@@ -24,12 +16,17 @@ import {
   FaAddressBook,
   FaGripHorizontal,
 } from "react-icons/fa";
+import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
+import { LuCalendarPlus2 } from "react-icons/lu";
+
+import { MdAddShoppingCart, MdOutlineBloodtype, MdOutlineDashboard, MdOutlineFeedback, MdOutlineReviews } from "react-icons/md";
+import { RiCustomerService2Line, RiFileAddLine } from "react-icons/ri";
 
 export const menuItems = [
   {
     type: "group",
     label: "Dashboard",
-    icon: FaTachometerAlt,
+    icon: MdOutlineDashboard,
     items: [
       { label: "Admin Dashboard", href: "/home/dashboard/admindashboard" },
       { label: "Doctor Dashboard", href: "/home/dashboard/doctordashboard" },
@@ -56,7 +53,7 @@ export const menuItems = [
   {
     type: "group",
     label: "Appointments",
-    icon: FaCalendarCheck,
+    icon: LuCalendarPlus2,
     items: [
       {
         label: "All Appointments",
@@ -73,7 +70,7 @@ export const menuItems = [
   {
     type: "group",
     label: "Prescriptions",
-    icon: FaPrescriptionBottleAlt,
+    icon: RiFileAddLine,
     items: [
       {
         label: "All Prescriptions",
@@ -102,11 +99,11 @@ export const menuItems = [
       { label: "Ambulance Details", href: "/home/ambulance/ambulance_details" },
     ],
   },
-  { type: "link", label: "Pharmacy", href: "/home/pharmacy", icon: FaHospital },
+  { type: "link", label: "Pharmacy", href: "/home/pharmacy", icon: MdAddShoppingCart },
   {
     type: "group",
     label: "Blood Bank",
-    icon: FaHospital,
+    icon: MdOutlineBloodtype,
     items: [
       { label: "Blood Stock", href: "/home/blood_bank/blood_stock" },
       { label: "Blood Donor", href: "/home/blood_bank/blood_donor" },
@@ -129,7 +126,7 @@ export const menuItems = [
   {
     type: "group",
     label: "Departments",
-    icon: FaHospital,
+    icon: HiOutlineBuildingOffice2,
     items: [
       { label: "Department List", href: "/home/departments/department_list" },
       { label: "Add Department", href: "/home/departments/add_department" },
@@ -184,7 +181,16 @@ export const menuItems = [
       { label: "Add New Room", href: "/home/room_allotment/add_new_room" },
     ],
   },
-  { type: "link", label: "Feedback", icon: FaComments, href: "/home/feedback" },
+  {
+    type: "group",
+    label: "Reviews",
+    icon: MdOutlineReviews,
+    items: [
+      { label: "Doctor Reviews", href: "/home/reviews/doctor_reviews" },
+      { label: "Patient ReViews", href: "/home/reviews/patient_reviews" },
+    ],
+  },
+  { type: "link", label: "Feedback", icon: MdOutlineFeedback, href: "/home/feedback" },
   {
     type: "group",
     label: "Reports",
@@ -231,21 +237,11 @@ export const menuItems = [
       },
     ],
   },
-  { type: "link", label: "Email", href: "/home/email", icon: FaEnvelope },
-  { type: "link", label: "Chat", href: "/home/chat", icon: FaChat },
-  { type: "link", label: "Support", href: "/home/support", icon: FaComments },
   { type: "link", label: "Calendar", href: "/home/calendar", icon: FaCalendar },
   { type: "link", label: "Tasks", href: "/home/tasks", icon: FaTasks },
-  {
-    type: "link",
-    label: "Contacts",
-    href: "/home/contacts",
-    icon: FaAddressBook,
-  },
-  {
-    type: "link",
-    label: "Widgets",
-    href: "/home/widgets",
-    icon: FaGripHorizontal,
-  },
+  { type: "link", label: "Contacts", href: "/home/contacts", icon: FaAddressBook },
+  { type: "link", label: "Email", href: "/home/email", icon: FaEnvelope },
+  { type: "link", label: "Chat", href: "/home/chat", icon: FaChat },
+  { type: "link", label: "Support", href: "/home/support", icon: RiCustomerService2Line },
+  { type: "link", label: "Widgets", href: "/home/widgets", icon: FaGripHorizontal },
 ];

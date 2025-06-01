@@ -1,177 +1,142 @@
 "use client";
 
-import { getPaymentData } from '../data/billingData';
+import { getInsuranceClaimsData } from '../data/billingData';
 
 const Card = () => {
-    const dummyPayments = getPaymentData();
+    const dummyClaims = getInsuranceClaimsData();
 
-    const calculateTotalPayments = () => {
-        const completedPayments = dummyPayments.filter(payment => payment.status === "Completed");
-        const totalAmount = completedPayments.reduce((sum, payment) => sum + payment.amount, 0);
-
+    const calculateTotalClaims = () => {
+        const totalAmount = dummyClaims.reduce((sum, claim) => sum + claim.amount, 0);
         return {
             total: totalAmount.toFixed(2),
-            subtitle: `From ${completedPayments.length} transactions`
+            subtitle: `From ${dummyClaims.length} claims`
         };
     };
 
-    const calculatePendingPayments = () => {
-        const pendingPayments = dummyPayments.filter(payment =>
-            payment.status === "Pending" || payment.status === "Processing"
-        );
-        const totalAmount = pendingPayments.reduce((sum, payment) => sum + payment.amount, 0);
-
+    const calculateApprovedClaims = () => {
+        const approvedClaims = dummyClaims.filter(claim => claim.status === "Approved");
+        const totalAmount = approvedClaims.reduce((sum, claim) => sum + claim.amount, 0);
         return {
             total: totalAmount.toFixed(2),
-            subtitle: `From ${pendingPayments.length} transactions`
+            subtitle: `From ${approvedClaims.length} claims`
         };
     };
 
-    const calculateFailedPayments = () => {
-        const failedPayments = dummyPayments.filter(payment => payment.status === "Failed");
-        const totalAmount = failedPayments.reduce((sum, payment) => sum + payment.amount, 0);
-
+    const calculatePendingClaims = () => {
+        const pendingClaims = dummyClaims.filter(claim => claim.status === "Pending");
+        const totalAmount = pendingClaims.reduce((sum, claim) => sum + claim.amount, 0);
         return {
             total: totalAmount.toFixed(2),
-            subtitle: `From ${failedPayments.length} transactions`
+            subtitle: `From ${pendingClaims.length} claims`
         };
     };
 
-    const calculatePaymentMethods = () => {
-        const methods = {};
-
-        dummyPayments.forEach(payment => {
-            if (payment.method) {
-                methods[payment.method] = (methods[payment.method] || 0) + 1;
-            }
-        });
-
-        // Group similar methods
-        const creditCard = (methods["Credit Card"] || 0);
-        const debitCard = (methods["Debit Card"] || 0);
-        const cash = (methods["Cash"] || 0);
-        const other = (methods["Check"] || 0) + (methods["Bank Transfer"] || 0) + (methods["Insurance"] || 0);
-
+    const calculateSuccessRate = () => {
+        const approvedCount = dummyClaims.filter(claim => claim.status === "Approved").length;
+        const submittedCount = dummyClaims.filter(claim => claim.status !== "Draft").length;
+        const rate = submittedCount > 0 ? (approvedCount / submittedCount * 100).toFixed(0) : 0;
         return {
-            "Credit Card": creditCard,
-            "Debit Card": debitCard,
-            "Cash": cash,
-            "Other": other
+            total: `${rate}%`,
+            subtitle: "Approval rate for submitted claims"
         };
     };
 
-    const calculateProgressWidth = (current, type) => {
-        const totalPayments = dummyPayments.length;
+    const calculateProgressWidth = (type) => {
+        const totalClaims = dummyClaims.length;
 
         if (type === 'total') {
-            const completedCount = dummyPayments.filter(p => p.status === "Completed").length;
-            return (completedCount / totalPayments) * 100;
+            return 100;
+        }
+        if (type === 'approved') {
+            const approvedCount = dummyClaims.filter(c => c.status === "Approved").length;
+            return (approvedCount / totalClaims) * 100;
         }
         if (type === 'pending') {
-            const pendingCount = dummyPayments.filter(p => p.status === "Pending" || p.status === "Processing").length;
-            return (pendingCount / totalPayments) * 100;
+            const pendingCount = dummyClaims.filter(c => c.status === "Pending").length;
+            return (pendingCount / totalClaims) * 100;
         }
-        if (type === 'failed') {
-            const failedCount = dummyPayments.filter(p => p.status === "Failed").length;
-            return (failedCount / totalPayments) * 100;
+        if (type === 'success') {
+            const approvedCount = dummyClaims.filter(c => c.status === "Approved").length;
+            const submittedCount = dummyClaims.filter(c => c.status !== "Draft").length;
+            return submittedCount > 0 ? (approvedCount / submittedCount) * 100 : 0;
         }
-        return 50;
+        return 0;
     };
 
-    const totalPayments = calculateTotalPayments();
-    const pendingPayments = calculatePendingPayments();
-    const failedPayments = calculateFailedPayments();
-    const paymentMethods = calculatePaymentMethods();
+    const totalClaims = calculateTotalClaims();
+    const approvedClaims = calculateApprovedClaims();
+    const pendingClaims = calculatePendingClaims();
+    const successRate = calculateSuccessRate();
 
     const data = [
         {
             id: 1,
-            title: "Total Payments",
-            total: totalPayments.total,
-            subtitle: totalPayments.subtitle,
-            progressColor: "bg-green-500",
-            progressWidth: `${calculateProgressWidth(totalPayments.total, 'total')}%`,
+            title: "Total Claims",
+            total: totalClaims.total,
+            subtitle: totalClaims.subtitle,
+            progressColor: "bg-blue-500",
+            progressWidth: `${calculateProgressWidth('total')}%`,
             isMoney: true
         },
         {
             id: 2,
-            title: "Pending Payments",
-            total: pendingPayments.total,
-            subtitle: pendingPayments.subtitle,
-            progressColor: "bg-orange-500",
-            progressWidth: `${calculateProgressWidth(pendingPayments.total, 'pending')}%`,
+            title: "Approved Claims",
+            total: approvedClaims.total,
+            subtitle: approvedClaims.subtitle,
+            progressColor: "bg-green-500",
+            progressWidth: `${calculateProgressWidth('approved')}%`,
             isMoney: true
         },
         {
             id: 3,
-            title: "Failed Payments",
-            total: failedPayments.total,
-            subtitle: failedPayments.subtitle,
-            progressColor: "bg-red-500",
-            progressWidth: `${calculateProgressWidth(failedPayments.total, 'failed')}%`,
+            title: "Pending Claims",
+            total: pendingClaims.total,
+            subtitle: pendingClaims.subtitle,
+            progressColor: "bg-yellow-500",
+            progressWidth: `${calculateProgressWidth('pending')}%`,
             isMoney: true
         },
         {
             id: 4,
-            title: "Payment Methods",
-            isMethodCard: true
+            title: "Claim Success Rate",
+            total: successRate.total,
+            subtitle: successRate.subtitle,
+            progressColor: "bg-purple-500",
+            progressWidth: `${calculateProgressWidth('success')}%`,
+            isMoney: false
         }
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-4">
-            {data.map((item) => {
-                if (item.isMethodCard) {
-                    return (
-                        <div
-                            key={item.id}
-                            className="bg-white rounded-lg p-5 shadow-sm border border-gray-200 hover:shadow-md transition duration-300 ease-in-out"
-                        >
-                            <div>
-                                <span className="font-medium text-gray-800">{item.title}</span>
-                            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-8">
+            {data.map((item) => (
+                <div
+                    key={item.id}
+                    className="bg-white rounded-lg p-5 shadow-sm border border-gray-200 hover:shadow-md transition duration-300 ease-in-out"
+                >
+                    <div>
+                        <span className="font-medium text-gray-800">{item.title}</span>
+                    </div>
 
-                            <div className="my-6 space-y-3">
-                                {Object.entries(paymentMethods).map(([method, count]) => (
-                                    <div key={method} className="flex justify-between items-center">
-                                        <span className="text-sm text-gray-600">{method}</span>
-                                        <span className="text-sm font-medium text-gray-900">{count}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    );
-                }
+                    <div className="my-6">
+                        <h3 className="text-3xl font-bold text-gray-900">
+                            {item.isMoney ? `$${item.total}` : item.total}
+                        </h3>
+                        <p className="text-sm mt-1 text-gray-500">
+                            <span>{item.subtitle}</span>
+                        </p>
+                    </div>
 
-                return (
-                    <div
-                        key={item.id}
-                        className="bg-white rounded-lg p-5 shadow-sm border border-gray-200 hover:shadow-md transition duration-300 ease-in-out"
-                    >
-                        <div>
-                            <span className="font-medium text-gray-800">{item.title}</span>
-                        </div>
-
-                        <div className="my-6">
-                            <h3 className="text-3xl font-bold text-gray-900">
-                                {item.isMoney ? `$${item.total}` : item.total}
-                            </h3>
-                            <p className="text-sm mt-1 text-gray-500">
-                                <span>{item.subtitle}</span>
-                            </p>
-                        </div>
-
-                        <div className="mt-2">
-                            <div className="w-full bg-gray-200 rounded-full h-1.5">
-                                <div
-                                    className={`${item.progressColor} h-1.5 rounded-full`}
-                                    style={{ width: item.progressWidth }}
-                                ></div>
-                            </div>
+                    <div className="mt-2">
+                        <div className="w-full bg-gray-200 rounded-full h-1.5">
+                            <div
+                                className={`${item.progressColor} h-1.5 rounded-full`}
+                                style={{ width: item.progressWidth }}
+                            ></div>
                         </div>
                     </div>
-                );
-            })}
+                </div>
+            ))}
         </div>
     );
 };

@@ -2,7 +2,6 @@ import React from 'react'
 import BackButton from '@/Components/UI/Button/BackButton'
 import InsuranceClaimsMng from './InsuranceClaimsMng'
 import Card from './Card'
-import ClaimDetails from './ClaimDetails'
 
 const insuranceClaims = () => {
     return (
@@ -16,7 +15,6 @@ const insuranceClaims = () => {
             </div>
             <InsuranceClaimsMng />
             <Card />
-            <ClaimDetails />
         </div>
     )
 }
