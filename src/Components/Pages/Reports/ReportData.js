@@ -78,7 +78,7 @@ export const ReportData = {
       btn: (
         <Button
           variant="primary"
-          text="View Report"
+          text="Coming Soon"
           className="w-full border border-gray-300"
         />
       ),
