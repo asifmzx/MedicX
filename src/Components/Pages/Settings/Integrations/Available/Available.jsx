@@ -5,7 +5,7 @@ import Button from "@/Components/UI/Button/Button";
 
 const Available = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:p-4   ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4   ">
       {IntegrationData.available.map((item, index) => (
         <div
           key={index}

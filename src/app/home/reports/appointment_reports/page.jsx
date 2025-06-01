@@ -1,12 +1,10 @@
+import AppointmentReports from "@/Components/Pages/Reports/AppointmentReports/AppointmentReports";
 import React from "react";
 
 const Page = () => {
   return (
     <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Appointment_Reports</span>
-      </p>
+      <AppointmentReports />
     </div>
   );
 };
