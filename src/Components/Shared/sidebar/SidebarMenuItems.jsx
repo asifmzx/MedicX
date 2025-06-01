@@ -120,7 +120,7 @@ export const menuItems = [
     label: "Billing",
     icon: FaClipboardList,
     items: [
-      { label: "Invoices List", href: "/home/billing/blood_stock" },
+      { label: "Invoices List", href: "/home/billing/invoices_list" },
       { label: "Create Invoice", href: "/home/billing/create_invoice" },
       { label: "Payment History", href: "/home/billing/payment_history" },
       { label: "Insurance Claims", href: "/home/billing/insurance_claims" },
