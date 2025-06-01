@@ -94,6 +94,10 @@ const Status = ({
   const settingsVariants = {
     Active: "bg-black text-white text-xs w-[70px]",
     InActive: "bg-gray-300 text-black text-xs w-[70px]",
+    Connected:
+      "bg-[#F0FDF4] text-green-700 border border border-green-200 text-sm w-[90px]",
+    Available:
+      "bg-[#FFFBEB] text-orange-700 border border-orange-100 text-sm w-[90px]",
   };
 
   const variantType = {
