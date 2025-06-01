@@ -99,6 +99,14 @@ const Status = ({
     Available:
       "bg-[#FFFBEB] text-orange-700 border border-orange-100 text-sm w-[90px]",
   };
+  const reportVariants = {
+    Completed:
+      "bg-[#F0FDF4] text-green-700 border border border-green-300 text-sm w-[90px]",
+    Canceled: "bg-red-100 text-red-500 w-[90px] border border-red-300",
+    "Not Show": "bg-[#FEF3C7] text-[#72400E] border border-orange-300 w-[90px]",
+    Scheduled:
+      "bg-[#DBEAFE] text-[#1E5DCB] border border-blue-300 text-xs w-[90px]",
+  };
 
   const variantType = {
     appointment: appointmentVariants,
@@ -112,6 +120,7 @@ const Status = ({
     contact: contactVariants,
     support: supportVariants,
     settings: settingsVariants,
+    report: reportVariants,
   };
 
   const variants = variantType[type] || {};
