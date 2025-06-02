@@ -1,6 +1,36 @@
 export const reviewData = [
   {
     id: 1,
+    status: "verified",
+    date: "4/15/2023",
+    doctorName: "Dr. Sarah Johnson",
+    specialty: "Cardiologist",
+    reviewerName: "Michael Thompson",
+    title: "Excellent care and attention",
+    reviewText:
+      "Dr. Johnson was extremely thorough and took the time to explain everything in detail. She answered all my questions and made me feel at ease during my appointment.",
+    response:
+      "Thank you for your kind words, Michael. It was a pleasure to help you with your health concerns. Looking forward to your follow-up visit.",
+    helpfulCount: 24,
+    department: "Cardiology",
+    rating: 5,
+  },
+  {
+    id: 2,
+    status: "verified",
+    date: "4/10/2023",
+    doctorName: "Dr. Robert Chen",
+    specialty: "Neurologist",
+    reviewerName: "Emily Wilson",
+    title: "Very knowledgeable doctor",
+    reviewText:
+      "Dr. Chen was very knowledgeable and professional. The only reason I'm not giving 5 stars is because I had to wait a bit longer than expected for my appointment.",
+    helpfulCount: 12,
+    department: "Neurology",
+    rating: 4,
+  },
+  {
+    id: 3,
     status: "flagged",
     date: "4/7/2023",
     doctorName: "Dr. James Wilson",
@@ -12,7 +42,7 @@ export const reviewData = [
     department: "Orthopedics",
   },
   {
-    id: 2,
+    id: 4,
     status: "flagged",
     date: "4/6/2023",
     doctorName: "Dr. Sarah Johnson",
@@ -24,7 +54,7 @@ export const reviewData = [
     department: "Cardiology",
   },
   {
-    id: 3,
+    id: 5,
     status: "pending",
     date: "4/10/2023",
     doctorName: "Dr. Michael Chen",
@@ -36,7 +66,7 @@ export const reviewData = [
     department: "Neurology",
   },
   {
-    id: 4,
+    id: 6,
     status: "pending",
     date: "4/9/2023",
     doctorName: "Dr. Emily Garcia",

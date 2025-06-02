@@ -8,7 +8,7 @@ const Buttonv2 = ({
 }) => {
 
   const baseStyles =
-    "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0";
+    "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0 cursor-pointer"; // Added cursor-pointer here
   const variants = {
     primary: "bg-black/10 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
     secondary:
