@@ -8,9 +8,9 @@ const Buttonv2 = ({
 }) => {
 
   const baseStyles =
-    "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0";
+    "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0 cursor-pointer";
   const variants = {
-    primary: "bg-black/10 hover:bg-[#F5F5F5] text-black text-xs font-semibold",
+    primary: "bg-white hover:bg-[#F5F5F5] text-black text-xs font-semibold",
     secondary:
       "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA] text-xs font-semibold",
     primary_main: "bg-[#FFFFFF] hover:bg-[#F5F5F5] text-black",
@@ -24,7 +24,7 @@ const Buttonv2 = ({
         ${baseStyles}
         ${variants[variant]}
         ${className}
-        ${isActive ? "!bg-white shadow-sm" : ""}
+        ${isActive ? "!bg-gray-200 shadow-md" : ""}
         transition-colors duration-200
       `}
     >

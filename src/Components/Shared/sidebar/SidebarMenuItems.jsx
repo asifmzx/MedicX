@@ -187,7 +187,7 @@ export const menuItems = [
     icon: MdOutlineReviews,
     items: [
       { label: "Doctor Reviews", href: "/home/reviews/doctor_reviews" },
-      { label: "Patient ReViews", href: "/home/reviews/patient_reviews" },
+      { label: "Patient Reviews", href: "/home/reviews/patient_reviews" },
     ],
   },
   { type: "link", label: "Feedback", icon: MdOutlineFeedback, href: "/home/feedback" },

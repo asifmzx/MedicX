@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { doctorReviews, doctorReviewStats, } from '../data/reviewData';
+import { patientReviews, patientReviewStats } from '../data/reviewData';
 import Buttonv2 from '@/Components/UI/Button/Buttonv2';
 import SearchInput from "@/Components/UI/Inputs/SearchInput";
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -11,24 +11,24 @@ const Card = () => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const stats = (() => {
-        const verifiedReviews = doctorReviews.filter(r => r.status === 'Verified' && r.rating);
-        const totalVerifiedReviews = verifiedReviews.length;
-        const averageRating = totalVerifiedReviews > 0
-            ? (verifiedReviews.reduce((sum, r) => sum + r.rating, 0) / totalVerifiedReviews).toFixed(1)
-            : doctorReviewStats.averageRating;
+        const approvedReviews = patientReviews.filter(r => r.status === 'Approved' && r.rating);
+        const totalApprovedReviews = approvedReviews.length;
+        const averageRating = totalApprovedReviews > 0
+            ? (approvedReviews.reduce((sum, r) => sum + r.rating, 0) / totalApprovedReviews).toFixed(1)
+            : patientReviewStats.averageRating;
 
-        const breakdown = {};
-        [5, 4, 3, 2, 1].forEach(star => {
-            const count = verifiedReviews.filter(r => r.rating === star).length;
-            breakdown[star] = {
+        const breakdown = [5, 4, 3, 2, 1].reduce((acc, star) => {
+            const count = approvedReviews.filter(r => r.rating === star).length;
+            acc[star] = {
                 count,
-                percentage: totalVerifiedReviews > 0 ? Math.round((count / totalVerifiedReviews) * 100) : 0,
+                percentage: totalApprovedReviews > 0 ? Math.round((count / totalApprovedReviews) * 100) : 0,
             };
-        });
+            return acc;
+        }, {});
 
         return {
             averageRating: parseFloat(averageRating),
-            totalReviews: totalVerifiedReviews,
+            totalReviews: totalApprovedReviews,
             ratingBreakdown: breakdown,
         };
     })();
@@ -47,7 +47,7 @@ const Card = () => {
                         />
                         <Buttonv2
                             variant="primary"
-                            text="Pending Response"
+                            text="Pending Mederation"
                             onClick={() => setActiveTab("pending")}
                             className="col-span-2 flex items-center justify-center h-10 text-xs sm:text-sm whitespace-nowrap border border-gray-200"
                             isActive={activeTab === "pending"}
@@ -78,7 +78,7 @@ const Card = () => {
                     <div className="p-6">
                         <div className="mb-4">
                             <h2 className="text-lg font-semibold text-gray-800">Review Statistics</h2>
-                            <p className="text-gray-500 text-sm">Overview of doctor reviews and ratings</p>
+                            <p className="text-gray-500 text-sm">Overview of patient reviews and ratings</p>
                         </div>
 
                         <div className="flex flex-col md:flex-row items-stretch gap-6 w-full">
@@ -121,7 +121,7 @@ const Card = () => {
                     </div>
                 )}
             </div>
-            <div className="mx-auto mt-6 mb-4 md:p-6 md:w-[90%] rounded-xl md:shadow-md md:border md:border-gray-300 overflow-hidden">
+            <div className="mx-auto mt-6 mb-4 md:p-6 md:w-[90%] rounded-xl md:shadow-md md:border md:border-gray-300">
                 <ReviewDashboard filter={activeTab} searchQuery={searchQuery} />
             </div>
         </div>
