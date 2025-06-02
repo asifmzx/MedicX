@@ -1,22 +1,23 @@
 "use client";
 import React, { useState } from "react";
-import { doctorReviews } from "../data/reviewData";
+import { patientReviews } from "../data/reviewData";
 import Image from 'next/image'
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import { assets } from "@/assets";
 import { FiMessageSquare } from "react-icons/fi";
 
-const getDepartments = (data) => {
-    const depts = Array.from(new Set(data.map(r => r.department).filter(Boolean)));
-    return depts.sort();
+const getcategories = (data) => {
+    const cate = Array.from(new Set(data.map(r => r.category).filter(Boolean)));
+    return cate.sort();
 };
 
 const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
     const [ratingFilter, setRatingFilter] = useState("all");
-    const [departmentFilter, setDepartmentFilter] = useState("all");
+    const [categoryFilter, setCategoryFilter] = useState("all");
+    const [serviceFilter, setServiceFilter] = useState("all");
 
-    let filteredReviews = doctorReviews.filter((review) => {
-        if (filter === "all" && review.status !== "Verified") return false;
+    let filteredReviews = patientReviews.filter((review) => {
+        if (filter === "all" && review.status !== "Approved") return false;
         if (filter === "flagged" && review.status !== "Flagged") return false;
         if (filter === "pending" && review.status !== "Pending") return false;
         return true;
@@ -26,59 +27,71 @@ const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
         filteredReviews = filteredReviews.filter(r => r.rating === Number(ratingFilter));
     }
 
-    if (departmentFilter !== "all") {
-        filteredReviews = filteredReviews.filter(r => r.department === departmentFilter);
+    if (categoryFilter !== "all") {
+        filteredReviews = filteredReviews.filter(r => r.category === categoryFilter);
+    }
+
+    if (serviceFilter !== "all") {
+        filteredReviews = filteredReviews.filter(r => r.service === serviceFilter);
     }
 
     if (searchQuery) {
         const query = searchQuery.toLowerCase();
         filteredReviews = filteredReviews.filter(review =>
-            review.doctorName.toLowerCase().includes(query) ||
-            review.specialty.toLowerCase().includes(query) ||
-            review.reviewerName.toLowerCase().includes(query) ||
-            review.reviewText.toLowerCase().includes(query) ||
-            review.department.toLowerCase().includes(query)
+            (review.doctorName?.toLowerCase().includes(query) || false) ||
+            (review.specialty?.toLowerCase().includes(query) || false) ||
+            (review.reviewerName?.toLowerCase().includes(query) || false) ||
+            (review.reviewText?.toLowerCase().includes(query) || false) ||
+            (review.category?.toLowerCase().includes(query) || false) ||
+            (review.service?.toLowerCase().includes(query) || false)
         );
     }
 
-    const departments = getDepartments(doctorReviews);
+    const categories = getcategories(patientReviews);
+    const services = Array.from(new Set(patientReviews.map(r => r.service).filter(Boolean))).sort();
 
     return (
         <div>
             {filter === "all" && (
-                <div className="flex flex-wrap items-center gap-4 md:mb-4">
-                    <div className="mx-auto md:mx-0 flex items-center gap-2">
-                        <div>
-                            <label className="mr-2 text-sm text-gray-700 font-medium">Filter by:</label>
-                            <select
-                                className="border border-gray-300 bg-white rounded md:px-2 py-1 text-sm"
-                                value={ratingFilter}
-                                onChange={e => setRatingFilter(e.target.value)}
-                            >
-                                <option value="all">All Ratings</option>
-                                <option value="5">5 stars</option>
-                                <option value="4">4 stars</option>
-                                <option value="3">3 stars</option>
-                                <option value="2">2 stars</option>
-                                <option value="1">1 star</option>
-                            </select>
-                        </div>
-                        <div>
-                            <select
-                                className="border border-gray-300 bg-white rounded md:px-2 py-1 text-sm"
-                                value={departmentFilter}
-                                onChange={e => setDepartmentFilter(e.target.value)}
-                            >
-                                <option value="all">All Departments</option>
-                                {departments.map(dep => (
-                                    <option key={dep} value={dep}>{dep}</option>
-                                ))}
-                            </select>
-                        </div>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                    <div className="flex flex-row items-center justify-center -mx-2 md:mx-0 gap-1 md:gap-2">
+                        <label className="text-sm text-gray-700 font-medium hidden md:block">Filter by:</label>
+                        <select
+                            className="border border-gray-300 bg-white rounded px-0 md:px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-transparent"
+                            value={ratingFilter}
+                            onChange={e => setRatingFilter(e.target.value)}
+                        >
+                            <option value="all">All Ratings</option>
+                            <option value="5">5 stars</option>
+                            <option value="4">4 stars</option>
+                            <option value="3">3 stars</option>
+                            <option value="2">2 stars</option>
+                            <option value="1">1 star</option>
+                        </select>
+                        <select
+                            className="border border-gray-300 bg-white rounded px-1 md:px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-transparent"
+                            value={categoryFilter}
+                            onChange={e => setCategoryFilter(e.target.value)}
+                        >
+                            <option value="all">All Categories</option>
+                            {categories.map(cat => (
+                                <option key={cat} value={cat}>{cat}</option>
+                            ))}
+                        </select>
+                        <select
+                            className="border border-gray-300 bg-white rounded px-0 md:px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-transparent"
+                            value={serviceFilter}
+                            onChange={e => setServiceFilter(e.target.value)}
+                        >
+                            <option value="all">All Services</option>
+                            {services.map(ser => (
+                                <option key={ser} value={ser}>{ser}</option>
+                            ))}
+                        </select>
                     </div>
 
-                    <div className="mx-auto md:mx-0 md:ml-auto text-gray-500 text-sm mb-4 md:mb-0">
-                        Showing {filteredReviews.length} of {doctorReviews.filter(r => r.status === "Verified").length} reviews
+                    <div className="text-gray-500 mx-auto md:mx-0 md:ml-auto text-sm">
+                        Showing {filteredReviews.length} of {patientReviews.filter(r => r.status === "Approved").length} reviews
                     </div>
                 </div>
             )}
@@ -89,7 +102,7 @@ const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
                     </div>
                 ) : (
                     filteredReviews.map((review) => (
-                        <div key={review.id} className="p-4 md:p-6 bg-white rounded-xl shadow border border-gray-200 mb-4 relative">
+                        <div key={review.id} className="p-4 md:p-6 bg-white rounded-xl shadow mb-4 relative">
                             <button
                                 className="absolute top-3 right-3 md:top-4 md:right-4 flex items-center justify-center size-8 md:size-10 text-gray-400 hover:bg-gray-100 rounded-md transition-colors duration-200 cursor-pointer"
                             >
@@ -103,7 +116,7 @@ const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
                             </button>
 
                             <div className="flex items-start md:items-center mb-2 pr-8 md:pr-12">
-                                {review.status === "Verified" && (
+                                {review.status === "Approved" && (
                                     <Image
                                         src={assets.prof}
                                         width={40}
@@ -118,7 +131,7 @@ const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
                                         <span className="text-base md:text-lg font-semibold text-gray-900 break-words">{review.title}</span>
                                     </div>
                                     <div className="flex flex-wrap items-center mt-1 gap-2">
-                                        {review.status === "Verified" && (
+                                        {review.status === "Approved" && (
                                             <div className="flex items-center">
                                                 {[1, 2, 3, 4, 5].map((i) => (
                                                     <svg
@@ -133,9 +146,9 @@ const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
                                             </div>
                                         )}
                                         <span className="text-gray-500 text-xs md:text-sm">{review.date}</span>
-                                        {review.status === "Verified" && (
+                                        {review.status === "Approved" && (
                                             <span className="px-2 md:px-3 py-1 text-xs border border-gray-200 rounded-2xl font-semibold whitespace-nowrap">
-                                                Verified Patient
+                                                Approved
                                             </span>
                                         )}
                                         {review.status === "Pending" && (
@@ -186,7 +199,7 @@ const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
                                     )}
                                 </div>
                                 <div className="text-xs md:text-sm text-gray-400 px-2 md:px-3 whitespace-nowrap ">
-                                    Department: {review.department}
+                                    Categoy: {review.category} | Service: {review.service}
                                 </div>
                             </div>
                         </div>
