@@ -2,10 +2,11 @@ import Button from "@/Components/UI/Button/Button";
 import { BiLineChart } from "react-icons/bi";
 import { BsBoxSeam } from "react-icons/bs";
 import { FaArrowTrendUp } from "react-icons/fa6";
-import { FiCheckCircle } from "react-icons/fi";
+import { FiCheckCircle, FiCreditCard } from "react-icons/fi";
 import { GiNetworkBars } from "react-icons/gi";
 import { GoCalendar } from "react-icons/go";
-import { LuUsers } from "react-icons/lu";
+import { LuUsers, LuWallet } from "react-icons/lu";
+import { MdOutlineAttachMoney, MdOutlineTrendingUp } from "react-icons/md";
 import { RxCrossCircled } from "react-icons/rx";
 import { TbClock } from "react-icons/tb";
 
@@ -417,6 +418,142 @@ export const ReportData = {
             department: "Pediatrics",
             appointments: 201,
             avgDuration: 35,
+          },
+        ],
+      },
+    ],
+  },
+  financialReport: {
+    card: [
+      {
+        id: 1,
+        title: "Total Revenue",
+        value: "128,450",
+        text: "+18.2% from last month",
+        icon: <MdOutlineAttachMoney size={24} />,
+        progressValue: 70,
+        progressColor: "#171717",
+      },
+      {
+        id: 2,
+        title: "Total Expenses",
+        value: "87,325",
+        text: "+5.4% from last month",
+        icon: <LuWallet size={24} />,
+        progressValue: 60,
+        progressColor: "#22C55E",
+      },
+      {
+        id: 3,
+        title: "Net Profit",
+        value: "41,125",
+        text: "+12.8% from last month",
+        icon: <MdOutlineTrendingUp size={24} />,
+        progressValue: 30,
+        progressColor: "#EF4444",
+      },
+      {
+        id: 4,
+        title: "Outstanding Payments",
+        value: "23,540",
+        text: "+3.2% from last month",
+        icon: <FiCreditCard size={24} />,
+        progressValue: 20,
+        progressColor: "#F59E0B",
+      },
+    ],
+    overview: [
+      {
+        id: 1,
+        title: "Financial Overview",
+        description:
+          "Monthly financial statistics including revenue, expenses, and profit.",
+        revenueExpenses: [
+          {
+            name: "Jan",
+            profit: 24050,
+            expenses: 78250,
+            revenue: 102300,
+          },
+          {
+            name: "Fev",
+            profit: 23800,
+            expenses: 78350,
+            revenue: 100150,
+          },
+          {
+            name: "Mar",
+            profit: 25800,
+            expenses: 82850,
+            revenue: 108650,
+          },
+          {
+            name: "Apr",
+            profit: 45125,
+            expenses: 87325,
+            revenue: 128450,
+          },
+          {
+            name: "May",
+            profit: 33125,
+            expenses: 83200,
+            revenue: 116700,
+          },
+          {
+            name: "June",
+            profit: 36400,
+            expenses: 85100,
+            revenue: 121500,
+          },
+        ],
+        revenueDepartmentPieChart: [
+          { name: "Orthopedics", value: 22, color: "#10B981" },
+          { name: "Cardiology", value: 27, color: "#2563EB" },
+          { name: "Pediatrics", value: 12, color: "#FF8042" },
+          { name: "Neurology", value: 14, color: "#FFBB28" },
+          { name: "Dermatology", value: 10, color: "#8884D8" },
+          { name: "Other", value: 14, color: "#82CA9D" },
+        ],
+        financialSummary: [
+          {
+            month: "December 2022",
+            revenue: 112300,
+            expenses: 60000,
+            profit: 60000,
+            margin: "34.1%",
+            growth: 0,
+          },
+          {
+            month: "January 2023",
+            revenue: 100150,
+            expenses: 78250,
+            profit: 45125,
+            margin: "34.1%",
+            growth: -10.85,
+          },
+          {
+            month: "February 2023",
+            revenue: 108650,
+            expenses: 76350,
+            profit: 45125,
+            margin: "34.1%",
+            growth: 8.49,
+          },
+          {
+            month: "March 2023",
+            revenue: 128450,
+            expenses: 82885,
+            profit: 45125,
+            margin: "34.1%",
+            growth: 18.22,
+          },
+          {
+            month: "April 2023",
+            revenue: 160450,
+            expenses: 45325,
+            profit: 62125,
+            margin: "34.1%",
+            growth: 24.91,
           },
         ],
       },

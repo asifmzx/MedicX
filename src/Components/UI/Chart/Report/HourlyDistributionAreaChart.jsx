@@ -9,10 +9,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-
-
 const HourlyDistributionAreaChart = () => {
-   const data = ReportData.appointmentReport.overview[0].hourlyDistribution;
+  const data = ReportData.appointmentReport.overview[0].hourlyDistribution;
   return (
     <div
       style={{

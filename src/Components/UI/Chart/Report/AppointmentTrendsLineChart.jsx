@@ -37,7 +37,7 @@ const AppointmentTrendsLineChart = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          
+
           <Line
             type="monotone"
             dataKey="totalAppointment"
@@ -58,7 +58,8 @@ const AppointmentTrendsLineChart = () => {
             stroke="#FF7300"
             strokeWidth={2}
             activeDot={{ r: 8 }}
-          /><Legend />
+          />
+          <Legend />
         </LineChart>
       </ResponsiveContainer>
     </div>
