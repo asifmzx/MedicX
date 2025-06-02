@@ -19,7 +19,7 @@ const AppointmentReports = () => {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mt-5">
         <div className="flex flex-col md:flex-row md:items-end gap-3 w-full">
           <Space>
-            <RangePicker className="h-[42px] w-full md:w-auto" />
+            <RangePicker className="h-[42px] w-full " />
           </Space>
           <select
             id="department"
