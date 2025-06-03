@@ -133,4 +133,4 @@ const DepartmentListMng = () => {
     );
 };
 
-export default DepartmentListMng
+export default DepartmentListMng;

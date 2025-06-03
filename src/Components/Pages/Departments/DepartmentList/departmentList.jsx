@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 
 import { FaPlus } from "react-icons/fa6";
 
-import DepartmentListMng from './DepartmentListMng';
+import DepartmentListMng from './departmentListMng';
 import Card from './Card'
 
 const DepartmentList = () => {
