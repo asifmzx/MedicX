@@ -1,5 +1,5 @@
 import React from "react";
-import Departments from "@/Components/Pages/Departments/DepartmentList/departments";
+import Departments from "@/Components/Pages/Departments/DepartmentList/departmentList";
 
 const Page = () => {
   return (

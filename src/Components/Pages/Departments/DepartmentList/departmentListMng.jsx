@@ -9,7 +9,7 @@ import Status from "@/Components/UI/Status/Status";
 
 import { departmentList } from '../data/departmentsData';
 
-const departmentListMng = () => {
+const DepartmentListMng = () => {
     const [activeTab, setActiveTab] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -133,4 +133,4 @@ const departmentListMng = () => {
     );
 };
 
-export default departmentListMng
+export default DepartmentListMng

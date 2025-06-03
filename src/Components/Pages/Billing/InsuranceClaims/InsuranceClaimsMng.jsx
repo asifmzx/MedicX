@@ -5,14 +5,13 @@ import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import SearchInput from "@/Components/UI/Inputs/SearchInput";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineFileDownload, MdFilterList } from "react-icons/md";
-import { insuranceClaimsData } from '../data/billingData'; // Changed from getInsuranceClaimsData
+import { insuranceClaimsData } from '../data/billingData';
 import { DatePicker } from 'antd';
 import dayjs from 'dayjs';
 import ClaimDetails from './ClaimDetails';
 
 const { RangePicker } = DatePicker;
 const dateFormat = 'MMM DD, YYYY';
-
 const StatusBadge = ({ status }) => {
     let style = "";
     let text = status;
@@ -92,7 +91,6 @@ const InsuranceClaimsMng = () => {
 
     return (
         <div className="max-w-full mt-6">
-            {/* Header Section */}
             <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
                 <div className="flex items-center gap-4">
                     <SearchInput
@@ -129,7 +127,6 @@ const InsuranceClaimsMng = () => {
                 </div>
             </div>
 
-            {/* Tabs Section */}
             <div className="w-full md:w-fit mb-6">
                 <div className="grid grid-cols-3 gap-2 md:grid-cols-5 md:gap-2">
                     <Buttonv2
@@ -169,8 +166,6 @@ const InsuranceClaimsMng = () => {
                     />
                 </div>
             </div>
-
-            {/* Claims Management Header */}
             <div className="flex justify-between items-center mb-4">
                 <div>
                     <h2 className="text-xl font-semibold text-gray-900">All Insurance Claims</h2>
@@ -183,7 +178,6 @@ const InsuranceClaimsMng = () => {
                 />
             </div>
 
-            {/* Claims Table */}
             <div className="overflow-x-auto bg-white shadow-sm border border-gray-200 rounded-lg">
                 <table className="w-full">
                     <thead className="bg-gray-50 border-b border-gray-200">
