@@ -101,11 +101,24 @@ const Status = ({
   };
   const reportVariants = {
     Completed:
-      "bg-[#F0FDF4] text-green-700 border border border-green-300 text-sm w-[90px]",
-    Canceled: "bg-red-100 text-red-500 w-[90px] border border-red-300",
-    "Not Show": "bg-[#FEF3C7] text-[#72400E] border border-orange-300 w-[90px]",
+      "bg-green-50 text-green-500 border border border-green-300 text-sm w-[90px]",
+    Canceled: "bg-red-50 text-red-400 border border-red-300 w-[90px]",
+    "Not Show":
+      "bg-orange-50 text-orange-300 border border-orange-300 w-[90px]",
     Scheduled:
-      "bg-[#DBEAFE] text-[#1E5DCB] border border-blue-300 text-xs w-[90px]",
+      "bg-blue-50 text-blue-500 border border-blue-300 text-xs w-[90px]",
+  };
+  const financialReportVariants = {
+    Income:
+      "bg-green-50 text-green-500 border border border-green-300 text-sm w-[90px]",
+    Insurance:
+      "bg-blue-50 text-blue-500 border border-blue-300 text-xs w-[90px]",
+    Expense: "bg-red-50 text-red-400 border border-red-300 w-[90px]",
+    Refund: "bg-orange-50 text-orange-300 border border-orange-300 w-[90px]",
+  };
+  const lowStockItemVariants = {
+    Critical: "bg-red-50 text-red-400 border border-red-300 w-[90px]",
+    Low: "bg-yellow-50 text-yellow-500 border border-yellow-300 w-[90px]",
   };
 
   const variantType = {
@@ -121,6 +134,8 @@ const Status = ({
     support: supportVariants,
     settings: settingsVariants,
     report: reportVariants,
+    financialReport: financialReportVariants,
+    lowStockItem: lowStockItemVariants,
   };
 
   const variants = variantType[type] || {};
