@@ -1,10 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import { patientReviews } from "../data/reviewData";
 import Image from 'next/image'
+
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
+import Status from "@/Components/UI/Status/Status";
 import { assets } from "@/assets";
+
 import { FiMessageSquare } from "react-icons/fi";
+
+import { patientReviews } from "../data/reviewData";
 
 const getcategories = (data) => {
     const cate = Array.from(new Set(data.map(r => r.category).filter(Boolean)));
@@ -147,19 +151,13 @@ const ReviewDashboard = ({ filter = "", searchQuery = "" }) => {
                                         )}
                                         <span className="text-gray-500 text-xs md:text-sm">{review.date}</span>
                                         {review.status === "Approved" && (
-                                            <span className="px-2 md:px-3 py-1 text-xs border border-gray-200 rounded-2xl font-semibold whitespace-nowrap">
-                                                Approved
-                                            </span>
+                                            <Status type="review" variant={review.status} text={review.status} />
                                         )}
                                         {review.status === "Pending" && (
-                                            <span className="px-2 md:px-3 py-1 bg-[#fffac4] text-xs text-[#854e0f] border border-gray-200 rounded-2xl font-semibold whitespace-nowrap">
-                                                Pending
-                                            </span>
+                                            <Status type="review" variant={review.status} text={review.status} />
                                         )}
                                         {review.status === "Flagged" && (
-                                            <span className="px-2 md:px-3 py-1 bg-[#ffe3e3] text-xs text-[#991c3b] border border-gray-200 rounded-2xl font-semibold whitespace-nowrap">
-                                                Flagged
-                                            </span>
+                                            <Status type="review" variant={review.status} text={review.status} />
                                         )}
                                     </div>
                                 </div>

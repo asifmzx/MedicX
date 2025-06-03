@@ -72,17 +72,20 @@ const Status = ({
     "Expiring Soon": "bg-[#f59f0a] h-6 text-black w-[100px]",
     Reserved: "bg-black/3 h-6 text-gray w-[100px] border border-gray-200",
   };
+
   const taskVariants = {
     high: "bg-red-500 text-white text-xs w-[70px]",
     medium: "bg-[#f59f0a] text-white text-xs w-[70px]",
     low: "bg-white text-black text-xs w-[70px] border border-gray-300",
   };
+
   const contactVariants = {
     client: "bg-[#DBEAFE] text-[#1E5DCB] text-xs w-[70px]",
     partner: "bg-[#FEF3C7] text-[#92400E] text-xs w-[70px]",
     supplier: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]",
     lead: "bg-[#FCE7F3] text-[#9D174D] text-xs w-[70px]",
   };
+
   const supportVariants = {
     High: "bg-sky-100 text-[#1A5BCB] text-xs w-[70px]",
     Medium: "bg-orange-100 text-[#92400E] text-xs w-[70px]",
@@ -91,6 +94,7 @@ const Status = ({
     "In Progress": "bg-[#FEF3C7] text-[#72400E] text-xs w-[90px]",
     Resolved: "bg-[#DCFCE7] text-[#166534] text-xs w-[70px]",
   };
+
   const settingsVariants = {
     Active: "bg-black text-white text-xs w-[70px]",
     InActive: "bg-gray-300 text-black text-xs w-[70px]",
@@ -99,6 +103,7 @@ const Status = ({
     Available:
       "bg-[#FFFBEB] text-orange-700 border border-orange-100 text-sm w-[90px]",
   };
+
   const reportVariants = {
     Completed:
       "bg-green-50 text-green-500 border border border-green-300 text-sm w-[90px]",
@@ -121,6 +126,26 @@ const Status = ({
     Low: "bg-yellow-50 text-yellow-500 border border-yellow-300 w-[90px]",
   };
 
+  const reviewVariants = {
+    Approved:
+      "px-2 md:px-3 py-1 text-xs border border-gray-200 rounded-2xl font-semibold whitespace-nowrap w-[80px]",
+    Verified:
+      "px-2 md:px-3 py-1 text-xs border border-gray-200 rounded-2xl font-semibold whitespace-nowrap w-[110px]",
+    Pending:
+      "px-2 md:px-3 py-1 bg-[#fffac4] text-xs text-[#854e0f] border border-gray-200 rounded-2xl font-semibold whitespace-nowrap w-[70px]",
+    Flagged:
+      "px-2 md:px-3 py-1 bg-[#ffe3e3] text-xs text-[#991c3b] border border-gray-200 rounded-2xl font-semibold whitespace-nowrap w-[70px]",
+  };
+
+  const departmentVariants = {
+    Active:
+      "text-xs font-medium rounded-full border bg-green-100 text-green-700 border-green-200 w-[70px]",
+    Inactive:
+      "text-xs font-medium rounded-full border bg-red-100 text-red-700 border-red-200 w-[70px]",
+    default:
+      "text-xs font-medium rounded-full border bg-gray-100 text-gray-700 border-gray-200 w-[70px]",
+  };
+
   const variantType = {
     appointment: appointmentVariants,
     ambulance: ambulanceVariants,
@@ -134,6 +159,8 @@ const Status = ({
     support: supportVariants,
     settings: settingsVariants,
     report: reportVariants,
+    department: departmentVariants,
+    review: reviewVariants,
     financialReport: financialReportVariants,
     lowStockItem: lowStockItemVariants,
   };

@@ -46,7 +46,7 @@ export default function Sidebar({ onMenuItemClick }) {
         <div className="sticky top-0 z-1 flex justify-end bg-[#193869]">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-white rounded hover:bg-white/20 transition-colors w-full text-right px-2 h-10"
+            className="text-white transition-colors w-full text-right px-2 h-10 cursor-pointer"
           >
             <span
               className={`inline-block transition-transform duration-300 ease-in-out ${isExpanded ? "rotate-180" : "rotate-0"
@@ -66,7 +66,7 @@ export default function Sidebar({ onMenuItemClick }) {
               <div key={index} className="mb-2">
                 <button
                   onClick={() => toggleGroup(item.label)}
-                  className="flex items-center justify-between w-full px-2 py-2 text-left text-md hover:bg-white/20 rounded"
+                  className="flex items-center justify-between w-full px-2 py-2 text-left text-md hover:bg-white/20 rounded cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
                     {item.icon && <div className="text-xl"><item.icon /></div>}
@@ -90,7 +90,7 @@ export default function Sidebar({ onMenuItemClick }) {
                 {/* Sub-menu: show when expanded or always on mobile */}
                 {((isMdUp && isExpanded) || !isMdUp) &&
                   openGroups[item.label] && (
-                    <ul className="mt-2 ml-6 space-y-1 text-sm transition-transform duration-300 ease-in-out">
+                    <ul className="mt-2 ml-6 space-y-1 text-md transition-transform duration-300 ease-in-out cursor-pointer">
                       {item.items.map((subItem, subIndex) => (
                         <li key={subIndex}>
                           <Link
@@ -112,7 +112,7 @@ export default function Sidebar({ onMenuItemClick }) {
                 <Link
                   href={item.href}
                   onClick={handleLinkClick}
-                  className="flex items-center gap-2 px-2 py-2 rounded hover:bg-white/20 mb-2 w-full text-md"
+                  className="flex items-center gap-2 px-2 py-2 rounded hover:bg-white/20 mb-2 w-full text-md cursor-pointer"
                 >
                   {item.icon && <div className="text-xl"><item.icon /></div>}
                   <span

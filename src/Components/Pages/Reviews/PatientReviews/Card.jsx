@@ -35,7 +35,7 @@ const Card = () => {
 
     return (
         <div className="min-h-screen md:py-4 mt-4">
-            <div className="flex flex-col md:flex-row justify-between items-start lg:items-center mb-4 gap-4 md:w-[90%] mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-start lg:items-center mb-4 gap-4 mx-auto"> {/*md:w-[90%] removed */}
                 <div className="w-full lg:w-fit">
                     <div className="grid auto-cols-max grid-cols-4 gap-2">
                         <Buttonv2
@@ -73,7 +73,7 @@ const Card = () => {
                 />
             </div>
 
-            <div className="bg-white rounded-xl shadow-md overflow-hidden md:w-[90%] mx-auto">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden mx-auto"> {/*md:w-[90%] removed */}
                 {activeTab === 'all' && (
                     <div className="p-6">
                         <div className="mb-4">
@@ -121,7 +121,7 @@ const Card = () => {
                     </div>
                 )}
             </div>
-            <div className="mx-auto mt-6 mb-4 md:p-6 md:w-[90%] rounded-xl md:shadow-md md:border md:border-gray-300">
+            <div className="mx-auto mt-6 mb-4 md:p-6 rounded-xl md:shadow-md md:border md:border-gray-300"> {/*md:w-[90%] removed */}
                 <ReviewDashboard filter={activeTab} searchQuery={searchQuery} />
             </div>
         </div>
