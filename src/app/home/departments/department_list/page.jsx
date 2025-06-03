@@ -1,12 +1,10 @@
 import React from "react";
+import Departments from "@/Components/Pages/Departments/DepartmentList/departments";
 
 const Page = () => {
   return (
     <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Department_List</span>
-      </p>
+      <Departments />
     </div>
   );
 };

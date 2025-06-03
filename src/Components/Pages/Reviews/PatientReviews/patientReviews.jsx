@@ -9,7 +9,7 @@ const patientReviews = () => {
     return (
         <>
             <div className="p-4 md:p-6">
-                <div className='flex flex-col md:flex-row md:justify-between md:items-center gap-4 w-full'>
+                <div className='flex flex-col md:flex-row md:justify-between md:items-center gap-4'>
                     <div className='flex items-center gap-4 w-full'>
                         <BackButton className="bg-white border border-gray-300 h-10 w-10 flex items-center justify-center rounded-md flex-shrink-0" />
                         <div className='flex flex-col'>
@@ -23,6 +23,7 @@ const patientReviews = () => {
                             text="Export"
                             Icon={CiFilter}
                             className='h-10 w-[40%] sm:w-auto text-sm font-semibold border border-gray-300'
+                            title="This button saves your current progress"
                         />
                         <Buttonv2
                             variant="secondary_main"
