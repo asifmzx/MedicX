@@ -2,7 +2,7 @@ import Button from "@/Components/UI/Button/Button";
 import { BiLineChart } from "react-icons/bi";
 import { BsBoxSeam } from "react-icons/bs";
 import { FaArrowTrendUp } from "react-icons/fa6";
-import { FiCheckCircle, FiCreditCard } from "react-icons/fi";
+import { FiCheckCircle, FiCreditCard, FiTruck } from "react-icons/fi";
 import { GiNetworkBars } from "react-icons/gi";
 import { GoCalendar } from "react-icons/go";
 import { LuUsers, LuWallet } from "react-icons/lu";
@@ -819,6 +819,146 @@ export const ReportData = {
           { name: "Pending", value: 15750, color: "#FFC107" },
           { name: "Overdue", value: 7850, color: "#F44336" },
           { name: "Refunded", value: 2350, color: "#9C27B0" },
+        ],
+      },
+    ],
+  },
+  inventoryReport: {
+    card: [
+      {
+        id: 1,
+        title: "Total Items",
+        value: "1,245",
+        text: "+28 items since last month",
+        icon: <BsBoxSeam size={24} />,
+      },
+      {
+        id: 2,
+        title: "Low Stock Items",
+        value: "2.6%",
+        text: "+0.8% from previous period",
+
+        SCount: 60,
+
+        progressColor: "#22C55E",
+      },
+      {
+        id: 3,
+        title: "Expiring Soon",
+        value: "1.4%",
+        text: "-0.5% from previous period",
+
+        progressValue: 30,
+        ECount: 60,
+        progressColor: "#EF4444",
+      },
+      {
+        id: 4,
+        title: "Inventory Value",
+        value: "248,320",
+        text: "+4.3% from previous period",
+        icon: <FiTruck size={24} />,
+        progressValue: 20,
+        progressColor: "#F59E0B",
+      },
+    ],
+    overview: [
+      {
+        id: 1,
+        title: "Financial Overview",
+        description:
+          "Monthly financial statistics including revenue, expenses, and profit.",
+        revenueExpenses: [
+          {
+            name: "Jan",
+            profit: 24050,
+            expenses: 78250,
+            revenue: 102300,
+          },
+          {
+            name: "Fev",
+            profit: 23800,
+            expenses: 78350,
+            revenue: 100150,
+          },
+          {
+            name: "Mar",
+            profit: 25800,
+            expenses: 82850,
+            revenue: 108650,
+          },
+          {
+            name: "Apr",
+            profit: 45125,
+            expenses: 87325,
+            revenue: 128450,
+          },
+          {
+            name: "May",
+            profit: 33125,
+            expenses: 83200,
+            revenue: 116700,
+          },
+          {
+            name: "June",
+            profit: 36400,
+            expenses: 85100,
+            revenue: 121500,
+          },
+        ],
+        inventoryCategoryPieChart: [
+          { name: "Medications", value: 876, color: "#8884D8" },
+          { name: "Medical Supplies", value: 100, color: "#82CA9D" },
+          { name: "Equipment", value: 187, color: "#FFC658" },
+          { name: "Office Supplies", value: 85, color: "#FF8042" },
+          { name: "Laboratory", value: 85, color: "#0088FE" },
+        ],
+        stockStatusPieChart: [
+          { name: "In Stock", value: 1121, fill: "#4ADE80" },
+          { name: "Low Stock", value: 86, fill: "#FACC15" },
+          { name: "Out of Stock", value: 38, fill: "#F87171" },
+        ],
+        lowStock: [
+          {
+            itemName: "Surgical Gloves (M)",
+            Category: "Medical Supplies",
+            currentStock: 24,
+            reorderLevel: 50,
+            Supplier: "Medline Industries",
+            Status: "Critical",
+          },
+          {
+            itemName: "Syringes (10ml)",
+            Category: "Medical Supplies",
+            currentStock: 30,
+            reorderLevel: 50,
+            Supplier: "McKesson Corporation",
+            Status: "Low",
+          },
+          {
+            itemName: "IV Catheters (18G)",
+            Category: "Medical Supplies",
+            currentStock: 15,
+            reorderLevel: 30,
+            Supplier: "Cardinal Health",
+            Status: "Critical",
+          },
+          {
+            itemName: "Blood Pressure Cuffs",
+            Category: "Equipment",
+            currentStock: 40,
+            reorderLevel: 60,
+            Supplier: "Omron Healthcare",
+            Status: "Low",
+          },
+          {
+            itemName: "Thermometers (Digital)",
+            Category: "Equipment",
+            currentStock: 20,
+            reorderLevel: 40,
+            Supplier: "Philips Healthcare",
+            Status: "Critical",
+          },
         ],
       },
     ],

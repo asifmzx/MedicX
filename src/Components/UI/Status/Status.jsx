@@ -109,10 +109,16 @@ const Status = ({
       "bg-blue-50 text-blue-500 border border-blue-300 text-xs w-[90px]",
   };
   const financialReportVariants = {
-    Income:"bg-green-50 text-green-500 border border border-green-300 text-sm w-[90px]",
-    Insurance:"bg-blue-50 text-blue-500 border border-blue-300 text-xs w-[90px]",
+    Income:
+      "bg-green-50 text-green-500 border border border-green-300 text-sm w-[90px]",
+    Insurance:
+      "bg-blue-50 text-blue-500 border border-blue-300 text-xs w-[90px]",
     Expense: "bg-red-50 text-red-400 border border-red-300 w-[90px]",
     Refund: "bg-orange-50 text-orange-300 border border-orange-300 w-[90px]",
+  };
+  const lowStockItemVariants = {
+    Critical: "bg-red-50 text-red-400 border border-red-300 w-[90px]",
+    Low: "bg-yellow-50 text-yellow-500 border border-yellow-300 w-[90px]",
   };
 
   const variantType = {
@@ -129,6 +135,7 @@ const Status = ({
     settings: settingsVariants,
     report: reportVariants,
     financialReport: financialReportVariants,
+    lowStockItem: lowStockItemVariants,
   };
 
   const variants = variantType[type] || {};
