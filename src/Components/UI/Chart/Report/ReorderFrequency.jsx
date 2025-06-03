@@ -1,4 +1,3 @@
-"use client";
 import { ReportData } from "@/Components/Pages/Reports/ReportData";
 import {
   ComposedChart,
@@ -11,17 +10,16 @@ import {
   Legend,
 } from "recharts";
 
-const AppointmentsByDepartment = () => {
-  const data = ReportData.appointmentReport.overview[0].overviewBarChart;
+const ReorderFrequencyBarChart = () => {
+  const data = ReportData.inventoryReport.overview[0].reorderFrequency;
 
   return (
-    <div style={{ width: "100%", height: 400 }}>
-      
+    <div style={{ width: "100%", height: 320 }}>
       <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
           layout="vertical"
           data={data}
-          margin={{ top: 40, right: 20, bottom: 10, left: 20 }}
+          margin={{ top: 30, right: 10, bottom: 0, left: 20 }}
         >
           <CartesianGrid stroke="#f5f5f5" />
           <XAxis type="number" />
@@ -29,10 +27,10 @@ const AppointmentsByDepartment = () => {
             dataKey="name"
             type="category"
             scale="band"
-            className="text-xs"
+            tick={{ fontSize: 12 }}
           />
           <Tooltip formatter={(value, name) => [`${value}`, name]} />
-          <Bar dataKey="appointment" barSize={40} fill="#8884D8" />
+          <Bar dataKey="expenses" name="Expenses" barSize={40} fill="#E76E50" />
           <Legend />
         </ComposedChart>
       </ResponsiveContainer>
@@ -40,4 +38,4 @@ const AppointmentsByDepartment = () => {
   );
 };
 
-export default AppointmentsByDepartment;
+export default ReorderFrequencyBarChart;
