@@ -1,7 +1,7 @@
 import { ReportData } from "@/Components/Pages/Reports/ReportData";
 import Status from "@/Components/UI/Status/Status";
 import PTable from "@/Components/UI/Table/PTable";
-import { FaRegFileLines } from "react-icons/fa6";
+
 
 const LowStock = () => {
   const data = ReportData.inventoryReport.overview[0].lowStock;
@@ -9,8 +9,8 @@ const LowStock = () => {
   const columns = [
     { label: "Item Name", key: "itemName" },
     { label: "Category", key: "Category" },
-    { label: "Current Stock", key: "currentStock" },
-    { label: "Reorder Level", key: "reorderLevel" },
+    { label: "Current Stock(box)", key: "currentStock" },
+    { label: "Reorder Level(box)", key: "reorderLevel" },
     { label: "Supplier", key: "Supplier" },
 
     {
