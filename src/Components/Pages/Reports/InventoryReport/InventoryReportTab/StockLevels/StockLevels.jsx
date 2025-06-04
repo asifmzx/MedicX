@@ -1,6 +1,6 @@
 import React from "react";
 
-import StockLevelbyCategory from "./StockLevelbyCategory/StockLevelbyCategory";
+import StockLevelbyCategory from "./StockLevelByCategory/StockLevelByCategory";
 import ReorderFrequency from "./ReorderFrequency/ReorderFrequency";
 import StokeLevelTrends from "./StokeLevelTrends/StokeLevelTrends";
 

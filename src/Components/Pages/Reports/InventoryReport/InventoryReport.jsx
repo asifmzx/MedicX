@@ -13,10 +13,9 @@ const InventoryReport = () => {
     <div className="p-5">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-4">
         <div>
-          <p className="text-3xl font-semibold">Appointment Reports</p>
+          <p className="text-3xl font-semibold">Inventory Report</p>
           <p className="text-gray-500 mt-3">
-            Analyze appointment data, track trends, and generate detailed
-            reports
+            Track inventory levels, usage patterns, and supply chain metrics
           </p>
         </div>
         <div className="flex gap-3 w-full md:w-auto">
