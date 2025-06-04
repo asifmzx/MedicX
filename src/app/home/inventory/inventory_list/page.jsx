@@ -1,12 +1,10 @@
 import React from "react";
+import InventoryList from "@/Components/Pages/Inventory/InventoryList/inventoryList";
 
 const Page = () => {
   return (
     <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Inventory_List</span>
-      </p>
+      <InventoryList />
     </div>
   );
 };

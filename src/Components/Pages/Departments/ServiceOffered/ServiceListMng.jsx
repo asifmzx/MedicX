@@ -85,7 +85,7 @@ const ServiceListMng = () => {
                         items: departmentItems, onClick: handleMenuClick, selectable: true,
                         defaultSelectedKeys: ['1'],
                     }} trigger={['click']}>
-                        <a onClick={e => e.preventDefault()} className='bg-white flex items-center px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors w-[150px] cursor-pointer h-10'>
+                        <a onClick={e => e.preventDefault()} className='bg-white flex items-center px-2 py-1 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors w-[150px] cursor-pointer h-10'>
                             <Space>
                                 <span className='text-[14px] font-semibold'>All Departments</span>
                                 <span className='text-[10px]'><DownOutlined /></span>
