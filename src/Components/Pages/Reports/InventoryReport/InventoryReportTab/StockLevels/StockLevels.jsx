@@ -1,8 +1,6 @@
-import React from "react";
-
-import StockLevelbyCategory from "./StockLevelbyCategory/StockLevelbyCategory";
 import ReorderFrequency from "./ReorderFrequency/ReorderFrequency";
 import StokeLevelTrends from "./StokeLevelTrends/StokeLevelTrends";
+import StockLevelbyCategory from "./StockLevelbyCategory/StockLevelbyCategory";
 
 const StockLevels = () => {
   return (

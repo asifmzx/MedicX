@@ -25,9 +25,9 @@ const LowStock = () => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <div>
-        <p className="text-3xl font-semibold">Recent Appointments</p>
+        <p className="text-3xl font-semibold">Top Low Stock Items</p>
         <p className="text-gray-500 mt-3">
-          Detailed view of the last 10 appointments
+          Items that need immediate attention
         </p>
       </div>
       <div className="overflow-x-auto mt-4">
