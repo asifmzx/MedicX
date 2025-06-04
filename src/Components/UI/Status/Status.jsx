@@ -146,6 +146,19 @@ const Status = ({
       "text-xs font-medium rounded-full border bg-gray-100 text-gray-700 border-gray-200 w-[70px]",
   };
 
+  const inventoryVariants = {
+    "In Stock":
+      "text-xs font-medium rounded-full border bg-green-100 text-green-700 border-green-200 w-[90px]",
+    "Low Stock":
+      "text-xs font-medium rounded-full border bg-orange-100 text-orange-800 border-orange-200 w-[90px]",
+    "Out of Stock":
+      "text-xs font-medium rounded-full border bg-red-100 text-red-700 border-red-200 w-[90px]",
+    "On Order":
+      "text-xs font-medium rounded-full border bg-blue-100 text-blue-700 border-blue-200 w-[90px]",
+    default:
+      "text-xs font-medium rounded-full border bg-gray-100 text-gray-700 border-gray-200 w-[90px]",
+  };
+
   const variantType = {
     appointment: appointmentVariants,
     ambulance: ambulanceVariants,
@@ -163,6 +176,7 @@ const Status = ({
     review: reviewVariants,
     financialReport: financialReportVariants,
     lowStockItem: lowStockItemVariants,
+    inventory: inventoryVariants,
   };
 
   const variants = variantType[type] || {};
