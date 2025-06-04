@@ -1,8 +1,8 @@
 import { ReportData } from "@/Components/Pages/Reports/ReportData";
 import PTable from "@/Components/UI/Table/PTable";
 
-const StockLevelByCategory = () => {
-  const data = ReportData.inventoryReport.overview[0].stockLevelByCategory;
+const StockLevelbyCategory = () => {
+  const data = ReportData.inventoryReport.overview[0].StockLevelbyCategory;
 
   const columns = [
     { label: "Category", key: "Category" },
@@ -32,4 +32,4 @@ const StockLevelByCategory = () => {
   );
 };
 
-export default StockLevelByCategory;
+export default StockLevelbyCategory;

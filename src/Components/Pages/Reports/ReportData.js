@@ -1059,7 +1059,7 @@ export const ReportData = {
             Status: "Critical",
           },
         ],
-        stockLevelByCategory: [
+        StockLevelbyCategory: [
           {
             Category: "Medications",
             totalItems: 428,
