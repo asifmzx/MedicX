@@ -1238,7 +1238,7 @@ export const ReportData = {
           {
             Supplier: "Medline Industries",
             "Items Supplied": 324,
-            " Order Value": "$68,450",
+            "Order Value": "$68,450",
             "Fulfillment Rate": "98.2%",
             "Avg. Delivery Time": "2.4 days",
             "Quality Rating": "4.8/5",
@@ -1246,7 +1246,7 @@ export const ReportData = {
           {
             Supplier: "McKesson",
             "Items Supplied": 286,
-            " Order Value": "$62,300",
+            "Order Value": "$62,300",
             "Fulfillment Rate": "97.5%",
             "Avg. Delivery Time": "3.1 days",
             "Quality Rating": "4.6/5",
@@ -1254,7 +1254,7 @@ export const ReportData = {
           {
             Supplier: "Cardinal Health",
             "Items Supplied": 245,
-            " Order Value": "$58,200",
+            "Order Value": "$58,200",
             "Fulfillment Rate": "96.8%",
             "Avg. Delivery Time": "2.8 days",
             "Quality Rating": "4.7/5",
@@ -1262,7 +1262,7 @@ export const ReportData = {
           {
             Supplier: "Henry Schein",
             "Items Supplied": 198,
-            " Order Value": "$45,750",
+            "Order Value": "$45,750",
             "Fulfillment Rate": "95.4%",
             "Avg. Delivery Time": "3.5 days",
             "Quality Rating": "4.5/5",
@@ -1270,7 +1270,7 @@ export const ReportData = {
           {
             Supplier: "Owens & Minor",
             "Items Supplied": 192,
-            " Order Value": "$44,500",
+            "Order Value": "$44,500",
             "Fulfillment Rate": "94.8%",
             "Avg. Delivery Time": "3.8 days",
             "Quality Rating": "4.4/5",

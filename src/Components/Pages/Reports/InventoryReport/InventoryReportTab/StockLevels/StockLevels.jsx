@@ -1,8 +1,7 @@
-import React from "react";
 
-import StockLevelbyCategory from "./StockLevelByCategory/StockLevelByCategory";
 import ReorderFrequency from "./ReorderFrequency/ReorderFrequency";
 import StokeLevelTrends from "./StokeLevelTrends/StokeLevelTrends";
+import StockLevelByCategory from "./StockLevelByCategory/StockLevelByCategory";
 
 const StockLevels = () => {
   return (
@@ -14,7 +13,7 @@ const StockLevels = () => {
         <ReorderFrequency />
       </div>
       <div className="col-span-1 sm:col-span-2">
-        <StockLevelbyCategory />
+        <StockLevelByCategory />
       </div>
     </div>
   );
