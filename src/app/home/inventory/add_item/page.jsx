@@ -1,12 +1,9 @@
 import React from "react";
-
+import AddItem from "@/Components/Pages/Inventory/AddItem/addItem";
 const Page = () => {
   return (
     <div>
-      <p className="flex items-center justify-center h-screen text-2xl font-bold ">
-        Welcome to
-        <span className="text-red-500 ps-2">Add_Item</span>
-      </p>
+      <AddItem />
     </div>
   );
 };
