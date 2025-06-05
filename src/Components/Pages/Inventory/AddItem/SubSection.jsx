@@ -23,7 +23,17 @@ const SubSection = () => {
         hazardousMaterial: false,
         controlledSubstance: false,
         sterile: false,
-        notes: ''
+        notes: '',
+        // Stock Management fields
+        currentStock: '',
+        minimumStockLevel: '',
+        maximumStockLevel: '',
+        reorderPoint: '',
+        reorderQuantity: '',
+        unitCost: '',
+        unitPrice: '',
+        enableLowStockAlerts: true,
+        enableExpiryAlerts: false
     });
 
     const handleInputChange = (field, value) => {
@@ -284,33 +294,168 @@ const SubSection = () => {
         </div>
     );
 
+    const renderStockManagementForm = () => (
+        <div className="mt-6">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Stock Information</h3>
+                <p className="text-sm text-gray-600 mb-6">Configure stock levels and reorder settings</p>
+
+                {/* Current Stock, Min/Max Levels */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Current Stock</label>
+                        <input
+                            type="number"
+                            placeholder="Enter current quantity"
+                            value={formData.currentStock}
+                            onChange={(e) => handleInputChange('currentStock', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Minimum Stock Level</label>
+                        <input
+                            type="number"
+                            placeholder="Enter minimum quantity"
+                            value={formData.minimumStockLevel}
+                            onChange={(e) => handleInputChange('minimumStockLevel', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Maximum Stock Level</label>
+                        <input
+                            type="number"
+                            placeholder="Enter maximum quantity"
+                            value={formData.maximumStockLevel}
+                            onChange={(e) => handleInputChange('maximumStockLevel', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                </div>
+
+                {/* Reorder Point and Quantity */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Reorder Point</label>
+                        <input
+                            type="number"
+                            placeholder="Enter reorder point"
+                            value={formData.reorderPoint}
+                            onChange={(e) => handleInputChange('reorderPoint', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Reorder Quantity</label>
+                        <input
+                            type="number"
+                            placeholder="Enter reorder quantity"
+                            value={formData.reorderQuantity}
+                            onChange={(e) => handleInputChange('reorderQuantity', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                </div>
+
+                {/* Unit Cost and Price */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Unit Cost ($)</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            placeholder="Enter unit cost"
+                            value={formData.unitCost}
+                            onChange={(e) => handleInputChange('unitCost', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Unit Price ($)</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            placeholder="Enter unit price"
+                            value={formData.unitPrice}
+                            onChange={(e) => handleInputChange('unitPrice', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                </div>
+
+                {/* Stock Alerts */}
+                <div className="mt-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-3">Stock Alerts</label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="enableLowStockAlerts"
+                                checked={formData.enableLowStockAlerts}
+                                onChange={() => handleCheckboxChange('enableLowStockAlerts')}
+                                className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                            />
+                            <label htmlFor="enableLowStockAlerts" className="ml-2 text-sm text-gray-700">
+                                Enable Low Stock Alerts
+                            </label>
+                        </div>
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="enableExpiryAlerts"
+                                checked={formData.enableExpiryAlerts}
+                                onChange={() => handleCheckboxChange('enableExpiryAlerts')}
+                                className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                            />
+                            <label htmlFor="enableExpiryAlerts" className="ml-2 text-sm text-gray-700">
+                                Enable Expiry Alerts
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex justify-end gap-3 mt-4">
+                <button className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+                    Cancel
+                </button>
+                <button className="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
+                    Save Item
+                </button>
+            </div>
+        </div>
+    );
+
     return (
         <div className="max-w-full mt-6">
-            <div className="grid grid-cols-3 gap-2 w-full md:w-fit">
+            <div className="grid grid-cols-7 gap-2 w-full md:w-fit">
                 <Buttonv2
                     variant="primary"
                     text="Item Details"
                     onClick={() => setActiveTab("itemDetails")}
-                    className="flex items-center justify-center h-10 text-sm"
+                    className="col-span-2 flex items-center justify-center h-10 text-sm"
                     isActive={activeTab === "itemDetails"}
                 />
                 <Buttonv2
                     variant="primary"
                     text="Stock Management"
                     onClick={() => setActiveTab("stockManagement")}
-                    className="flex items-center justify-center h-10 text-sm"
+                    className="col-span-3 flex items-center justify-center h-10 text-sm"
                     isActive={activeTab === "stockManagement"}
                 />
                 <Buttonv2
                     variant="primary"
                     text="Suppliers"
                     onClick={() => setActiveTab("suppliers")}
-                    className="flex items-center justify-center h-10 text-sm"
+                    className="col-span-2 flex items-center justify-center h-10 text-sm"
                     isActive={activeTab === "suppliers"}
                 />
             </div>
 
             {activeTab === "itemDetails" && renderItemDetailsForm()}
+            {activeTab === "stockManagement" && renderStockManagementForm()}
         </div>
     );
 };
