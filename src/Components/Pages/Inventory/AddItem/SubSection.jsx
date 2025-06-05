@@ -33,7 +33,18 @@ const SubSection = () => {
         unitCost: '',
         unitPrice: '',
         enableLowStockAlerts: true,
-        enableExpiryAlerts: false
+        enableExpiryAlerts: false,
+        // Supplier fields
+        primarySupplier: '',
+        supplierItemCode: '',
+        supplierPrice: '',
+        leadTime: '',
+        minimumOrderQuantity: '',
+        alternativeSuppliers: {
+            pharmaTech: false,
+            medEquip: false,
+            healthSupply: false
+        }
     });
 
     const handleInputChange = (field, value) => {
@@ -47,6 +58,16 @@ const SubSection = () => {
         setFormData(prev => ({
             ...prev,
             [field]: !prev[field]
+        }));
+    };
+
+    const handleAlternativeSupplierChange = (supplier) => {
+        setFormData(prev => ({
+            ...prev,
+            alternativeSuppliers: {
+                ...prev.alternativeSuppliers,
+                [supplier]: !prev.alternativeSuppliers[supplier]
+            }
         }));
     };
 
@@ -428,6 +449,133 @@ const SubSection = () => {
         </div>
     );
 
+    const renderSuppliersForm = () => (
+        <div className="mt-6">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Supplier Information</h3>
+                <p className="text-sm text-gray-600 mb-6">Link suppliers to this inventory item</p>
+
+                {/* Primary Supplier */}
+                <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Primary Supplier</label>
+                    <select
+                        value={formData.primarySupplier}
+                        onChange={(e) => handleInputChange('primarySupplier', e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                    >
+                        <option value="">Select primary supplier</option>
+                        <option value="PharmaTech Inc.">PharmaTech Inc.</option>
+                        <option value="MedEquip Solutions">MedEquip Solutions</option>
+                        <option value="Health Supply Co.">Health Supply Co.</option>
+                        <option value="Global Medical Supplies">Global Medical Supplies</option>
+                    </select>
+                </div>
+
+                {/* Supplier Item Code and Price */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Supplier Item Code</label>
+                        <input
+                            type="text"
+                            placeholder="Enter supplier's item code"
+                            value={formData.supplierItemCode}
+                            onChange={(e) => handleInputChange('supplierItemCode', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Supplier Price ($)</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            placeholder="Enter supplier price"
+                            value={formData.supplierPrice}
+                            onChange={(e) => handleInputChange('supplierPrice', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                </div>
+
+                {/* Lead Time and Minimum Order Quantity */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Lead Time (Days)</label>
+                        <input
+                            type="number"
+                            placeholder="Enter lead time in days"
+                            value={formData.leadTime}
+                            onChange={(e) => handleInputChange('leadTime', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Minimum Order Quantity</label>
+                        <input
+                            type="number"
+                            placeholder="Enter minimum order quantity"
+                            value={formData.minimumOrderQuantity}
+                            onChange={(e) => handleInputChange('minimumOrderQuantity', e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                        />
+                    </div>
+                </div>
+
+                {/* Alternative Suppliers */}
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-3">Alternative Suppliers</label>
+                    <div className="space-y-3">
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="pharmaTech"
+                                checked={formData.alternativeSuppliers.pharmaTech}
+                                onChange={() => handleAlternativeSupplierChange('pharmaTech')}
+                                className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                            />
+                            <label htmlFor="pharmaTech" className="ml-2 text-sm text-gray-700">
+                                PharmaTech Inc.
+                            </label>
+                        </div>
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="medEquip"
+                                checked={formData.alternativeSuppliers.medEquip}
+                                onChange={() => handleAlternativeSupplierChange('medEquip')}
+                                className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                            />
+                            <label htmlFor="medEquip" className="ml-2 text-sm text-gray-700">
+                                MedEquip Solutions
+                            </label>
+                        </div>
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="healthSupply"
+                                checked={formData.alternativeSuppliers.healthSupply}
+                                onChange={() => handleAlternativeSupplierChange('healthSupply')}
+                                className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                            />
+                            <label htmlFor="healthSupply" className="ml-2 text-sm text-gray-700">
+                                Health Supply Co.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex justify-end gap-3 mt-4">
+                <button className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+                    Cancel
+                </button>
+                <button className="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
+                    Save Item
+                </button>
+            </div>
+        </div>
+    );
+
     return (
         <div className="max-w-full mt-6">
             <div className="grid grid-cols-7 gap-2 w-full md:w-fit">
@@ -456,6 +604,7 @@ const SubSection = () => {
 
             {activeTab === "itemDetails" && renderItemDetailsForm()}
             {activeTab === "stockManagement" && renderStockManagementForm()}
+            {activeTab === "suppliers" && renderSuppliersForm()}
         </div>
     );
 };
