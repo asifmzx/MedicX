@@ -10,11 +10,11 @@ import {
   Legend,
 } from "recharts";
 
-const PatientVisitOutcomesPieChart = () => {
-  const data = ReportData.patientReport.visitOutcomesPieChart;
+const GenderDistributionPieChart = () => {
+  const data = ReportData.patientReport.GenderDistributionPieChart;
 
   return (
-    <div style={{ width: "100%", height: 400 }}>
+    <div style={{ width: "100%", height: 300 }}>
       <ResponsiveContainer>
         <PieChart>
           <Pie
@@ -22,16 +22,14 @@ const PatientVisitOutcomesPieChart = () => {
             dataKey="value"
             nameKey="name"
             outerRadius={110}
-            label={({ name, percent }) =>
-              `${name} (${(percent * 100).toFixed(1)}%)`
-            }
+           
           >
             {data.map((item, index) => (
               <Cell key={`cell-${index}`} fill={item.color} />
             ))}
           </Pie>
           <Tooltip
-            formatter={(value, name) => [`${value}`, name]}
+            formatter={(value, name) => [`${value}%`, name]}
           />
           <Legend />
         </PieChart>
@@ -40,4 +38,4 @@ const PatientVisitOutcomesPieChart = () => {
   );
 };
 
-export default PatientVisitOutcomesPieChart;
+export default GenderDistributionPieChart;
