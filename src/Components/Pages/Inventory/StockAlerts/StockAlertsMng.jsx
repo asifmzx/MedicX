@@ -113,7 +113,7 @@ const StockAlertsMng = () => {
     return (
         <div className="max-w-full mt-6">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-6">
-                <div className="flex-1 max-w-md">
+                <div className="flex-1 max-w-md w-full">
                     <SearchInput
                         type="text"
                         placeholder="Search alerts..."
@@ -125,7 +125,7 @@ const StockAlertsMng = () => {
                     />
                 </div>
 
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 w-full md:w-auto'>
                     <Dropdown
                         menu={{
                             items: alertTypeItems,
@@ -134,7 +134,7 @@ const StockAlertsMng = () => {
                         }}
                         trigger={['click']}
                     >
-                        <a onClick={e => e.preventDefault()} className='bg-white flex items-center px-4 py-1 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors min-w-[120px] cursor-pointer h-10'>
+                        <a onClick={e => e.preventDefault()} className='bg-white flex items-center px-8 md:px-4 py-1 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors min-w-[120px] w-full cursor-pointer h-10'>
                             <Space>
                                 <span className='text-[14px] font-medium'>{selectedAlertType}</span>
                                 <span className='text-[10px]'><DownOutlined /></span>
@@ -150,7 +150,7 @@ const StockAlertsMng = () => {
                         }}
                         trigger={['click']}
                     >
-                        <a onClick={e => e.preventDefault()} className='bg-white flex items-center px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors min-w-[140px] cursor-pointer h-10'>
+                        <a onClick={e => e.preventDefault()} className='bg-white flex items-center px-8 md:px-4 py-1 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors min-w-[140px] w-full cursor-pointer h-10'>
                             <Space>
                                 <span className='text-[14px] font-medium'>{selectedCategory}</span>
                                 <span className='text-[10px]'><DownOutlined /></span>
