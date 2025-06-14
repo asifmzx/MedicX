@@ -263,7 +263,65 @@ export const supplierList = [
   "MedPlus Supplies",
 ];
 
-// Helper functions for inventory calculations
+export const suppliersData = [
+  {
+    id: "SUP001",
+    name: "MedPlus Supplies",
+    category: "Medical Supplies",
+    contact: "contact@medplus.com",
+    rating: 5,
+    status: "Active",
+  },
+  {
+    id: "SUP002",
+    name: "PharmaTech Inc.",
+    category: "Medications",
+    contact: "sales@pharmatech.com",
+    rating: 4,
+    status: "Active",
+  },
+  {
+    id: "SUP003",
+    name: "MedEquip Solutions",
+    category: "Equipment",
+    contact: "info@medequip.com",
+    rating: 4,
+    status: "Inactive",
+  },
+  {
+    id: "SUP004",
+    name: "Health Supply Co.",
+    category: "Medical Supplies",
+    contact: "orders@healthsupply.com",
+    rating: 3,
+    status: "Active",
+  },
+  {
+    id: "SUP005",
+    name: "Office Depot Medical",
+    category: "Office Supplies",
+    contact: "medical@officedepot.com",
+    rating: 4,
+    status: "Active",
+  },
+  {
+    id: "SUP006",
+    name: "Global Pharma Ltd.",
+    category: "Medications",
+    contact: "sales@globalpharma.com",
+    rating: 5,
+    status: "Active",
+  },
+  {
+    id: "SUP008",
+    name: "Lab Supplies Direct",
+    category: "Laboratory",
+    contact: "orders@labsupplies.com",
+    rating: 3,
+    status: "Active",
+  },
+];
+
 export const getInventoryStats = () => {
   const currentDate = new Date();
   const thirtyDaysFromNow = new Date(

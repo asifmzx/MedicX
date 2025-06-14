@@ -6,22 +6,18 @@ import { MdError, MdSchedule, MdShoppingCart } from 'react-icons/md';
 
 const Card = () => {
     const calculateInventoryStats = () => {
-        // Calculate Low Stock Items (currentStock <= minStock)
         const lowStockItems = inventoryList.filter(item =>
             item.status === "Low Stock" || item.currentStock <= item.minStock
         ).length;
 
-        // Calculate Out of Stock Items
         const outOfStockItems = inventoryList.filter(item =>
             item.status === "Out of Stock" || item.currentStock === 0
         ).length;
 
-        // Calculate Pending Orders
         const pendingOrders = inventoryList.filter(item =>
             item.status === "On Order"
         ).length;
 
-        // Calculate items expiring soon (items updated more than 30 days ago)
         const thirtyDaysAgo = new Date();
         thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
@@ -30,10 +26,9 @@ const Card = () => {
             return lastUpdated < thirtyDaysAgo;
         }).length;
 
-        // Calculate changes from "last week" (mock calculation based on current data)
         const totalItems = inventoryList.length;
-        const lowStockChange = Math.floor(lowStockItems * 0.2); // 20% increase assumption
-        const outOfStockChange = Math.floor(outOfStockItems * 0.3); // 30% increase assumption
+        const lowStockChange = Math.floor(lowStockItems * 0.2);
+        const outOfStockChange = Math.floor(outOfStockItems * 0.3);
 
         return {
             lowStockItems,

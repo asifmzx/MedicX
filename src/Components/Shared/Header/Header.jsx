@@ -12,7 +12,7 @@ const Header = ({ toggleSidebar }) => {
   const [isDark, setIsDark] = useState(false);
 
   return (
-    <nav className="bg-[#193768] text-white w-full fixed top-0 z-50">
+    <nav className="bg-[#14837f] text-white w-full fixed top-0 z-50">
       <div className="flex items-center justify-between h-16 px-5">
         <div className="flex items-center gap-3">
           <button
