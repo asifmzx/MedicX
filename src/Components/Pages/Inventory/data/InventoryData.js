@@ -8,6 +8,7 @@ export const inventoryList = [
     minStock: 20,
     status: "In Stock",
     lastUpdated: "2023-04-15",
+    expirationDate: "2024-12-31",
     supplier: "MedSupply Co.",
     unitPrice: 12.5,
     totalValue: 562.5,
@@ -21,6 +22,7 @@ export const inventoryList = [
     minStock: 15,
     status: "Low Stock",
     lastUpdated: "2023-04-14",
+    expirationDate: "2024-08-15",
     supplier: "PharmaCorp",
     unitPrice: 8.75,
     totalValue: 105.0,
@@ -34,6 +36,7 @@ export const inventoryList = [
     minStock: 3,
     status: "In Stock",
     lastUpdated: "2023-04-10",
+    expirationDate: null, // Equipment doesn't expire
     supplier: "MedTech Solutions",
     unitPrice: 89.99,
     totalValue: 449.95,
@@ -47,6 +50,7 @@ export const inventoryList = [
     minStock: 10,
     status: "Out of Stock",
     lastUpdated: "2023-04-12",
+    expirationDate: "2025-06-30",
     supplier: "SafetyFirst Ltd",
     unitPrice: 15.25,
     totalValue: 0.0,
@@ -60,6 +64,7 @@ export const inventoryList = [
     minStock: 10,
     status: "Low Stock",
     lastUpdated: "2023-04-13",
+    expirationDate: "2024-07-20",
     supplier: "PharmaCorp",
     unitPrice: 22.5,
     totalValue: 180.0,
@@ -73,6 +78,7 @@ export const inventoryList = [
     minStock: 50,
     status: "In Stock",
     lastUpdated: "2023-04-11",
+    expirationDate: "2026-01-15",
     supplier: "MedSupply Co.",
     unitPrice: 0.85,
     totalValue: 102.0,
@@ -86,6 +92,7 @@ export const inventoryList = [
     minStock: 5,
     status: "Low Stock",
     lastUpdated: "2023-04-09",
+    expirationDate: "2025-03-10",
     supplier: "CleanCare Products",
     unitPrice: 18.75,
     totalValue: 56.25,
@@ -99,6 +106,7 @@ export const inventoryList = [
     minStock: 5,
     status: "In Stock",
     lastUpdated: "2023-04-08",
+    expirationDate: null, // Equipment doesn't expire
     supplier: "MedTech Solutions",
     unitPrice: 25.99,
     totalValue: 389.85,
@@ -112,6 +120,7 @@ export const inventoryList = [
     minStock: 20,
     status: "On Order",
     lastUpdated: "2023-04-07",
+    expirationDate: "2024-09-25",
     supplier: "CleanCare Products",
     unitPrice: 6.5,
     totalValue: 162.5,
@@ -125,6 +134,7 @@ export const inventoryList = [
     minStock: 30,
     status: "In Stock",
     lastUpdated: "2023-04-06",
+    expirationDate: "2024-11-12",
     supplier: "PharmaCorp",
     unitPrice: 5.25,
     totalValue: 315.0,
@@ -138,6 +148,7 @@ export const inventoryList = [
     minStock: 5,
     status: "In Stock",
     lastUpdated: "2023-04-05",
+    expirationDate: null, // Equipment doesn't expire
     supplier: "MedTech Solutions",
     unitPrice: 125.0,
     totalValue: 1000.0,
@@ -151,6 +162,7 @@ export const inventoryList = [
     minStock: 20,
     status: "In Stock",
     lastUpdated: "2023-04-04",
+    expirationDate: "2025-02-28",
     supplier: "MedSupply Co.",
     unitPrice: 8.99,
     totalValue: 314.65,
@@ -166,3 +178,33 @@ export const supplierList = [
   "SafetyFirst Ltd",
   "CleanCare Products",
 ];
+
+// Helper functions for inventory calculations
+export const getInventoryStats = () => {
+  const currentDate = new Date();
+  const thirtyDaysFromNow = new Date(
+    currentDate.getTime() + 30 * 24 * 60 * 60 * 1000
+  );
+
+  return {
+    totalItems: inventoryList.length,
+    lowStockItems: inventoryList.filter((item) => item.status === "Low Stock")
+      .length,
+    outOfStockItems: inventoryList.filter(
+      (item) => item.status === "Out of Stock"
+    ).length,
+    pendingOrders: inventoryList.filter((item) => item.status === "On Order")
+      .length,
+    expiringSoon: inventoryList.filter((item) => {
+      if (!item.expirationDate) return false;
+      const expirationDate = new Date(item.expirationDate);
+      return (
+        expirationDate <= thirtyDaysFromNow && expirationDate >= currentDate
+      );
+    }).length,
+    totalValue: inventoryList.reduce((sum, item) => sum + item.totalValue, 0),
+    lowStockValue: inventoryList
+      .filter((item) => item.status === "Low Stock")
+      .reduce((sum, item) => sum + item.totalValue, 0),
+  };
+};

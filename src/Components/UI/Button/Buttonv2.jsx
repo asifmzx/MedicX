@@ -29,7 +29,7 @@ const Buttonv2 = ({
       `}
     >
       <div className="flex items-center gap-1 md:gap-2 w-full justify-center">
-        {Icon && <Icon className="size-4 md:w-4 md:h-4 shrink-0" />}
+        {Icon && <Icon className="size-4 md:size-5 shrink-0" />}
         {text && <span className="whitespace-nowrap ">{text}</span>}
       </div>
     </button>
