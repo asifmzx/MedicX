@@ -39,30 +39,31 @@ const InventoryReport = () => {
             <RangePicker className="h-[42px] w-full " />
           </Space>
           <select
-            id="department"
+            id="Categories"
             className="bg-white text-gray-400 h-[42px] w-full md:max-w-[200px] border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             defaultValue=""
           >
             <option value="" disabled>
-              All Department
+              All Categories
             </option>
-            <option value="Cardiology">Cardiology</option>
-            <option value="Neurology">Neurology</option>
-            <option value="Orthopedics">Orthopedics</option>
-            <option value="Dermatology">Dermatology</option>
+            <option value="Medications">Medications</option>
+            <option value="Medical Supplies">Medical Supplies</option>
+            <option value="Equipments">Equipments</option>
+            <option value="Office Supplies">Office Supplies</option>
           </select>
           <select
-            id="doctor"
+            id="Suppliers"
             className="bg-white text-gray-400 h-[42px] w-full md:max-w-[200px] border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             defaultValue=""
           >
             <option value="" disabled>
-              All Doctors
+              All Suppliers
             </option>
-            <option value="Dr. Smith">Dr. Smith</option>
-            <option value="Dr. Asif">Dr. Asif</option>
-            <option value="Dr Rakib">Dr Rakib</option>
+            <option value="Medicine Industries">Medicine Industries</option>
+            <option value="McKcsson">McKcsson</option>
+            <option value="Cardinal Health">Cardinal Health</option>
           </select>
+          
         </div>
 
         <div className="w-full md:w-1/3  h-full  ">

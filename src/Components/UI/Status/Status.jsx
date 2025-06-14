@@ -158,6 +158,10 @@ const Status = ({
     default:
       "text-xs font-medium rounded-full border bg-gray-100 text-gray-700 border-gray-200 w-[90px]",
   };
+  const patientReportVariants = {
+    Completed:
+      "bg-green-50 text-green-500 border border border-green-300 text-sm w-[90px]",
+  };
 
   const variantType = {
     appointment: appointmentVariants,
@@ -177,6 +181,7 @@ const Status = ({
     financialReport: financialReportVariants,
     lowStockItem: lowStockItemVariants,
     inventory: inventoryVariants,
+    patientReport: patientReportVariants,
   };
 
   const variants = variantType[type] || {};
