@@ -5,7 +5,7 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 import { FiCheckCircle, FiCreditCard, FiTruck } from "react-icons/fi";
 import { GiNetworkBars } from "react-icons/gi";
 import { GoCalendar } from "react-icons/go";
-import { LuUsers, LuWallet } from "react-icons/lu";
+import { LuUserRound, LuUsers, LuWallet } from "react-icons/lu";
 import { MdOutlineAttachMoney, MdOutlineTrendingUp } from "react-icons/md";
 import { RxCrossCircled } from "react-icons/rx";
 import { TbClock } from "react-icons/tb";
@@ -1276,6 +1276,94 @@ export const ReportData = {
             "Quality Rating": "4.4/5",
           },
         ],
+      },
+    ],
+  },
+  patientReport: {
+    card: [
+      {
+        id: 1,
+        title: "Total Visits",
+        value: "3,842",
+        text: "+12.5% from previous period",
+        icon: <LuUsers size={24} />,
+      },
+      {
+        id: 2,
+        title: "New Patients",
+        value: "428",
+        text: "+8.2% from previous period",
+
+        icon: <LuUserRound size={24} />,
+      },
+      {
+        id: 3,
+        title: "Avg. Visit Duration",
+        value: "32 min",
+        text: "-2.5 min from previous period",
+        duration: 32,
+      },
+      {
+        id: 4,
+        title: "No-Show Rate",
+        value: "6.8%",
+        text: "-0.5% from previous period",
+        rate: 6.8,
+      },
+    ],
+
+    visitTypesPieChart: [
+      { name: "Medications", value: 46, color: "#8884D8" },
+      { name: "Medical Supplies", value: 20, color: "#82CA9D" },
+      { name: "Equipment", value: 24, color: "#FFC658" },
+      { name: "Office Supplies", value: 10, color: "#FF8042" },
+    ],
+    visitOutcomesPieChart: [
+      { name: "Medications", value: 46, color: "#8884D8" },
+      { name: "Medical Supplies", value: 20, color: "#82CA9D" },
+      { name: "Equipment", value: 24, color: "#FFC658" },
+      { name: "Office Supplies", value: 10, color: "#FF8042" },
+    ],
+    recentPatientVisits: [
+      {
+        Patient: "Sarah Johnson",
+        "Visit Date": "Apr 18, 2023",
+        Department: "Cardiology",
+        Doctor: "Dr. Smith",
+        "Visit Type": "Follow-up",
+        Status: "Completed",
+      },
+      {
+        Patient: "Michael Brown",
+        "Visit Date": "Apr 20, 2023",
+        Department: "Orthopedics",
+        Doctor: "Dr. Johnson",
+        "Visit Type": "Consultation",
+        Status: "Completed",
+      },
+      {
+        Patient: "Emma Thompson",
+        "Visit Date": "Apr 22, 2023",
+        Department: "Pediatrics",
+        Doctor: "Dr. Emma Thompson",
+        "Visit Type": "Routine Checkup",
+        Status: "Completed",
+      },
+      {
+        Patient: "Liam Anderson",
+        "Visit Date": "Apr 24, 2023",
+        Department: "Neurology",
+        Doctor: "Dr. Asif",
+        "Visit Type": "Follow-up",
+        Status: "Completed",
+      },
+      {
+        Patient: "Olivia Taylor",
+        "Visit Date": "Apr 26, 2023",
+        Department: "Dermatology",
+        Doctor: "Dr. Rakib",
+        "Visit Type": "Consultation",
+        Status: "Completed",
       },
     ],
   },
