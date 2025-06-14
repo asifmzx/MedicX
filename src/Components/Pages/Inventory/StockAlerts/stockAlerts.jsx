@@ -9,6 +9,7 @@ import { MdOutlineFileDownload } from 'react-icons/md';
 
 import Card from './Card';
 import StockAlertsMng from './StockAlertsMng';
+import AlertSettings from './AlertSettings';
 
 const StockAlerts = () => {
     return (
@@ -37,6 +38,7 @@ const StockAlerts = () => {
             </div>
             <Card />
             <StockAlertsMng />
+            <AlertSettings />
         </div>
     );
 };

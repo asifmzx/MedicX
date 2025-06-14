@@ -17,7 +17,6 @@ const StockAlertsMng = () => {
     const [selectedAlertType, setSelectedAlertType] = useState("All Alerts");
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
 
-    // Filter data based on alert types
     const getFilteredByAlertType = () => {
         switch (activeTab) {
             case "low stock":
@@ -194,77 +193,77 @@ const StockAlertsMng = () => {
                 </div>
             </div>
 
-            <div className="mb-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">{getAlertTypeTitle()}</h2>
-                <p className="text-sm text-gray-600">{getAlertTypeDescription()}</p>
-            </div>
+            <div className="bg-white px-4 py-2  rounded-lg shadow-sm">
+                <div className="mb-6">
+                    <h2 className="text-xl font-semibold text-gray-900 mb-2">{getAlertTypeTitle()}</h2>
+                    <p className="text-sm text-gray-600">{getAlertTypeDescription()}</p>
+                </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto bg-white shadow-sm border border-gray-200 rounded-lg">
-                <table className="w-full">
-                    <thead className="bg-gray-50 border-b border-gray-200">
-                        <tr className='cursor-default'>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item ID</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current Stock</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Min. Level</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Supplier</th>
-                            <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200 cursor-default">
-                        {filteredData.map((item) => (
-                            <tr key={item.id} className="hover:bg-gray-50">
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="text-sm font-medium text-gray-900">{item.id}</div>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
-                                        {item.name}
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="text-sm text-gray-900">{item.category}</div>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="text-sm text-gray-900">{item.currentStock}</div>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="text-sm text-gray-900">{item.minStock}</div>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${item.status === 'Low Stock'
-                                        ? 'bg-yellow-100 text-yellow-800'
-                                        : item.status === 'Out of Stock'
-                                            ? 'bg-red-100 text-red-800'
-                                            : 'bg-green-100 text-green-800'
-                                        }`}>
-                                        {item.status}
-                                    </span>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="text-sm text-gray-900">{item.supplier}</div>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-center">
-                                    <button className="text-xl text-gray-400 hover:text-gray-600 transition-colors size-8 rounded-md cursor-pointer hover:bg-gray-100">
-                                        <div>⋯</div>
-                                    </button>
-                                </td>
+                <div className="overflow-x-auto rounded-lg">
+                    <table className="w-full">
+                        <thead className=" border-b border-gray-200">
+                            <tr className='cursor-default'>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item ID</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current Stock</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Min. Level</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Supplier</th>
+                                <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-gray-200 cursor-default">
+                            {filteredData.map((item) => (
+                                <tr key={item.id} className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm font-medium text-gray-900">{item.id}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                                            {item.name}
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm text-gray-900">{item.category}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm text-gray-900">{item.currentStock}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm text-gray-900">{item.minStock}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${item.status === 'Low Stock'
+                                            ? 'bg-yellow-100 text-yellow-800'
+                                            : item.status === 'Out of Stock'
+                                                ? 'bg-red-100 text-red-800'
+                                                : 'bg-[#f974161c] text-[#fa7516]'
+                                            }`}>
+                                            {item.status}
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm text-gray-900">{item.supplier}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-center">
+                                        <button className="text-xl text-gray-400 hover:text-gray-600 transition-colors size-8 rounded-md cursor-pointer hover:bg-gray-100">
+                                            <div>⋯</div>
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
 
-                {filteredData.length === 0 && (
-                    <div className="text-center py-12">
-                        <div className="text-gray-500">No {activeTab} items found</div>
-                    </div>
-                )}
+                    {filteredData.length === 0 && (
+                        <div className="text-center py-12">
+                            <div className="text-gray-500">No {activeTab} items found</div>
+                        </div>
+                    )}
+                </div>
             </div>
 
-            {/* Pagination */}
             {filteredData.length > 0 && (
                 <div className="flex items-center justify-between mt-4 text-sm text-gray-600">
                     <div className='cursor-default'>
