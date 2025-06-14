@@ -38,12 +38,12 @@ export default function Sidebar({ onMenuItemClick }) {
 
   return (
     <aside
-      className={`bg-[#193768] text-white min-h-screen px-4 transition-all duration-300 
+      className={`bg-[#129692] text-white min-h-screen px-4 transition-all duration-300 
         ${isMdUp ? (isExpanded ? "w-64" : "w-17") : "w-64"}`}
     >
       {/* Toggle button: only visible on md and up */}
       {isMdUp && (
-        <div className="sticky top-0 z-1 flex justify-end bg-[#193869]">
+        <div className="sticky top-0 z-1 flex justify-end bg-[#129692]">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="text-white transition-colors w-full text-right px-2 h-10 cursor-pointer"
