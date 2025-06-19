@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { staffData } from "../data/StaffData";
+import { IoCalendarOutline, IoEyeOutline } from "react-icons/io5";
+import { AiOutlineMail } from "react-icons/ai";
+import { LuBuilding, LuPhone } from "react-icons/lu";
 
 const StaffMng = () => {
   const [viewMode, setViewMode] = useState("grid");
@@ -24,36 +27,42 @@ const StaffMng = () => {
   const getStatusStyles = (status) => {
     switch (status) {
       case "Active":
-        return "bg-green-100 text-green-800";
+        return "bg-green-200 text-green-800";
       case "On Leave":
-        return "bg-yellow-100 text-yellow-800";
+        return "bg-yellow-200 text-yellow-800";
       case "Inactive":
-        return "bg-red-100 text-red-800";
+        return "bg-red-200 text-red-800";
       default:
         return "bg-green-100 text-green-800";
     }
   };
 
   const GridView = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-6">
       {currentStaff.map((staff) => (
         <div
           key={staff.id}
-          className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100"
+          className="bg-white rounded-md shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-200"
         >
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-white font-semibold mr-3">
-                {staff.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
+          <div className="bg-gray-50 p-2 w-full flex items-center justify-between mb-4">
+            <div className="flex items-start gap-3">
+              <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                <img
+                  src={
+                    staff.profileImage ||
+                    `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                      staff.name
+                    )}&background=0D8ABC&color=fff`
+                  }
+                  alt={staff.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 text-sm">
+                <h3 className="font-semibold text-gray-900 text-base leading-tight">
                   {staff.name}
                 </h3>
-                <p className="text-gray-600 text-xs">{staff.role}</p>
+                <p className="text-gray-600 text-sm">{staff.role}</p>
               </div>
             </div>
             <span
@@ -65,34 +74,49 @@ const StaffMng = () => {
             </span>
           </div>
 
-          <div className="space-y-2 mb-4">
-            <div className="flex items-center text-gray-600 text-sm">
-              <span className="w-4 text-center mr-2">🏥</span>
+          <div className="space-y-2 mb-4 px-4">
+            <div className="flex items-center text-gray-900 text-sm">
+              <LuBuilding className="w-4 h-4 mr-3 text-gray-600" />
               <span>{staff.department}</span>
             </div>
-            <div className="flex items-center text-gray-600 text-sm">
-              <span className="w-4 text-center mr-2">✉️</span>
+            <div className="flex items-center text-gray-900 text-sm">
+              <AiOutlineMail className="w-4 h-4 mr-3 text-gray-600" />
               <span className="truncate">{staff.email}</span>
             </div>
-            <div className="flex items-center text-gray-600 text-sm">
-              <span className="w-4 text-center mr-2">📞</span>
+            <div className="flex items-center text-gray-900 text-sm">
+              <LuPhone className="w-4 h-4 mr-3 text-gray-600" />
               <span>{staff.phone}</span>
             </div>
-            <div className="flex items-center text-gray-600 text-sm">
-              <span className="w-4 text-center mr-2">📅</span>
+            <div className="flex items-center text-gray-900 text-sm">
+              <IoCalendarOutline className="w-4 h-4 mr-3 text-gray-600" />
               <span>Joined {staff.joinedDate}</span>
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <button className="flex-1 px-3 py-2 text-xs bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors duration-200 flex items-center justify-center gap-1">
-              <span>👁️</span> View
+          <div className="flex border-t border-gray-200">
+            <button className="flex-1 px-3 py-2 text-sm text-black-700 border-r border-gray-200 hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2">
+              <IoEyeOutline className="w-4 h-4" />
+              <span className="font-semibold">View</span>
             </button>
-            <button className="flex-1 px-3 py-2 text-xs bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors duration-200 flex items-center justify-center gap-1">
-              <span>✏️</span> Edit
+            <button className="flex-1 px-3 py-2 text-sm text-black-700 border-r border-gray-200 hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+              <span className="font-semibold">Edit</span>
             </button>
-            <button className="flex-1 px-3 py-2 text-xs bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors duration-200 flex items-center justify-center gap-1">
-              <span>📅</span> Schedule
+            <button className="flex-1 px-3 py-2 text-sm text-black-700 hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2">
+              <IoCalendarOutline className="w-4 h-4" />
+              <span className="font-semibold">Schedule</span>
             </button>
           </div>
         </div>
@@ -101,7 +125,7 @@ const StaffMng = () => {
   );
 
   const ListView = () => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-6">
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gray-50 border-b border-gray-200">
@@ -192,11 +216,10 @@ const StaffMng = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="bg-white px-4 py-6 border border-gray-200 rounded-md shadow-sm h-fit">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-0">
+          <h1 className="text-xl font-semibold text-black-900 mb-4 sm:mb-0">
             Staff Directory
           </h1>
           <div className="flex items-center gap-3">
@@ -240,10 +263,9 @@ const StaffMng = () => {
           </div>
         </div>
 
-        {/* View Toggle */}
-        <div className="flex bg-gray-100 rounded-lg p-1 w-fit mb-6">
+        <div className="flex bg-gray-100 rounded-lg p-1.5 w-full mb-6">
           <button
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all w-full duration-200 ${
               viewMode === "list"
                 ? "bg-white text-gray-900 shadow-sm"
                 : "text-gray-600 hover:text-gray-900"
@@ -253,7 +275,7 @@ const StaffMng = () => {
             List View
           </button>
           <button
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all w-full duration-200 ${
               viewMode === "grid"
                 ? "bg-white text-gray-900 shadow-sm"
                 : "text-gray-600 hover:text-gray-900"
@@ -264,10 +286,8 @@ const StaffMng = () => {
           </button>
         </div>
 
-        {/* Content */}
         {viewMode === "grid" ? <GridView /> : <ListView />}
 
-        {/* Pagination */}
         <div className="flex items-center justify-between">
           <p className="text-sm text-gray-700">
             Showing <span className="font-medium">{startIndex + 1}</span> to{" "}
