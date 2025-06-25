@@ -28,9 +28,9 @@ export const AdminSidebarMenuItems = [
     label: "Dashboard",
     icon: MdOutlineDashboard,
     items: [
-      { label: "Admin Dashboard", href: "/home/dashboard/admindashboard" },
-      { label: "Doctor Dashboard", href: "/home/dashboard/doctordashboard" },
-      { label: "Patient Dashboard", href: "/home/dashboard/patientdashboard" },
+      { label: "Admin Dashboard", href: "/home/Admin/dashboard/admindashboard" },
+      { label: "Doctor Dashboard", href: "/home/Admin/dashboard/doctordashboard" },
+      { label: "Patient Dashboard", href: "/home/Admin/dashboard/patientdashboard" },
     ],
   },
   {
@@ -38,16 +38,16 @@ export const AdminSidebarMenuItems = [
     label: "Doctors",
     icon: FaUserMd,
     items: [
-      { label: "Doctor List", href: "/home/doctors/doctors_list" },
-      { label: "Add Doctor", href: "/home/doctors/add_doctor" },
-      { label: "Doctor Schedule", href: "/home/doctors/doctor_schedule" },
-      { label: "Specialization", href: "/home/doctors/specializations" },
+      { label: "Doctor List", href: "/home/Admin/doctors/doctors_list" },
+      { label: "Add Doctor", href: "/home/Admin/doctors/add_doctor" },
+      { label: "Doctor Schedule", href: "/home/Admin/doctors/doctor_schedule" },
+      { label: "Specialization", href: "/home/Admin/doctors/specializations" },
     ],
   },
   {
     type: "link",
     label: "Patient",
-    href: "/home/patient",
+    href: "/home/Admin/patient",
     icon: FaUserInjured,
   },
   {
@@ -57,13 +57,13 @@ export const AdminSidebarMenuItems = [
     items: [
       {
         label: "All Appointments",
-        href: "/home/appointments/all_appointments",
+        href: "/home/Admin/appointments/all_appointments",
       },
-      { label: "Add Appointment", href: "/home/appointments/add_appointment" },
-      { label: "Calendar View", href: "/home/appointments/calender_view" },
+      { label: "Add Appointment", href: "/home/Admin/appointments/add_appointment" },
+      { label: "Calendar View", href: "/home/Admin/appointments/calender_view" },
       {
         label: "Appointment Requests",
-        href: "/home/appointments/appointment_requests",
+        href: "/home/Admin/appointments/appointment_requests",
       },
     ],
   },
@@ -74,15 +74,15 @@ export const AdminSidebarMenuItems = [
     items: [
       {
         label: "All Prescriptions",
-        href: "/home/prescriptions/all_prescriptions",
+        href: "/home/Admin/prescriptions/all_prescriptions",
       },
       {
         label: "Create Prescriptions",
-        href: "/home/prescriptions/create_prescription",
+        href: "/home/Admin/prescriptions/create_prescription",
       },
       {
         label: "Medicine Templates",
-        href: "/home/prescriptions/medicine_templates",
+        href: "/home/Admin/prescriptions/medicine_templates",
       },
     ],
   },
@@ -93,16 +93,16 @@ export const AdminSidebarMenuItems = [
     items: [
       {
         label: "Ambulance Call List",
-        href: "/home/ambulance/ambulance_call_list",
+        href: "/home/Admin/ambulance/ambulance_call_list",
       },
-      { label: "Ambulance List", href: "/home/ambulance/ambulance_list" },
-      { label: "Ambulance Details", href: "/home/ambulance/ambulance_details" },
+      { label: "Ambulance List", href: "/home/Admin/ambulance/ambulance_list" },
+      { label: "Ambulance Details", href: "/home/Admin/ambulance/ambulance_details" },
     ],
   },
   {
     type: "link",
     label: "Pharmacy",
-    href: "/home/pharmacy",
+    href: "/home/Admin/pharmacy",
     icon: MdAddShoppingCart,
   },
   {
@@ -110,11 +110,11 @@ export const AdminSidebarMenuItems = [
     label: "Blood Bank",
     icon: MdOutlineBloodtype,
     items: [
-      { label: "Blood Stock", href: "/home/blood_bank/blood_stock" },
-      { label: "Blood Donor", href: "/home/blood_bank/blood_donor" },
-      { label: "Blood Issued", href: "/home/blood_bank/blood_issued" },
-      { label: "Add Blood Unit", href: "/home/blood_bank/add_blood_unit" },
-      { label: "Issue Blood", href: "/home/blood_bank/issue_blood" },
+      { label: "Blood Stock", href: "/home/Admin/blood_bank/blood_stock" },
+      { label: "Blood Donor", href: "/home/Admin/blood_bank/blood_donor" },
+      { label: "Blood Issued", href: "/home/Admin/blood_bank/blood_issued" },
+      { label: "Add Blood Unit", href: "/home/Admin/blood_bank/add_blood_unit" },
+      { label: "Issue Blood", href: "/home/Admin/blood_bank/issue_blood" },
     ],
   },
   {
@@ -122,10 +122,10 @@ export const AdminSidebarMenuItems = [
     label: "Billing",
     icon: FaClipboardList,
     items: [
-      { label: "Invoices List", href: "/home/billing/invoices_list" },
-      { label: "Create Invoice", href: "/home/billing/create_invoice" },
-      { label: "Payment History", href: "/home/billing/payment_history" },
-      { label: "Insurance Claims", href: "/home/billing/insurance_claims" },
+      { label: "Invoices List", href: "/home/Admin/billing/invoices_list" },
+      { label: "Create Invoice", href: "/home/Admin/billing/create_invoice" },
+      { label: "Payment History", href: "/home/Admin/billing/payment_history" },
+      { label: "Insurance Claims", href: "/home/Admin/billing/insurance_claims" },
     ],
   },
   {
@@ -133,9 +133,9 @@ export const AdminSidebarMenuItems = [
     label: "Departments",
     icon: HiOutlineBuildingOffice2,
     items: [
-      { label: "Department List", href: "/home/departments/department_list" },
-      { label: "Add Department", href: "/home/departments/add_department" },
-      { label: "Services Offered", href: "/home/departments/services_offered" },
+      { label: "Department List", href: "/home/Admin/departments/department_list" },
+      { label: "Add Department", href: "/home/Admin/departments/add_department" },
+      { label: "Services Offered", href: "/home/Admin/departments/services_offered" },
     ],
   },
   {
@@ -143,10 +143,10 @@ export const AdminSidebarMenuItems = [
     label: "Inventory",
     icon: FaBoxes,
     items: [
-      { label: "Inventory List", href: "/home/inventory/inventory_list" },
-      { label: "Add Item", href: "/home/inventory/add_item" },
-      { label: "Stock Alerts", href: "/home/inventory/stock_alerts" },
-      { label: "Suppliers List", href: "/home/inventory/suppliers_list" },
+      { label: "Inventory List", href: "/home/Admin/inventory/inventory_list" },
+      { label: "Add Item", href: "/home/Admin/inventory/add_item" },
+      { label: "Stock Alerts", href: "/home/Admin/inventory/stock_alerts" },
+      { label: "Suppliers List", href: "/home/Admin/inventory/suppliers_list" },
     ],
   },
   {
@@ -154,13 +154,13 @@ export const AdminSidebarMenuItems = [
     label: "Staff",
     icon: FaUserMd,
     items: [
-      { label: "All Staff", href: "/home/staff/all_staff" },
-      { label: "Add Staff", href: "/home/staff/add_staff" },
+      { label: "All Staff", href: "/home/Admin/staff/all_staff" },
+      { label: "Add Staff", href: "/home/Admin/staff/add_staff" },
       {
         label: "Roles & Permissions",
-        href: "/home/staff/roles_and_permission",
+        href: "/home/Admin/staff/roles_and_permission",
       },
-      { label: "Attendance", href: "/home/staff/attendance" },
+      { label: "Attendance", href: "/home/Admin/staff/attendance" },
     ],
   },
   {
@@ -168,8 +168,8 @@ export const AdminSidebarMenuItems = [
     label: "Records",
     icon: FaFolderOpen,
     items: [
-      { label: "Birth Records", href: "/home/records/birth_records" },
-      { label: "Death Records", href: "/home/records/death_records" },
+      { label: "Birth Records", href: "/home/Admin/records/birth_records" },
+      { label: "Death Records", href: "/home/Admin/records/death_records" },
     ],
   },
   {
@@ -177,13 +177,13 @@ export const AdminSidebarMenuItems = [
     label: "Room Allotment",
     icon: FaBed,
     items: [
-      { label: "Allotted Rooms", href: "/home/room_allotment/allotted_rooms" },
-      { label: "New Allotment", href: "/home/room_allotment/new_allotment" },
+      { label: "Allotted Rooms", href: "/home/Admin/room_allotment/allotted_rooms" },
+      { label: "New Allotment", href: "/home/Admin/room_allotment/new_allotment" },
       {
         label: "Room by Department",
-        href: "/home/room_allotment/room_by_department",
+        href: "/home/Admin/room_allotment/room_by_department",
       },
-      { label: "Add New Room", href: "/home/room_allotment/add_new_room" },
+      { label: "Add New Room", href: "/home/Admin/room_allotment/add_new_room" },
     ],
   },
   {
@@ -191,31 +191,31 @@ export const AdminSidebarMenuItems = [
     label: "Reviews",
     icon: MdOutlineReviews,
     items: [
-      { label: "Doctor Reviews", href: "/home/reviews/doctor_reviews" },
-      { label: "Patient Reviews", href: "/home/reviews/patient_reviews" },
+      { label: "Doctor Reviews", href: "/home/Admin/reviews/doctor_reviews" },
+      { label: "Patient Reviews", href: "/home/Admin/reviews/patient_reviews" },
     ],
   },
   {
     type: "link",
     label: "Feedback",
     icon: MdOutlineFeedback,
-    href: "/home/feedback",
+    href: "/home/Admin/feedback",
   },
   {
     type: "group",
     label: "Reports",
     icon: FaChartLine,
     items: [
-      { label: "Overview", href: "/home/reports/overview" },
+      { label: "Overview", href: "/home/Admin/reports/overview" },
       {
         label: "Appointment Reports",
-        href: "/home/reports/appointment_reports",
+        href: "/home/Admin/reports/appointment_reports",
       },
-      { label: "Financial Reports", href: "/home/reports/financial_reports" },
-      { label: "Inventory Reports", href: "/home/reports/inventory_reports" },
+      { label: "Financial Reports", href: "/home/Admin/reports/financial_reports" },
+      { label: "Inventory Reports", href: "/home/Admin/reports/inventory_reports" },
       {
         label: "Patient Visit Reports",
-        href: "/home/reports/patient_visit_reports",
+        href: "/home/Admin/reports/patient_visit_reports",
       },
     ],
   },
@@ -224,10 +224,10 @@ export const AdminSidebarMenuItems = [
     label: "Settings",
     icon: FaCog,
     items: [
-      { label: "General Settings", href: "/home/settings/general_settings" },
-      { label: "Notifications", href: "/home/settings/notifications" },
-      { label: "Working Hours", href: "/home/settings/working_hours" },
-      { label: "Integrations", href: "/home/settings/integrations" },
+      { label: "General Settings", href: "/home/Admin/settings/general_settings" },
+      { label: "Notifications", href: "/home/Admin/settings/notifications" },
+      { label: "Working Hours", href: "/home/Admin/settings/working_hours" },
+      { label: "Integrations", href: "/home/Admin/settings/integrations" },
     ],
   },
   {
@@ -235,38 +235,38 @@ export const AdminSidebarMenuItems = [
     label: "Authentication",
     icon: FaLock,
     items: [
-      { label: "Login", href: "/home/authentication/login" },
-      { label: "Register", href: "/home/authentication/register" },
+      { label: "Login", href: "/home/Admin/authentication/login" },
+      { label: "Register", href: "/home/Admin/authentication/register" },
       {
         label: "Forgot Password",
-        href: "/home/authentication/forgot_password",
+        href: "/home/Admin/authentication/forgot_password",
       },
       {
         label: "Profile Settings",
-        href: "/home/authentication/profile_settings",
+        href: "/home/Admin/authentication/profile_settings",
       },
     ],
   },
-  { type: "link", label: "Calendar", href: "/home/calendar", icon: FaCalendar },
-  { type: "link", label: "Tasks", href: "/home/tasks", icon: FaTasks },
+  { type: "link", label: "Calendar", href: "/home/Admin/calendar", icon: FaCalendar },
+  { type: "link", label: "Tasks", href: "/home/Admin/tasks", icon: FaTasks },
   {
     type: "link",
     label: "Contacts",
-    href: "/home/contacts",
+    href: "/home/Admin/contacts",
     icon: FaAddressBook,
   },
-  { type: "link", label: "Email", href: "/home/email", icon: FaEnvelope },
-  { type: "link", label: "Chat", href: "/home/chat", icon: FaChat },
+  { type: "link", label: "Email", href: "/home/Admin/email", icon: FaEnvelope },
+  { type: "link", label: "Chat", href: "/home/Admin/chat", icon: FaChat },
   {
     type: "link",
     label: "Support",
-    href: "/home/support",
+    href: "/home/Admin/support",
     icon: RiCustomerService2Line,
   },
   {
     type: "link",
     label: "Widgets",
-    href: "/home/widgets",
+    href: "/home/Admin/widgets",
     icon: FaGripHorizontal,
   },
 ];
