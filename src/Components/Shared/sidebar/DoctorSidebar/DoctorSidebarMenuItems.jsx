@@ -26,7 +26,7 @@ export const DoctorSidebarMenuItems = [
   {
     type: "link",
     label: "Dashboard",
-    href: "/home/Doctor/dashboard/admindashboard",
+    href: "/home/Doctor/dashboard/doctordashboard",
     icon: MdOutlineDashboard,
   },
   {

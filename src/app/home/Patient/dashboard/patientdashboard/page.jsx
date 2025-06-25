@@ -7,7 +7,7 @@ const Page = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">
-            Welcome back, Dr. Sarah
+            Welcome back, user
           </h1>
           <p className="text-gray-700">
             Here's what's happening with your patients today.
