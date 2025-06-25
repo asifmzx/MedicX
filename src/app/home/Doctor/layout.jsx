@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import Sidebar from "@/Components/Shared/sidebar/Sidebar";
+
 import Header from "@/Components/Shared/Header/Header";
+import DoctorSidebar from "@/Components/Shared/sidebar/DoctorSidebar/DoctorSidebar";
 
 export default function HomeLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function HomeLayout({ children }) {
           w-100% md:translate-x-0 md:static md:block
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
-          <Sidebar onMenuItemClick={() => setSidebarOpen(false)} />
+          <DoctorSidebar onMenuItemClick={() => setSidebarOpen(false)} />
         </aside>
 
         {/* Main Content Area */}

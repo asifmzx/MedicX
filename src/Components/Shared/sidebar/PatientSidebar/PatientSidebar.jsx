@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { menuItems } from "./SidebarMenuItems";
 import { FaAngleDown, FaAnglesRight, FaAnglesLeft } from "react-icons/fa6";
+import { PatientSidebarMenuItems } from "./PatientSidebarMenuItems";
 
-
-export default function Sidebar({ onMenuItemClick }) {
+export default function PatientSidebar({ onMenuItemClick }) {
   const [openGroups, setOpenGroups] = useState({});
   const [isExpanded, setIsExpanded] = useState(true);
   const [isMdUp, setIsMdUp] = useState(false);
@@ -49,8 +48,9 @@ export default function Sidebar({ onMenuItemClick }) {
             className="text-white transition-colors w-full text-right px-2 h-10 cursor-pointer"
           >
             <span
-              className={`inline-block transition-transform duration-300 ease-in-out ${isExpanded ? "rotate-180" : "rotate-0"
-                }`}
+              className={`inline-block transition-transform duration-300 ease-in-out ${
+                isExpanded ? "rotate-180" : "rotate-0"
+              }`}
             >
               <FaAnglesRight />
             </span>
@@ -60,7 +60,7 @@ export default function Sidebar({ onMenuItemClick }) {
 
       {/* Menu items */}
       <nav>
-        {menuItems.map((item, index) => {
+        {PatientSidebarMenuItems.map((item, index) => {
           if (item.type === "group") {
             return (
               <div key={index} className="mb-2">
@@ -69,18 +69,24 @@ export default function Sidebar({ onMenuItemClick }) {
                   className="flex items-center justify-between w-full px-2 py-2 text-left text-md hover:bg-white/20 rounded cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    {item.icon && <div className="text-xl"><item.icon /></div>}
+                    {item.icon && (
+                      <div className="text-xl">
+                        <item.icon />
+                      </div>
+                    )}
                     <span
-                      className={`${isMdUp && !isExpanded ? "hidden" : "inline"
-                        } transition-opacity duration-300`}
+                      className={`${
+                        isMdUp && !isExpanded ? "hidden" : "inline"
+                      } transition-opacity duration-300`}
                     >
                       {item.label}
                     </span>
                   </div>
                   {((isMdUp && isExpanded) || !isMdUp) && (
                     <span
-                      className={`transition-transform duration-300 ease-in-out ${openGroups[item.label] ? "rotate-180" : "rotate-0"
-                        }`}
+                      className={`transition-transform duration-300 ease-in-out ${
+                        openGroups[item.label] ? "rotate-180" : "rotate-0"
+                      }`}
                     >
                       <FaAngleDown />
                     </span>
@@ -114,10 +120,15 @@ export default function Sidebar({ onMenuItemClick }) {
                   onClick={handleLinkClick}
                   className="flex items-center gap-2 px-2 py-2 rounded hover:bg-white/20 mb-2 w-full text-md cursor-pointer"
                 >
-                  {item.icon && <div className="text-xl"><item.icon /></div>}
+                  {item.icon && (
+                    <div className="text-xl">
+                      <item.icon />
+                    </div>
+                  )}
                   <span
-                    className={`${isMdUp && !isExpanded ? "hidden" : "inline"
-                      } transition-opacity duration-300`}
+                    className={`${
+                      isMdUp && !isExpanded ? "hidden" : "inline"
+                    } transition-opacity duration-300`}
                   >
                     {item.label}
                   </span>
