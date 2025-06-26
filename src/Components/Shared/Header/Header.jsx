@@ -17,9 +17,11 @@ const Header = ({ toggleSidebar }) => {
       <div className="flex items-center justify-between h-16 px-5">
         {/* Left Section */}
         <div className="flex items-center gap-3">
+          {/* Hamburger only visible on mobile */}
           <button
             onClick={toggleSidebar}
-            className="md:hidden hover:bg-white/10 rounded-full"
+            className="md:hidden hover:bg-white/10 rounded-full "
+            aria-label="Toggle Sidebar"
           >
             <HiMenu className="text-3xl" />
           </button>
@@ -34,7 +36,7 @@ const Header = ({ toggleSidebar }) => {
           {/* Theme Toggle */}
           <button
             onClick={() => setIsDark(!isDark)}
-            className="p-2 hover:bg-white/10 rounded-full size-10 flex justify-center items-center"
+            className="p-2 hover:bg-white/10 rounded-full flex justify-center items-center"
             aria-label="Toggle Theme"
           >
             {isDark ? (
@@ -47,7 +49,8 @@ const Header = ({ toggleSidebar }) => {
           {/* Notifications */}
           <Link
             href="/"
-            className="hover:bg-white/10 rounded-full size-10 flex justify-center items-center"
+            className="hover:bg-white/10 rounded-full flex justify-center items-center p-2"
+            aria-label="Notifications"
           >
             <IoMdNotificationsOutline className="text-xl" />
           </Link>
@@ -55,7 +58,8 @@ const Header = ({ toggleSidebar }) => {
           {/* Dropdown Trigger */}
           <button
             onClick={() => setDropdownOpen((prev) => !prev)}
-            className="bg-white/20 hover:bg-white/10 rounded-full text-xl font-normal size-10 flex items-center justify-center"
+            className="bg-white/20 hover:bg-white/10 rounded-full text-xl font-normal flex items-center justify-center px-3 py-1"
+            aria-label="User Dropdown"
           >
             US
           </button>
