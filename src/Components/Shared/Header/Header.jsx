@@ -64,7 +64,7 @@ const Header = ({ toggleSidebar }) => {
           {dropdownOpen && (
             <div className="absolute top-14 right-0 bg-[#a1dad8] text-black rounded shadow-lg w-40 z-50">
               <Link
-                href="home/Admin/dashboard"
+                href="/home/Admin/dashboard"
                 className="block px-4 py-2 hover:bg-gray-100"
                 onClick={() => setDropdownOpen(false)}
               >
