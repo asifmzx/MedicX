@@ -21,7 +21,7 @@ const FinancialReportCard = () => {
             <Progress
               percent={item.progressValue}
               showInfo={false}
-              strokeWidth={3}
+              size={3}
               strokeColor={item.progressColor}
             />
           </div>

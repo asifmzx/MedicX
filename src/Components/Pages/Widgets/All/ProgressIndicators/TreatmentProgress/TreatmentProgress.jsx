@@ -3,7 +3,7 @@ import { Flex, Progress } from "antd";
 const TreatmentProgress = () => {
   const progressData = [
     { label: "Physical", percent: 80, color: "#171717" },
-    { label: "Mental", percent: 50, color: "#3B82F6" }, 
+    { label: "Mental", percent: 50, color: "#3B82F6" },
     { label: "Overall", percent: 70, color: "#22C55E" },
   ];
 
@@ -24,7 +24,7 @@ const TreatmentProgress = () => {
                 type="dashboard"
                 percent={percent}
                 strokeColor={color}
-                strokeWidth={10}
+                size={10}
                 width={120}
               />
               <p className="mt-2 text-sm font-semibold">{label}</p>
