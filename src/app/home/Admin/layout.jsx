@@ -30,7 +30,7 @@ export default function HomeLayout({ children }) {
         {/* Backdrop overlay - only visible on mobile when sidebar open */}
         {sidebarOpen && (
           <div
-            className="fixed inset-0  bg-opacity-30 z-30 md:hidden"
+            className="fixed inset-0 bg-transparent backdrop-blur-xs z-30 md:hidden"
             onClick={() => setSidebarOpen(false)}
           ></div>
         )}
