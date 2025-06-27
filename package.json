@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "antd": "^5.25.1",
+    "antd": "^5.26.2",
     "dayjs": "^1.11.13",
     "next": "^15.3.4",
     "react": "^19.0.0",
