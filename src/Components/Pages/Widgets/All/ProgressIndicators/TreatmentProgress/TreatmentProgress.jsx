@@ -24,8 +24,7 @@ const TreatmentProgress = () => {
                 type="dashboard"
                 percent={percent}
                 strokeColor={color}
-                size={10}
-                width={120}
+                size={120}
               />
               <p className="mt-2 text-sm font-semibold">{label}</p>
             </div>

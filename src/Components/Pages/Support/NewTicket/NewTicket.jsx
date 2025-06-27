@@ -31,9 +31,10 @@ const NewTicket = () => {
           </label>
           <select
             id=""
+            defaultValue=""
             className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
           >
-            <option value="" disabled selected>
+            <option value="" disabled>
               Select Category
             </option>
             <option value="Technical Issue">Technical Issue</option>
@@ -49,9 +50,10 @@ const NewTicket = () => {
           </label>
           <select
             id=""
+            defaultValue=""
             className="w-full border border-gray-300 rounded px-3 py-2  focus:outline-none focus:ring focus:ring-black"
           >
-            <option value="" disabled selected>
+            <option value="" disabled>
               Select Priority
             </option>
             <option value="Low">Low-General Questions or request</option>
