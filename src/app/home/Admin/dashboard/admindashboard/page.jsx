@@ -18,7 +18,7 @@ const Page = () => {
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1">
             Dashboard
           </h1>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm">
             Welcome back, Dr. Johnson! Here's what's happening today.
           </p>
         </div>

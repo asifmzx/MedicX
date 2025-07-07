@@ -4,6 +4,144 @@
   --header-height: 4rem;
 }
 
+/* Dark theme variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+  --header-bg: #14837f;
+  --sidebar-bg: #129692;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --accent-primary: #14837f;
+  --accent-secondary: #129692;
+}
+
+:root.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e5;
+  --text-tertiary: #a3a3a3;
+  --border-primary: #1a1a1a;
+  --border-secondary: #2a2a2a;
+  --header-bg: #000000;
+  --sidebar-bg: #000000;
+  --card-bg: #0a0a0a;
+  --input-bg: #1a1a1a;
+  --accent-primary: #00ff88;
+  --accent-secondary: #00cc6a;
+}
+
+/* Dark mode utility classes */
+.dark-card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark .dark-card {
+  background-color: #0a0a0a;
+  border-color: #1a1a1a;
+}
+
+.dark-input {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  border-radius: 0.5rem;
+}
+
+.dark .dark-input {
+  background-color: #1a1a1a;
+  border-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.dark-btn-primary {
+  background-color: #14837f;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.dark-btn-primary:hover {
+  background-color: #0f6b68;
+}
+
+.dark .dark-btn-primary {
+  background-color: #00ff88;
+  color: #000000;
+}
+
+.dark .dark-btn-primary:hover {
+  background-color: #00cc6a;
+}
+
+.dark-text-primary {
+  color: #111827;
+}
+
+.dark .dark-text-primary {
+  color: #ffffff;
+}
+
+.dark-text-secondary {
+  color: #6b7280;
+}
+
+.dark .dark-text-secondary {
+  color: #e5e5e5;
+}
+
+.dark-text-muted {
+  color: #9ca3af;
+}
+
+.dark .dark-text-muted {
+  color: #a3a3a3;
+}
+
+.dark-bg-primary {
+  background-color: white;
+}
+
+.dark .dark-bg-primary {
+  background-color: #000000;
+}
+
+.dark-bg-secondary {
+  background-color: #f9fafb;
+}
+
+.dark .dark-bg-secondary {
+  background-color: #0a0a0a;
+}
+
+.dark-border {
+  border-color: #e5e7eb;
+}
+
+.dark .dark-border {
+  border-color: #1a1a1a;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* loading component */
 .loader {
   font-size: 48px;
@@ -19,6 +157,14 @@
   -webkit-text-fill-color: transparent;
   animation: loaderText 2s linear infinite;
   letter-spacing: 2px;
+}
+
+.dark .loader {
+  background: linear-gradient(90deg, #00ff88 0%, #ffffff 50%, #00ff88 100%);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes loaderText {
@@ -46,4 +192,110 @@
 
 .ScrollBar::-webkit-scrollbar-thumb:hover {
   background-image: linear-gradient(to bottom, #172554);
+}
+
+.dark .ScrollBar::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #00ff88);
+}
+
+.dark .ScrollBar::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to bottom, #00cc6a);
+}
+
+/* Additional OLED Black Utilities */
+.oled-bg-primary {
+  background-color: white;
+}
+
+.dark .oled-bg-primary {
+  background-color: #000000;
+}
+
+.oled-bg-secondary {
+  background-color: #f9fafb;
+}
+
+.dark .oled-bg-secondary {
+  background-color: #0a0a0a;
+}
+
+.oled-bg-card {
+  background-color: white;
+}
+
+.dark .oled-bg-card {
+  background-color: #0a0a0a;
+}
+
+.oled-border {
+  border-color: #e5e7eb;
+}
+
+.dark .oled-border {
+  border-color: #374151;
+}
+
+.oled-text-primary {
+  color: #111827;
+}
+
+.dark .oled-text-primary {
+  color: #f9fafb;
+}
+
+.oled-text-secondary {
+  color: #6b7280;
+}
+
+.dark .oled-text-secondary {
+  color: #d1d5db;
+}
+
+.oled-text-muted {
+  color: #9ca3af;
+}
+
+.dark .oled-text-muted {
+  color: #9ca3af;
+}
+
+/* Override for common Tailwind classes in dark mode to ensure OLED black */
+.dark .bg-white {
+  background-color: #0a0a0a !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #000000 !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #1a1a1a !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #2a2a2a !important;
+}
+
+.dark .border-gray-300 {
+  border-color: #3a3a3a !important;
+}
+
+.dark .text-gray-900 {
+  color: #ffffff !important;
+}
+
+.dark .text-gray-800 {
+  color: #e5e5e5 !important;
+}
+
+.dark .text-gray-700 {
+  color: #d1d1d1 !important;
+}
+
+.dark .text-gray-600 {
+  color: #b8b8b8 !important;
+}
+
+.dark .text-gray-500 {
+  color: #9f9f9f !important;
 }

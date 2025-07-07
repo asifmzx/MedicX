@@ -44,13 +44,20 @@ const Card = () => {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
         {data.map(({ id, icon, title, text, number, color }) => (
-          <div key={id} className="bg-white rounded-lg p-4 flex flex-col gap-2">
+          <div
+            key={id}
+            className="bg-white dark:bg-gray-900 rounded-lg p-4 flex flex-col gap-2 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
+          >
             <div className={` ${color}`}>{icon}</div>
-            <h2 className="text-lg md:text-2xl font-semibold">{title}</h2>
-            <p className="text-sm text-gray-500">
+            <h2 className="text-lg md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
+              {title}
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               <span className={` ${color}`}>{text}</span> from last month
             </p>
-            <span className="text-2xl font-bold">${number}</span>
+            <span className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              ${number}
+            </span>
           </div>
         ))}
       </div>

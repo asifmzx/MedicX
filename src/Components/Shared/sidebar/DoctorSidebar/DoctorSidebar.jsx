@@ -6,8 +6,6 @@ import { FaAngleDown, FaAnglesRight, FaAnglesLeft } from "react-icons/fa6";
 import { DoctorSidebarMenuItems } from "./DoctorSidebarMenuItems";
 // import { DoctorSidebarMenuItems } from "./DoctorSidebarMenuItems";
 
-
-
 export default function DoctorSidebar({ onMenuItemClick }) {
   const [openGroups, setOpenGroups] = useState({});
   const [isExpanded, setIsExpanded] = useState(true);
@@ -40,12 +38,12 @@ export default function DoctorSidebar({ onMenuItemClick }) {
 
   return (
     <aside
-      className={`bg-[#129692] text-white min-h-screen px-4 transition-all duration-300 
+      className={`bg-[#129692] dark:bg-black text-white min-h-screen px-4 transition-all duration-300 
         ${isMdUp ? (isExpanded ? "w-64" : "w-17") : "w-64"}`}
     >
       {/* Toggle button: only visible on md and up */}
       {isMdUp && (
-        <div className="sticky top-0 z-1 flex justify-end bg-[#129692]">
+        <div className="sticky top-0 z-1 flex justify-end bg-[#129692] dark:bg-black">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="text-white transition-colors w-full text-right px-2 h-10 cursor-pointer"

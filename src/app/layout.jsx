@@ -1,4 +1,4 @@
-import Header from "@/Components/Shared/Header/Header";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import "./globals.css";
 
 export const metadata = {
@@ -9,12 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full">
-      <body 
-        className="h-full bg-gray-50"
+      <body
+        className="h-full bg-gray-50 dark:bg-black transition-colors duration-300"
         suppressHydrationWarning={true}
       >
-        <Header />
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

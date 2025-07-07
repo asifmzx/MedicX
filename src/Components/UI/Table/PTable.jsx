@@ -1,7 +1,7 @@
 const PTable = ({ columns, data }) => {
   return (
     <div className="w-full overflow-x-auto">
-      <table className="min-w-[700px] w-full bg-white border-b border-gray-200 rounded-lg text-sm">
+      <table className="min-w-[700px] w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 rounded-lg text-sm">
         <thead>
           <tr className=" text-left font-semibold text-gray-600">
             {columns.map((col, index) => (

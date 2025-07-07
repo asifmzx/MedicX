@@ -7,13 +7,14 @@ import Image from "next/image";
 import { useState } from "react";
 import { assets } from "@/assets";
 import Link from "next/link";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const Header = ({ toggleSidebar }) => {
-  const [isDark, setIsDark] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-[#14837f] text-white w-full fixed top-0 z-50">
+    <nav className="bg-[#14837f] dark:bg-black text-white w-full fixed top-0 z-50 transition-colors duration-300 dark:border-b dark:border-gray-900">
       <div className="flex items-center justify-between h-16 px-5">
         {/* Left Section */}
         <div className="flex items-center gap-3">
@@ -35,8 +36,8 @@ const Header = ({ toggleSidebar }) => {
         <div className="flex items-center gap-2 relative">
           {/* Theme Toggle */}
           <button
-            onClick={() => setIsDark(!isDark)}
-            className="p-2 hover:bg-white/10 rounded-full flex justify-center items-center"
+            onClick={toggleTheme}
+            className="p-2 hover:bg-white/10 dark:hover:bg-white/10 rounded-full flex justify-center items-center transition-colors duration-200"
             aria-label="Toggle Theme"
           >
             {isDark ? (
@@ -49,7 +50,7 @@ const Header = ({ toggleSidebar }) => {
           {/* Notifications */}
           <Link
             href="/"
-            className="hover:bg-white/10 rounded-full flex justify-center items-center p-2"
+            className="hover:bg-white/10 dark:hover:bg-white/10 rounded-full flex justify-center items-center p-2 transition-colors duration-200"
             aria-label="Notifications"
           >
             <IoMdNotificationsOutline className="text-xl" />
@@ -58,7 +59,7 @@ const Header = ({ toggleSidebar }) => {
           {/* Dropdown Trigger */}
           <button
             onClick={() => setDropdownOpen((prev) => !prev)}
-            className="bg-white/20 hover:bg-white/10 rounded-full text-xl font-normal flex items-center justify-center px-3 py-1"
+            className="bg-white/20 hover:bg-white/10 dark:bg-white/20 dark:hover:bg-white/10 rounded-full text-xl font-normal flex items-center justify-center px-3 py-1 transition-colors duration-200"
             aria-label="User Dropdown"
           >
             US
@@ -66,24 +67,24 @@ const Header = ({ toggleSidebar }) => {
 
           {/* Dropdown Menu */}
           {dropdownOpen && (
-            <div className="absolute top-14 right-0 bg-[#a1dad8] text-black rounded shadow-lg w-40 z-50">
+            <div className="absolute top-14 right-0 bg-[#a1dad8] dark:bg-gray-700 text-black dark:text-white rounded shadow-lg w-40 z-50">
               <Link
                 href="/home/Admin/dashboard"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
                 onClick={() => setDropdownOpen(false)}
               >
                 Admin
               </Link>
               <Link
                 href="/home/Doctor/dashboard/doctordashboard"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
                 onClick={() => setDropdownOpen(false)}
               >
                 Doctor
               </Link>
               <Link
                 href="/home/Patient/dashboard/patientdashboard"
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
                 onClick={() => setDropdownOpen(false)}
               >
                 Patient

@@ -19,7 +19,7 @@ export default function HomeLayout({ children }) {
         {/* Sidebar */}
         <aside
           className={`
-            ScrollBar fixed top-16 left-0 h-[calc(100vh-4rem)] bg-white z-40 overflow-y-auto transform transition-transform duration-300 ease-in-out
+            ScrollBar fixed top-16 left-0 h-[calc(100vh-4rem)] bg-white dark:bg-black z-40 overflow-y-auto transform transition-transform duration-300 ease-in-out
             w-100%  md:translate-x-0 md:static md:block
             ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
           `}
@@ -38,9 +38,9 @@ export default function HomeLayout({ children }) {
         {/* Main Content Area */}
         <main
           className="
-            flex-1 overflow-y-auto bg-gray-50 h-[calc(100vh-4rem)] ScrollBar
+            flex-1 overflow-y-auto bg-gray-50 dark:bg-black h-[calc(100vh-4rem)] ScrollBar
             transition-all duration-300 ease-in-out
-          
+           
           "
         >
           {children}

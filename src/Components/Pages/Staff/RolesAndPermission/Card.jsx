@@ -72,7 +72,7 @@ const Card = () => {
         return (
           <div
             key={item.id}
-            className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition duration-300 ease-in-out"
+            className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition duration-300 ease-in-out"
           >
             <div className="flex items-center justify-between mb-4">
               <span className="font-medium text-gray-600 text-sm">

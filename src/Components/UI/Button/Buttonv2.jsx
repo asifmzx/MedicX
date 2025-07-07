@@ -6,15 +6,17 @@ const Buttonv2 = ({
   className = "",
   isActive = false,
 }) => {
-
   const baseStyles =
     "px-2 md:px-3 py-2 h-8 flex items-center justify-center rounded-md min-w-0 cursor-pointer";
   const variants = {
-    primary: "bg-white hover:bg-[#F5F5F5] text-black text-xs font-semibold",
+    primary:
+      "bg-white hover:bg-[#F5F5F5] dark:bg-gray-900 dark:hover:bg-gray-800 text-black dark:text-white text-xs font-semibold",
     secondary:
-      "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA] text-xs font-semibold",
-    primary_main: "bg-[#FFFFFF] hover:bg-[#F5F5F5] text-black",
-    secondary_main: "bg-[#0A0A0A] hover:bg-[#262626] text-[#FAFAFA]",
+      "bg-[#0A0A0A] hover:bg-[#262626] dark:bg-gray-700 dark:hover:bg-gray-600 text-[#FAFAFA] dark:text-gray-100 text-xs font-semibold",
+    primary_main:
+      "bg-[#FFFFFF] hover:bg-[#F5F5F5] dark:bg-gray-900 dark:hover:bg-gray-800 text-black dark:text-white",
+    secondary_main:
+      "bg-[#0A0A0A] hover:bg-[#262626] dark:bg-gray-700 dark:hover:bg-gray-600 text-[#FAFAFA] dark:text-gray-100",
   };
 
   return (

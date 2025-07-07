@@ -31,12 +31,12 @@ const RecentAppointment = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-sm p-4 h-full flex flex-col">
+    <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 h-full flex flex-col transition-colors duration-300">
       <div className="mb-6">
-        <h1 className="text-xl font-semibold text-gray-800">
+        <h1 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
           Recent Appointments
         </h1>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           You have {appointments.length} appointments today.
         </p>
       </div>
@@ -45,7 +45,7 @@ const RecentAppointment = () => {
         {appointments.map((appointment) => (
           <div
             key={appointment.id}
-            className="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors"
+            className="flex justify-between items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
           >
             <div className="flex items-center gap-4">
               <div className="flex-shrink-0">
@@ -56,9 +56,15 @@ const RecentAppointment = () => {
                 />
               </div>
               <div>
-                <p className="font-medium text-gray-800">{appointment.name}</p>
-                <p className="text-sm text-gray-600">{appointment.type}</p>
-                <p className="text-xs text-gray-500">{appointment.time}</p>
+                <p className="font-medium text-gray-800 dark:text-gray-100">
+                  {appointment.name}
+                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {appointment.type}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {appointment.time}
+                </p>
               </div>
             </div>
 
@@ -68,7 +74,7 @@ const RecentAppointment = () => {
                 text={appointment.status}
               />
               <button
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 aria-label="More options"
               >
                 <SlOptions />
@@ -81,7 +87,7 @@ const RecentAppointment = () => {
       <div className="text-center mt-4  ">
         <Link
           href="/Dashboard/AdminDashboard"
-          className="text-sm font-medium text-primary-600 hover:text-primary-800 hover:underline"
+          className="text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 hover:underline"
         >
           View All Appointments
         </Link>
