@@ -24,7 +24,7 @@ const DoctorList = () => {
           variant="secondary"
           text="Add Doctor"
           Icon={GoPlus}
-          onClick={() => router.push("/home/doctors/add_doctor")}
+          onClick={() => router.push("/home/Admin/doctors/add_doctor")}
         />
       </div>
       <div>
