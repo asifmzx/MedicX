@@ -5,7 +5,7 @@ import Button from "@/Components/UI/Button/Button";
 import { useRouter } from "next/navigation";
 import { GoPlus } from "react-icons/go";
 
-const addPatient = () => {
+const addPatientPage = () => {
   const router = useRouter();
 
   return (
@@ -23,7 +23,7 @@ const addPatient = () => {
           variant="secondary"
           text="Add Patient"
           Icon={GoPlus}
-          onClick={() => router.push("/home/patient/addPatient")}
+          onClick={() => router.push("/home/Admin/patient/addPatient")}
         />
       </div>
       <div>
@@ -33,4 +33,4 @@ const addPatient = () => {
   );
 };
 
-export default addPatient;
+export default addPatientPage;
