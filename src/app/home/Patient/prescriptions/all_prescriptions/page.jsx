@@ -18,12 +18,7 @@ const Page = () => {
             Manage patient prescriptions and medications.
           </p>
         </div>
-        <Button
-          variant="secondary"
-          text="Create Prescription"
-          Icon={GoPlus}
-          onClick={() => router.push("/home/prescriptions/create_prescription")}
-        />
+        
       </div>
       <div>
         <AllPrescriptionTable />

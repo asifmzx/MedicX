@@ -26,7 +26,7 @@ const DepartmentList = () => {
                     variant='secondary_main'
                     text="Add Department"
                     className='border border-gray-300 h-10 font-semibold text-xs w-full md:w-auto'
-                    onClick={() => router.push('/home/departments/add_department')}
+                    onClick={() => router.push('/home/Admin/departments/add_department')}
                 />
             </div>
             <Card />

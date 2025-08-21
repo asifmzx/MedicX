@@ -171,9 +171,7 @@ const DoctorSpecializations = () => {
             inputClassName="text-sm text-gray-700"
             wrapperClassName="flex-grow sm:flex-grow-0"
           />
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <DoctorSpecializationsModal />
-          </div>
+          
         </div>
       </div>
 

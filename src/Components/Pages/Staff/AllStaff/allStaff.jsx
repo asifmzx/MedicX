@@ -15,9 +15,11 @@ import {
 
 import StaffMng from "./StaffMng";
 import Card from "./Card";
+import { useRouter } from "next/navigation";
 
 const AllStaff = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const router = useRouter();
 
   const dropdownOptions = [
     { icon: FaUserShield, label: "Roles & Permissions" },
@@ -46,6 +48,7 @@ const AllStaff = () => {
             variant="secondary_main"
             text="Add New Staff"
             className="border border-gray-300 h-10 w-full sm:w-auto whitespace-nowrap"
+            onClick={() => router.push("/home/Admin/staff/add_staff")}
           />
           <div className="relative w-full sm:w-auto">
             <button

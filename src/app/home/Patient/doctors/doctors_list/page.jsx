@@ -20,12 +20,7 @@ const DoctorList = () => {
             Manage your medical staff and their information.
           </p>
         </div>
-        <Button
-          variant="secondary"
-          text="Add Doctor"
-          Icon={GoPlus}
-          onClick={() => router.push("/home/doctors/add_doctor")}
-        />
+        
       </div>
       <div>
         <DoctorsListTable />

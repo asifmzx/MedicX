@@ -22,7 +22,9 @@ const Page = () => {
           variant="secondary"
           text="Create Prescription"
           Icon={GoPlus}
-          onClick={() => router.push("/home/prescriptions/create_prescription")}
+          onClick={() =>
+            router.push("/home/Doctor/prescriptions/create_prescription")
+          }
         />
       </div>
       <div>
