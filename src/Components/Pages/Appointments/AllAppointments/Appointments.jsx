@@ -1,10 +1,13 @@
+"use client"
 import React from "react";
 import SubSection from "./SubSections";
 import Buttonv2 from "@/Components/UI/Button/Buttonv2";
 import { FiMessageSquare } from "react-icons/fi";
 import { CiCalendar } from "react-icons/ci";
+import { useRouter } from "next/navigation";
 
 const Appointments = () => {
+  const router = useRouter();
   return (
     <div className="p-4">
       <div className="flex justify-between items-center">
@@ -30,6 +33,9 @@ const Appointments = () => {
                 text="Book Appointment"
                 Icon={CiCalendar}
                 className="text-xs md:text-sm flex-1 h-[40px] min-w-[140px]"
+                onClick={() =>
+                  router.push("/home/Admin/appointments/add_appointment")
+                }
               />
             </div>
           </div>
